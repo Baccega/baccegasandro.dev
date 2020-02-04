@@ -1,20 +1,20 @@
 import React from "react"
-import Header from "../components/Header"
 import { createUseStyles } from "react-jss"
+import ListLayout from "../layouts/ListLayout"
 
 const useStyles = createUseStyles(theme => ({
-  container: {
-    fontFamily: theme.fontFamily,
-    fontSize: theme.fontSize,
+  list: {
+    gridArea: "center",
+    backgroundColor: theme.colorSecondary,
   },
 }))
 
 const WorkExp = () => {
   const styles = useStyles()
   return (
-    <div className={styles.container}>
-      <Header />
-    </div>
+    <ListLayout>
+      <div className={styles.list}>LIST</div>
+    </ListLayout>
   )
 }
 

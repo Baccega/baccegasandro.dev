@@ -39,6 +39,9 @@ const useStyles = createUseStyles(theme => ({
     color: theme.colorPrimary,
     textDecoration: "none",
   },
+  title: {
+    fontSize: "1.5rem",
+  },
 }))
 
 const Header = () => {
@@ -57,7 +60,7 @@ const Header = () => {
 
   return (
     <nav className={styles.navbar}>
-      <h1>Sandro Baccega</h1>
+      <span className={styles.title}>Sandro Baccega</span>
       <ul className={styles.linkList}>
         <li>
           <Link

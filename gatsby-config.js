@@ -33,6 +33,9 @@ module.exports = {
         path: `${__dirname}/static/`,
       },
     },
+    `gatsby-transformer-json`,
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {

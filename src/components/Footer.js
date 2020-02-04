@@ -4,7 +4,12 @@ import { createUseStyles } from "react-jss"
 const useStyles = createUseStyles(theme => ({
   footer: {
     gridArea: "footer",
-    backgroundColor: theme.colorBase,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    fontSize: "0.9rem",
+    color: theme.color,
+    backgroundColor: theme.colorSecondary,
   },
 }))
 

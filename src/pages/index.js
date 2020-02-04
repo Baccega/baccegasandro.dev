@@ -1,7 +1,8 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
 import GridLayout from "../layouts/GridLayout"
-import MaterialUiIcon from "../icons/MaterialUiIcon"
+import MaterialUiIcon from "../assets/icons/MaterialUiIcon"
+import "../styles/bulma.scss"
 
 const useStyles = createUseStyles(theme => ({
   whoAmI: {

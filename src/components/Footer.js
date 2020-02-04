@@ -10,7 +10,7 @@ const useStyles = createUseStyles(theme => ({
 
 const Footer = props => {
   const styles = useStyles()
-  return <div className={styles.footer}>Footer</div>
+  return <div className={styles.footer}>Created by Sandro Baccega © 2020</div>
 }
 
 export default Footer

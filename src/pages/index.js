@@ -1,6 +1,7 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
 import GridLayout from "../layouts/GridLayout"
+import MaterialUiIcon from "../icons/MaterialUiIcon"
 
 const useStyles = createUseStyles(theme => ({
   whoAmI: {
@@ -22,7 +23,9 @@ const Homepage = () => {
   return (
     <GridLayout>
       <div className={styles.whoAmI}>WHO AM I</div>
-      <div className={styles.work}>WORK</div>
+      <div className={styles.work}>
+        <MaterialUiIcon width="100" height="100" />
+      </div>
       <div className={styles.personal}>PERSONAL</div>
     </GridLayout>
   )

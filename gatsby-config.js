@@ -17,12 +17,21 @@ const theme = {
 }
 
 module.exports = {
-  /* Your site config here */
-
+  siteMetadata: {
+    title: "Sandro Baccega — CV",
+    author: "Sandro Baccega",
+  },
   plugins: [
     {
       resolve: "gatsby-plugin-jss",
       options: { theme },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "static",
+        path: `${__dirname}/static/`,
+      },
     },
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,

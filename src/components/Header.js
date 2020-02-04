@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import { createUseStyles } from "react-jss"
 
 const useStyles = createUseStyles(theme => ({
@@ -44,9 +44,20 @@ const useStyles = createUseStyles(theme => ({
 const Header = () => {
   const styles = useStyles()
 
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          author
+        }
+      }
+    }
+  `)
+
   return (
     <nav className={styles.navbar}>
-      <span>Sandro Baccega</span>
+      <h1>Sandro Baccega</h1>
       <ul className={styles.linkList}>
         <li>
           <Link
@@ -61,7 +72,7 @@ const Header = () => {
           <Link
             className={styles.link}
             activeClassName={styles.activeLink}
-            to="work-experiences"
+            to="/work-experiences"
           >
             Work Experiences
           </Link>
@@ -70,7 +81,7 @@ const Header = () => {
           <Link
             className={styles.link}
             activeClassName={styles.activeLink}
-            to="personal-experiences"
+            to="/personal-experiences"
           >
             Personal Experiences
           </Link>

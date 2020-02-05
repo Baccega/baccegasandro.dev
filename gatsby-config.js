@@ -29,12 +29,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: "static",
-        path: `${__dirname}/static/`,
+        name: "experience",
+        path: `${__dirname}/content/`,
       },
     },
     `gatsby-transformer-json`,
     `gatsby-transformer-remark`,
+    `gatsby-plugin-mdx`,
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,

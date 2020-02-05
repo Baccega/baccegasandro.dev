@@ -8,13 +8,19 @@ const useStyles = createUseStyles(theme => ({
     display: "grid",
     color: theme.color,
     width: "100vw",
-    gridTemplateColumns: "1fr 1fr",
-    gridTemplateRows: "50px auto auto 50px",
-    gridTemplateAreas:
-      "'header header' 'center center' 'left right' 'footer footer'",
     minHeight: "100vh",
+    gridTemplateColumns: "1fr 1fr",
+    gridTemplateRows: "50px auto auto auto 50px",
+    gridTemplateAreas:
+      "'header header' 'center center' 'left right' 'left right' 'footer footer'",
     fontFamily: theme.fontFamily,
     fontSize: theme.fontSize,
+  },
+  "@media (max-width: 1024px)": {
+    container: {
+      gridTemplateAreas:
+        "'header header' 'center center' 'left left' 'right right' 'footer footer'",
+    },
   },
 }))
 

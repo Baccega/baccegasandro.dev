@@ -19,24 +19,24 @@ const useStyles = createUseStyles(theme => ({
 const WorkCard = props => {
   const styles = useStyles()
   return (
-    <div class="card">
+    <div className="card">
       <header className={`card-header ${styles.cardHeader}`}>
-        <h1 class=" is-4 has-text-weight-bold has-text-black">Component</h1>
+        <h1 className=" is-4 has-text-weight-bold has-text-black">Component</h1>
         <p
           className={` is-5 has-text-weight-light has-text-gray ${styles.date}`}
         >
           Date
         </p>
       </header>
-      <div class="card-content">
-        <p class="title">
+      <div className="card-content">
+        <p className="title">
           “There are two hard things in computer science: cache invalidation,
           naming things, and off-by-one errors.”
         </p>
-        <p class="subtitle">Jeff Atwood</p>
+        <p className="subtitle">Jeff Atwood</p>
       </div>
-      <footer class="card-footer">
-        <Link to="#" class="card-footer-item">
+      <footer className="card-footer">
+        <Link to="#" className="card-footer-item">
           View details
         </Link>
       </footer>

@@ -3,7 +3,7 @@ import { createUseStyles } from "react-jss"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import ReactIcon from "../assets/icons/ReactIcon"
-import Icon from "../assets/icons/Icon"
+import Icon from "./Icon"
 
 const useStyles = createUseStyles(theme => ({
   contentContainer: {
@@ -58,16 +58,10 @@ const BodyLayout = ({ children }) => {
     <main className={styles.iconContainer}>
       <MDXProvider
         components={{
-          // Map HTML element tag to React component
-          // h1: DesignSystem.H1,
-          // h2: DesignSystem.H2,
-          // h3: DesignSystem.H3,
-          // Or define component inline
           h1: () => null,
           p: () => null,
           li: props => <IconContainer {...props} />,
           img: props => <Icon {...props} />,
-          // p: props => <p {...props} style={{ color: "red" }} />,
         }}
       >
         <MDXRenderer>{children}</MDXRenderer>

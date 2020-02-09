@@ -61,14 +61,14 @@ const Homepage = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      allMdx {
-        edges {
-          node {
+      allFile(filter: { sourceInstanceName: { eq: "experience" } }) {
+        nodes {
+          childMdx {
             frontmatter {
               company
+              tags
               from
               to
-              tags
             }
             body
           }
@@ -84,14 +84,14 @@ const Homepage = () => {
       </div>
       <GridListLayout className={styles.list}>
         <div className={styles.work}>
-          {data.allMdx.edges.map(({ node }) => (
-            <ExperienceCard key={node.id} {...node} />
+          {data.allFile.nodes.map(({ childMdx }) => (
+            <ExperienceCard key={childMdx.id} {...childMdx} />
           ))}
         </div>
         <Divider />
         <div className={styles.personal}>
-          {data.allMdx.edges.map(({ node }) => (
-            <ExperienceCard key={node.id} {...node} />
+          {data.allFile.nodes.map(({ childMdx }) => (
+            <ExperienceCard key={childMdx.id} {...childMdx} />
           ))}
         </div>
       </GridListLayout>

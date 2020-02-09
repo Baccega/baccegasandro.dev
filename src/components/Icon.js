@@ -61,13 +61,22 @@ const useStyles = createUseStyles(theme => ({
 const Icon = props => {
   const styles = useStyles()
 
-  const dynamicWidth = {
-    width: `calc(20px + ${props.width})`,
-    height: `calc(20px + ${props.height})`,
+  const dynamicWidth = props.isLarge
+    ? "100px"
+    : props.isMedium
+    ? "70px"
+    : props.isSmall
+    ? "30px"
+    : "20px"
+
+  const dynamicDimensions = {
+    width: `calc(15px + ${dynamicWidth})`,
+    height: `calc(15px + ${dynamicWidth})`,
   }
+
   return (
-    <div style={dynamicWidth} {...props} className={styles.root}>
-      {icons(props)}
+    <div style={dynamicDimensions} className={styles.root}>
+      {icons({ ...props, width: dynamicWidth, height: dynamicWidth })}
     </div>
   )
 }

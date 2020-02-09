@@ -29,17 +29,17 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: "experience",
-        path: `${__dirname}/content/experience`,
-        ignore: [`**/\.*`],
+        name: "general",
+        path: `${__dirname}/content`,
+        ignore: [`**/\.*`, `**/experience/`],
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: "general",
-        path: `${__dirname}/content`,
-        // ignore: [`**/\.*`, `**/experience/`],
+        name: "experience",
+        path: `${__dirname}/content/experience`,
+        ignore: [`**/\.*`],
       },
     },
     `gatsby-transformer-json`,

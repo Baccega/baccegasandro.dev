@@ -75,7 +75,7 @@ const ExperienceCard = ({ frontmatter, body }) => {
   return (
     <div className="card">
       <div className={`card-content ${styles.contentContainer}`}>
-        <FrontmatterLayout {...frontmatter}></FrontmatterLayout>
+        <FrontmatterLayout {...frontmatter} />
         <BodyLayout>{body}</BodyLayout>
       </div>
     </div>

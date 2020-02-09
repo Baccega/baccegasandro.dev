@@ -59,16 +59,17 @@ const Divider = () => {
 const Homepage = () => {
   const styles = useStyles()
 
-  const data = useStaticQuery(graphql`
+  const staticData = useStaticQuery(graphql`
     query {
-      allFile(filter: { sourceInstanceName: { eq: "experience" } }) {
+      allFile {
         nodes {
+          sourceInstanceName
           childMdx {
             frontmatter {
               company
-              tags
               from
               to
+              tags
             }
             body
           }
@@ -76,6 +77,16 @@ const Homepage = () => {
       }
     }
   `)
+  const workData = staticData.allFile.nodes.filter(
+    el => el.sourceInstanceName === "work-experience"
+  )
+  const personalData = staticData.allFile.nodes.filter(
+    el => el.sourceInstanceName === "personal-experience"
+  )
+
+  console.log(staticData)
+  console.log(workData)
+  console.log(personalData)
 
   return (
     <GridLayout>
@@ -84,13 +95,13 @@ const Homepage = () => {
       </div>
       <GridListLayout className={styles.list}>
         <div className={styles.work}>
-          {data.allFile.nodes.map(({ childMdx }) => (
+          {workData.map(({ childMdx }) => (
             <ExperienceCard key={childMdx.id} {...childMdx} />
           ))}
         </div>
         <Divider />
         <div className={styles.personal}>
-          {data.allFile.nodes.map(({ childMdx }) => (
+          {personalData.map(({ childMdx }) => (
             <ExperienceCard key={childMdx.id} {...childMdx} />
           ))}
         </div>

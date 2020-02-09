@@ -31,14 +31,22 @@ module.exports = {
       options: {
         name: "general",
         path: `${__dirname}/content`,
-        ignore: [`**/\.*`, `**/experience/`],
+        ignore: [`**/\.*`, `**/work-experience*`, `**/personal-experience*`],
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: "experience",
-        path: `${__dirname}/content/experience`,
+        name: "work-experience",
+        path: `${__dirname}/content/work-experience`,
+        ignore: [`**/\.*`],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "personal-experience",
+        path: `${__dirname}/content/personal-experience`,
         ignore: [`**/\.*`],
       },
     },

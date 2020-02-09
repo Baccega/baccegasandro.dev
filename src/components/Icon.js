@@ -65,7 +65,7 @@ const Icon = props => {
     ? "100px"
     : props.isMedium
     ? "70px"
-    : props.isSmall
+    : props.issmall
     ? "30px"
     : "20px"
 

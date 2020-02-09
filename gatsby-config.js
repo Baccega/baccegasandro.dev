@@ -8,7 +8,7 @@
 
 const theme = {
   fontSize: "1rem",
-  fontFamily: "Montserrat",
+  // fontFamily: "Montserrat",
   color: "#FFFFFF",
   colorBase: "#90AFC5",
   colorPrimary: "#336B87",
@@ -30,13 +30,28 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: "experience",
-        path: `${__dirname}/content/`,
+        path: `${__dirname}/content/experience`,
+        ignore: [`**/\.*`],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "general",
+        path: `${__dirname}/content`,
+        // ignore: [`**/\.*`, `**/experience/`],
       },
     },
     `gatsby-transformer-json`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-mdx`,
     `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {

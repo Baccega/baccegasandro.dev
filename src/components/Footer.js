@@ -9,7 +9,8 @@ const useStyles = createUseStyles(theme => ({
     alignItems: "center",
     fontSize: "0.9rem",
     color: theme.color,
-    backgroundColor: "blue",
+    // backgroundColor: theme.colorTertiary,
+    backgroundColor: theme.colorSecondary,
   },
 }))
 

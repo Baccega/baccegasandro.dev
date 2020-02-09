@@ -1,26 +1,60 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
 import "../styles/bulma.scss"
-import GridLayout from "../layouts/GridLayout"
+import { GridLayout, GridListLayout } from "../layouts/GridLayout"
 import MaterialUiIcon from "../assets/icons/MaterialUiIcon"
 import WorkCard from "../components/WorkCard"
 import { useStaticQuery } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import WhoAmI from "../components/WhoAmI"
+import ExperienceCard from "../components/ExperienceCard"
 
 const useStyles = createUseStyles(theme => ({
   whoAmI: {
     gridArea: "center",
-    backgroundColor: theme.colorTertiary,
+    backgroundColor: theme.colorSecondary,
+  },
+  list: {
+    gridArea: "list",
+    backgroundColor: theme.colorSecondary,
   },
   work: {
     gridArea: "left",
     backgroundColor: theme.colorPrimary,
+    padding: 20,
   },
   personal: {
     gridArea: "right",
-    backgroundColor: theme.colorSecondary,
+    padding: 20,
+    backgroundColor: theme.colorPrimary,
+  },
+  divider: {
+    gridArea: "divider",
+    position: "relative",
+    backgroundColor: theme.colorPrimary,
+    height: "100%",
+    paddingLeft: 5,
+    paddingRight: 5,
+    display: "flex",
+    alignItems: "center",
+  },
+  bar: {
+    borderRadius: 10,
+    border: `1px solid ${theme.color}`,
+    height: "calc(100% - 40px)",
+    position: "absolute",
   },
 }))
+
+const Divider = () => {
+  const styles = useStyles()
+
+  return (
+    <div className={styles.divider}>
+      <div className={styles.bar} />
+    </div>
+  )
+}
 
 const Homepage = () => {
   const styles = useStyles()
@@ -28,29 +62,39 @@ const Homepage = () => {
   const data = useStaticQuery(graphql`
     query {
       allMdx {
-        nodes {
-          frontmatter {
-            company
-            test
+        edges {
+          node {
+            frontmatter {
+              company
+              from
+              to
+              tags
+            }
+            body
           }
-          body
         }
       }
     }
   `)
-  console.log(data)
 
   return (
     <GridLayout>
-      <div className={styles.whoAmI}>WHO AM I</div>
-      <div className={styles.work}>
-        <WorkCard />
+      <div className={styles.whoAmI}>
+        <WhoAmI />
       </div>
-      <div className={styles.personal}>
-        <h1>{data.allMdx.nodes[0].frontmatter.company}</h1>
-        <h1>{data.allMdx.nodes[0].frontmatter.test[0]}</h1>
-        <MDXRenderer>{data.allMdx.nodes[0].body}</MDXRenderer>
-      </div>
+      <GridListLayout className={styles.list}>
+        <div className={styles.work}>
+          {data.allMdx.edges.map(({ node }) => (
+            <ExperienceCard key={node.id} {...node} />
+          ))}
+        </div>
+        <Divider />
+        <div className={styles.personal}>
+          {data.allMdx.edges.map(({ node }) => (
+            <ExperienceCard key={node.id} {...node} />
+          ))}
+        </div>
+      </GridListLayout>
     </GridLayout>
   )
 }

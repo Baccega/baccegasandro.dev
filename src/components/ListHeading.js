@@ -1,7 +1,7 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
 import "../styles/bulma.scss"
-import { useStaticQuery } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
 const useStyles = createUseStyles(theme => ({
   root: {

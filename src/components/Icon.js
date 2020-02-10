@@ -1,7 +1,6 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
-import { FaRegCopyright, FaLaptopCode, FaUniversity } from "react-icons/fa"
-import { icons } from "../assets/icons"
+import MyIcons from "../assets/MyIcons"
 
 const useStyles = createUseStyles(theme => ({
   root: {
@@ -23,7 +22,7 @@ const useStyles = createUseStyles(theme => ({
 
 export const Icon = props => {
   const { dynamicWidth } = props
-  return <>{icons({ ...props, width: dynamicWidth, height: dynamicWidth })}</>
+  return <MyIcons {...props} width={dynamicWidth} height={dynamicWidth} />
 }
 
 const RoundedIcon = props => {

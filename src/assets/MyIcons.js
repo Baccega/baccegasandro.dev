@@ -1,11 +1,18 @@
-export const icons = props => {
-  switch (props.icon) {
+import React from "react"
+import { FaRegCopyright, FaLaptopCode, FaUniversity } from "react-icons/fa"
+import { GoLocation } from "react-icons/go"
+
+const MyIcons = props => {
+  const { icon } = props
+  switch (icon) {
     case "degree":
       return <FaUniversity />
     case "copyright":
       return <FaRegCopyright />
     case "frontend":
       return <FaLaptopCode />
+    case "position":
+      return <GoLocation />
     case "angular":
       return (
         <svg
@@ -556,9 +563,9 @@ export const icons = props => {
               gradientTransform="matrix(0.463 0 0 0.463 76.4644 81.9182)"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0" style="stop-color:#FFFFFF" />
-              <stop offset="0.5" style="stop-color:#4C6B97" />
-              <stop offset="1" style="stop-color:#231F20" />
+              <stop offset="0" style={{ stopColor: "#FFFFFF" }} />
+              <stop offset="0.5" style={{ stopColor: "#4C6B97" }} />
+              <stop offset="1" style={{ stopColor: "#231F20" }} />
             </radialGradient>
           </defs>
           <g>
@@ -692,3 +699,5 @@ export const icons = props => {
       return null
   }
 }
+
+export default MyIcons

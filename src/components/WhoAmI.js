@@ -13,6 +13,18 @@ const useStyles = createUseStyles(theme => ({
   textContainer: {
     maxWidth: "500px",
   },
+  list: {
+    display: "grid",
+    gridTemplateColumns: "auto auto",
+    gridTemplateRows: "auto",
+    alignItems: "center",
+    gridRowGap: "15px",
+    gridColumnGap: "15px",
+  },
+  mainHeading: {
+    paddingLeft: "30px",
+    paddingBottom: "20px",
+  },
 }))
 
 export default function WhoAmI(props) {
@@ -39,14 +51,23 @@ export default function WhoAmI(props) {
               components={{
                 table: props => <div {...props} />,
                 hr: props => null,
+                ul: props => <div {...props} className={styles.list} />,
                 h1: props => (
-                  <h1 {...props} className={`title has-text-white`} />
+                  <div className={styles.mainHeading}>
+                    <h1 {...props} className={`title has-text-white`} />
+                  </div>
                 ),
                 h2: props => (
-                  <h2 {...props} className={`subtitle has-text-light`} />
+                  <div>
+                    <h2 {...props} className={`subtitle has-text-light`} />
+                  </div>
                 ),
                 p: props => <p {...props} />,
-                img: props => <Icon {...props} />,
+                img: props => (
+                  <div>
+                    <Icon {...props} />
+                  </div>
+                ),
               }}
             >
               <MDXRenderer>{body}</MDXRenderer>

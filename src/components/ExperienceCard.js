@@ -7,6 +7,11 @@ import { TiArrowRightThick } from "react-icons/ti"
 import "../styles/bulma.scss"
 
 const useStyles = createUseStyles(theme => ({
+  root: {
+    margin: {
+      bottom: 20,
+    },
+  },
   contentContainer: {
     display: "grid",
     gridTemplateColumns: "3fr 2fr",
@@ -100,7 +105,7 @@ const PersonalFrontmatterLayout = ({ project, role, period }) => {
 const ExperienceCard = ({ children, body }) => {
   const styles = useStyles()
   return (
-    <div className="card">
+    <div className={`card ${styles.root}`}>
       <div className={`card-content ${styles.contentContainer}`}>
         {children}
         <BodyLayout>{body}</BodyLayout>

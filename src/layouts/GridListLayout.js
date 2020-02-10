@@ -1,5 +1,4 @@
 import React from "react"
-import Footer from "../components/Footer"
 import { createUseStyles } from "react-jss"
 
 const useStyles = createUseStyles(theme => ({

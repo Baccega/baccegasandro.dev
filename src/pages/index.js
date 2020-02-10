@@ -1,7 +1,8 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
 import "../styles/bulma.scss"
-import { GridLayout, GridListLayout } from "../layouts/GridLayout"
+import GridLayout from "../layouts/GridLayout"
+import GridListLayout from "../layouts/GridListLayout"
 import { useStaticQuery, graphql } from "gatsby"
 import WhoAmI from "../components/WhoAmI"
 import {

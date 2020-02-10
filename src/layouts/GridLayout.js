@@ -3,7 +3,7 @@ import Footer from "../components/Footer"
 import { createUseStyles } from "react-jss"
 
 const useStyles = createUseStyles(theme => ({
-  container: {
+  root: {
     display: "grid",
     color: theme.color,
     width: "100vw",
@@ -14,39 +14,16 @@ const useStyles = createUseStyles(theme => ({
     fontFamily: theme.fontFamily,
     fontSize: theme.fontSize,
   },
-  listContainer: {
-    display: "grid",
-    color: theme.color,
-    backgroundColor: theme.colorPrimary,
-    paddingBottom: 20,
-    width: "100vw",
-    gridTemplateColumns: "1fr 10px 1fr",
-    gridTemplateRows: "auto",
-    gridTemplateAreas: "'left divider right'",
-    gridRowGap: 10,
-    fontFamily: theme.fontFamily,
-    fontSize: theme.fontSize,
-  },
-  "@media (max-width: 1024px)": {
-    listContainer: {
-      gridTemplateColumns: "1fr",
-      gridTemplateRows: "auto auto",
-      gridTemplateAreas: "'left' 'right'",
-    },
-  },
 }))
 
-export const GridLayout = props => {
+const GridLayout = props => {
   const styles = useStyles()
   return (
-    <div className={styles.container}>
+    <div className={styles.root}>
       {props.children}
       <Footer />
     </div>
   )
 }
 
-export const GridListLayout = props => {
-  const styles = useStyles()
-  return <div className={styles.listContainer}>{props.children}</div>
-}
+export default GridLayout

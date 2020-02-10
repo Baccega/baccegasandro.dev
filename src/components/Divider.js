@@ -1,10 +1,6 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
 import "../styles/bulma.scss"
-import GridLayout from "../layouts/GridLayout"
-import GridListLayout from "../layouts/GridListLayout"
-import WhoAmI from "../components/WhoAmI"
-import ExperiencesList from "../containers/ExperiencesList"
 
 const useStyles = createUseStyles(theme => ({
   root: {

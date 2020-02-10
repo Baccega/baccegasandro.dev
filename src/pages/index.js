@@ -10,7 +10,6 @@ import Divider from "../components/Divider"
 const useStyles = createUseStyles(theme => ({
   whoAmI: {
     gridArea: "center",
-    backgroundColor: theme.colorSecondary,
   },
   list: {
     gridArea: "list",

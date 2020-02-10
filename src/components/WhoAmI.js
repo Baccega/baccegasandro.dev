@@ -2,78 +2,58 @@ import React from "react"
 import "../styles/bulma.scss"
 import { MDXProvider } from "@mdx-js/react"
 import { graphql, useStaticQuery } from "gatsby"
-// import { createUseStyles } from "react-jss"
-// import { useStaticQuery } from "gatsby"
-// import { MDXRenderer } from "gatsby-plugin-mdx"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+import { createUseStyles } from "react-jss"
+import Icon from "./Icon"
 
-// const useStyles = createUseStyles(theme => ({
-// container: {
-//   display: "grid",
-//   color: theme.color,
-//   width: "100vw",
-//   minHeight: "100vh",
-//   gridTemplateColumns: "1fr 10px 1fr",
-//   gridTemplateRows: "auto auto auto 50px",
-//   gridTemplateAreas:
-//     "'center center center' 'left divider right' 'left divider right' 'footer footer footer'",
-//   fontFamily: theme.fontFamily,
-//   fontSize: theme.fontSize,
-// },
-// "@media (max-width: 1024px)": {
-//   container: {
-//     gridTemplateAreas:
-//       "'center center center' 'left left left' 'right right right' 'footer footer footer'",
-//   },
-// },
-// }))
+const useStyles = createUseStyles(theme => ({
+  root: {
+    backgroundColor: theme.colorSecondary,
+  },
+  textContainer: {
+    maxWidth: "500px",
+  },
+}))
 
 export default function WhoAmI(props) {
-  // const classes = useStyles()
+  const styles = useStyles()
   const staticData = useStaticQuery(graphql`
     query {
-      allMdx {
+      allMdx(filter: { frontmatter: { type: { eq: "general" } } }) {
         edges {
           node {
-            frontmatter {
-              type
-              company
-              role
-              from
-              to
-              tags
-            }
             body
-          }
-          node {
-            frontmatter {
-              type
-              project
-              period
-              role
-              tags
-            }
-            body
-          }
-          node {
-            frontmatter {
-              type
-              right_list_heading
-              left_list_heading
-            }
           }
         }
       }
     }
   `)
+  const body = staticData.allMdx.edges[0].node.body
+
   return (
-    <section className={`hero is-large`}>
+    <header className={`hero is-large ${styles.root}`}>
       <div className={`hero-body`}>
-        <div className={`container has-text-left`}>
-          {/* <MDXProvider></MDXProvider> */}
-          <h1 className={`title has-text-white`}>Hero title </h1>
-          <h2 className={`subtitle has-text-light`}>Hero subtitle</h2>
+        <div className={`container`}>
+          <div className={styles.textContainer}>
+            <MDXProvider
+              components={{
+                table: props => <div {...props} />,
+                hr: props => null,
+                h1: props => (
+                  <h1 {...props} className={`title has-text-white`} />
+                ),
+                h2: props => (
+                  <h2 {...props} className={`subtitle has-text-light`} />
+                ),
+                p: props => <p {...props} />,
+                img: props => <Icon {...props} />,
+              }}
+            >
+              <MDXRenderer>{body}</MDXRenderer>
+            </MDXProvider>
+          </div>
         </div>
       </div>
-    </section>
+    </header>
   )
 }

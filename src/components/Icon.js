@@ -1,8 +1,11 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
+import { FaRegCopyright } from "react-icons/fa"
 
 const icons = props => {
   switch (props.icon) {
+    case "copyright":
+      return <FaRegCopyright />
     case "graphql":
       return (
         <svg
@@ -61,7 +64,12 @@ const useStyles = createUseStyles(theme => ({
   },
 }))
 
-const Icon = props => {
+export const Icon = props => {
+  const { dynamicWidth } = props
+  return <>{icons({ ...props, width: dynamicWidth, height: dynamicWidth })}</>
+}
+
+const RoundedIcon = props => {
   const styles = useStyles()
 
   const dynamicWidth = props.isLarge
@@ -79,9 +87,9 @@ const Icon = props => {
 
   return (
     <div style={dynamicDimensions} className={styles.root}>
-      {icons({ ...props, width: dynamicWidth, height: dynamicWidth })}
+      <Icon dynamicWidth={dynamicWidth} {...props} />
     </div>
   )
 }
 
-export default Icon
+export default RoundedIcon

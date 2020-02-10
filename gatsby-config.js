@@ -31,24 +31,9 @@ module.exports = {
       options: {
         name: "general",
         path: `${__dirname}/content`,
-        ignore: [`**/\.*`, `**/work-experience*`, `**/personal-experience*`],
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: "work-experience",
-        path: `${__dirname}/content/work-experience`,
         ignore: [`**/\.*`],
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: "personal-experience",
-        path: `${__dirname}/content/personal-experience`,
-        ignore: [`**/\.*`],
-      },
     },
     `gatsby-transformer-json`,
     `gatsby-transformer-remark`,

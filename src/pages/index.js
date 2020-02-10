@@ -2,12 +2,12 @@ import React from "react"
 import { createUseStyles } from "react-jss"
 import "../styles/bulma.scss"
 import { GridLayout, GridListLayout } from "../layouts/GridLayout"
-import MaterialUiIcon from "../assets/icons/MaterialUiIcon"
-import WorkCard from "../components/WorkCard"
 import { useStaticQuery } from "gatsby"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 import WhoAmI from "../components/WhoAmI"
-import ExperienceCard from "../components/ExperienceCard"
+import {
+  WorkExperienceCard,
+  PersonalExperienceCard,
+} from "../components/ExperienceCard"
 
 const useStyles = createUseStyles(theme => ({
   whoAmI: {
@@ -16,22 +16,29 @@ const useStyles = createUseStyles(theme => ({
   },
   list: {
     gridArea: "list",
-    backgroundColor: theme.colorSecondary,
   },
   work: {
     gridArea: "left",
-    backgroundColor: theme.colorPrimary,
-    padding: 20,
   },
   personal: {
     gridArea: "right",
-    padding: 20,
-    backgroundColor: theme.colorPrimary,
   },
+  experienceList: {
+    padding: {
+      top: 20,
+      left: 20,
+      right: 20,
+      bottom: 0,
+    },
+    display: "grid",
+    gridTemplateRow: "auto",
+    gridTemplateColumns: "1fr",
+    gridRowGap: 20,
+  },
+
   divider: {
     gridArea: "divider",
     position: "relative",
-    backgroundColor: theme.colorPrimary,
     height: "100%",
     paddingLeft: 5,
     paddingRight: 5,
@@ -40,9 +47,15 @@ const useStyles = createUseStyles(theme => ({
   },
   bar: {
     borderRadius: 10,
+    top: 20,
     border: `1px solid ${theme.color}`,
-    height: "calc(100% - 40px)",
+    height: "calc(100% - 20px)",
     position: "absolute",
+  },
+  listHeadingTitle: {
+    color: theme.color,
+    marginBottom: "0.5rem",
+    paddingLeft: "1.5rem",
   },
 }))
 
@@ -61,32 +74,51 @@ const Homepage = () => {
 
   const staticData = useStaticQuery(graphql`
     query {
-      allFile {
-        nodes {
-          sourceInstanceName
-          childMdx {
+      allMdx {
+        edges {
+          node {
             frontmatter {
+              type
               company
+              role
               from
               to
               tags
             }
             body
           }
+          node {
+            frontmatter {
+              type
+              project
+              period
+              role
+              tags
+            }
+            body
+          }
+          node {
+            frontmatter {
+              type
+              right_list_heading
+              left_list_heading
+            }
+          }
         }
       }
     }
   `)
-  const workData = staticData.allFile.nodes.filter(
-    el => el.sourceInstanceName === "work-experience"
+  const workData = staticData.allMdx.edges.filter(
+    ({ node }) => node.frontmatter.type === "work"
   )
-  const personalData = staticData.allFile.nodes.filter(
-    el => el.sourceInstanceName === "personal-experience"
+  const personalData = staticData.allMdx.edges.filter(
+    ({ node }) => node.frontmatter.type === "personal"
   )
+  const generalData = staticData.allMdx.edges.filter(
+    ({ node }) => node.frontmatter.type === "general"
+  )[0].node
 
-  console.log(staticData)
-  console.log(workData)
-  console.log(personalData)
+  console.log(generalData)
 
   return (
     <GridLayout>
@@ -94,15 +126,22 @@ const Homepage = () => {
         <WhoAmI />
       </div>
       <GridListLayout className={styles.list}>
-        <div className={styles.work}>
-          {workData.map(({ childMdx }) => (
-            <ExperienceCard key={childMdx.id} {...childMdx} />
+        <div className={`${styles.work} ${styles.experienceList}`}>
+          <h1 className={`${styles.listHeadingTitle} title`}>
+            {generalData.frontmatter.left_list_heading}
+          </h1>
+          {workData.map(({ node }) => (
+            <WorkExperienceCard key={node.id} {...node} />
           ))}
         </div>
         <Divider />
-        <div className={styles.personal}>
-          {personalData.map(({ childMdx }) => (
-            <ExperienceCard key={childMdx.id} {...childMdx} />
+        <div className={`${styles.personal} ${styles.experienceList}`}>
+          <h1 className={`${styles.listHeadingTitle} title`}>
+            {generalData.frontmatter.right_list_heading}
+          </h1>
+
+          {personalData.map(({ node }) => (
+            <PersonalExperienceCard key={node.id} {...node} />
           ))}
         </div>
       </GridListLayout>

@@ -37,6 +37,9 @@ const icons = props => {
           </g>
         </svg>
       )
+
+    default:
+      return null
   }
 }
 

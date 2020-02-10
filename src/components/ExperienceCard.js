@@ -2,8 +2,8 @@ import React from "react"
 import { createUseStyles } from "react-jss"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import ReactIcon from "../assets/icons/ReactIcon"
 import Icon from "./Icon"
+import "../styles/bulma.scss"
 
 const useStyles = createUseStyles(theme => ({
   contentContainer: {
@@ -40,18 +40,6 @@ const IconContainer = ({ children }) => {
   return <div className={styles.iconBox}>{children}</div>
 }
 
-const FrontmatterLayout = ({ company, from, to, tags }) => {
-  const styles = useStyles()
-  return (
-    <header>
-      <p className="title">{company}</p>
-      <p className="subtitle">
-        {from} -> {to}
-      </p>
-    </header>
-  )
-}
-
 const BodyLayout = ({ children }) => {
   const styles = useStyles()
   return (
@@ -70,16 +58,56 @@ const BodyLayout = ({ children }) => {
   )
 }
 
-const ExperienceCard = ({ frontmatter, body }) => {
+const WorkFrontmatterLayout = ({ company, role, from, to }) => {
+  // const styles = useStyles()
+  return (
+    <header>
+      <p className="title">{company}</p>
+      <p className="subtitle">{role}</p>
+      <p className="subtitle">
+        <>
+          {from}{" "}
+          <span className="icon">
+            <i className="fas fa-home"></i>
+          </span>{" "}
+          {to}
+        </>
+      </p>
+    </header>
+  )
+}
+
+const PersonalFrontmatterLayout = ({ project, role, period }) => {
+  // const styles = useStyles()
+  return (
+    <header>
+      <p className="title">{project}</p>
+      <p className="subtitle">{role}</p>
+      <p className="subtitle">{period}</p>
+    </header>
+  )
+}
+
+const ExperienceCard = ({ children, body }) => {
   const styles = useStyles()
   return (
     <div className="card">
       <div className={`card-content ${styles.contentContainer}`}>
-        <FrontmatterLayout {...frontmatter} />
+        {children}
         <BodyLayout>{body}</BodyLayout>
       </div>
     </div>
   )
 }
 
-export default ExperienceCard
+export const WorkExperienceCard = ({ frontmatter, body }) => (
+  <ExperienceCard body={body}>
+    <WorkFrontmatterLayout {...frontmatter} />
+  </ExperienceCard>
+)
+
+export const PersonalExperienceCard = ({ frontmatter, body }) => (
+  <ExperienceCard body={body}>
+    <PersonalFrontmatterLayout {...frontmatter} />
+  </ExperienceCard>
+)

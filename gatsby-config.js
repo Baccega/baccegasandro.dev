@@ -34,9 +34,8 @@ module.exports = {
         ignore: [`**/\.*`],
       },
     },
-    },
-    `gatsby-transformer-json`,
-    `gatsby-transformer-remark`,
+    // `gatsby-transformer-json`,
+    // `gatsby-transformer-remark`,
     `gatsby-plugin-mdx`,
     `gatsby-plugin-sass`,
     {

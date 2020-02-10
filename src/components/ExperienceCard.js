@@ -3,6 +3,7 @@ import { createUseStyles } from "react-jss"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Icon from "./Icon"
+import { TiArrowRightThick } from "react-icons/ti"
 import "../styles/bulma.scss"
 
 const useStyles = createUseStyles(theme => ({
@@ -22,6 +23,16 @@ const useStyles = createUseStyles(theme => ({
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
+  },
+  periodContainer: {
+    display: "flex",
+    alignItems: "center",
+  },
+  periodIcon: {
+    margin: {
+      right: 6,
+      left: 6,
+    },
   },
   "@media (max-width: 1024px)": {
     contentContainer: {
@@ -59,19 +70,17 @@ const BodyLayout = ({ children }) => {
 }
 
 const WorkFrontmatterLayout = ({ company, role, from, to }) => {
-  // const styles = useStyles()
+  const styles = useStyles()
   return (
     <header>
       <p className="title">{company}</p>
       <p className="subtitle">{role}</p>
       <p className="subtitle">
-        <>
-          {from}{" "}
-          <span className="icon">
-            <i className="fas fa-home"></i>
-          </span>{" "}
+        <div className={styles.periodContainer}>
+          {from}
+          <TiArrowRightThick className={styles.periodIcon} />
           {to}
-        </>
+        </div>
       </p>
     </header>
   )

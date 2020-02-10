@@ -2,7 +2,7 @@ import React from "react"
 import { createUseStyles } from "react-jss"
 import "../styles/bulma.scss"
 import { GridLayout, GridListLayout } from "../layouts/GridLayout"
-import { useStaticQuery } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import WhoAmI from "../components/WhoAmI"
 import {
   WorkExperienceCard,

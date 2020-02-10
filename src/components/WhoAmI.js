@@ -4,7 +4,7 @@ import { MDXProvider } from "@mdx-js/react"
 import { graphql, useStaticQuery } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { createUseStyles } from "react-jss"
-import Icon from "./Icon"
+import { Icon } from "./Icon"
 
 const useStyles = createUseStyles(theme => ({
   root: {

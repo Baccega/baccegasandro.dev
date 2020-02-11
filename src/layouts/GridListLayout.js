@@ -28,7 +28,7 @@ const useStyles = createUseStyles(theme => ({
 const GridListLayout = props => {
   const styles = useStyles()
   return (
-    <section className={`hero is-fullheight ${styles.root}`}>
+    <section id="experiences" className={`hero is-fullheight ${styles.root}`}>
       {props.children}
     </section>
   )

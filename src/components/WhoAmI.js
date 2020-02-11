@@ -43,7 +43,7 @@ export default function WhoAmI(props) {
   const body = staticData.allMdx.edges[0].node.body
 
   return (
-    <section className={`hero is-fullheight ${styles.root}`}>
+    <section id="whoami" className={`hero is-fullheight ${styles.root}`}>
       <div className={`hero-body`}>
         <div className={`container`}>
           <div className={styles.textContainer}>

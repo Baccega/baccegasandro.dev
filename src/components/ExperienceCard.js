@@ -2,7 +2,7 @@ import React from "react"
 import { createUseStyles } from "react-jss"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import Icon from "./Icon"
+import Icon from "./NormalIcon"
 import { TiArrowRightThick } from "react-icons/ti"
 import "../styles/bulma.scss"
 
@@ -80,13 +80,13 @@ const WorkFrontmatterLayout = ({ company, role, from, to }) => {
     <header>
       <p className="title">{company}</p>
       <p className="subtitle">{role}</p>
-      <p className="subtitle">
+      <div className="subtitle">
         <div className={styles.periodContainer}>
           {from}
           <TiArrowRightThick className={styles.periodIcon} />
           {to}
         </div>
-      </p>
+      </div>
     </header>
   )
 }

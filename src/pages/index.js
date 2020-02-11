@@ -6,10 +6,11 @@ import GridListLayout from "../layouts/GridListLayout"
 import WhoAmI from "../components/WhoAmI"
 import ExperiencesList from "../containers/ExperiencesList"
 import Divider from "../components/Divider"
+import ContactMe from "../components/ContactMe"
 
 const useStyles = createUseStyles(theme => ({
   whoAmI: {
-    gridArea: "center",
+    gridArea: "whoAmI",
   },
   list: {
     gridArea: "list",
@@ -23,6 +24,9 @@ const useStyles = createUseStyles(theme => ({
   divider: {
     gridArea: "divider",
   },
+  contactMe: {
+    gridArea: "contactMe",
+  },
 }))
 
 const Homepage = () => {
@@ -34,10 +38,11 @@ const Homepage = () => {
         <WhoAmI />
       </div>
       <GridListLayout className={styles.list}>
-        <ExperiencesList className={styles.work} headerLocation="left" />
+        <ExperiencesList className={styles.work} listContent="work" />
         <Divider className={styles.divider} />
-        <ExperiencesList className={styles.peronal} headerLocation="right" />
+        <ExperiencesList className={styles.personal} listContent="personal" />
       </GridListLayout>
+      <ContactMe className={styles.contactMe} />
     </GridLayout>
   )
 }

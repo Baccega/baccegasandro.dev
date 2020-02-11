@@ -21,7 +21,7 @@ const useStyles = createUseStyles(theme => ({
   },
 }))
 
-const ExperiencesList = ({ headerLocation }) => {
+const ExperiencesList = ({ listContent }) => {
   const styles = useStyles()
   const staticData = useStaticQuery(graphql`
     query {
@@ -52,16 +52,15 @@ const ExperiencesList = ({ headerLocation }) => {
       }
     }
   `)
-  const directionType = headerLocation === "right" ? "personal" : "work"
   const listData = staticData.allMdx.edges.filter(
-    ({ node }) => node.frontmatter.type === directionType
+    ({ node }) => node.frontmatter.type === listContent
   )
 
   return (
     <div className={`${styles.work} ${styles.root}`}>
-      <ListHeading headerLocation={headerLocation} />
+      <ListHeading listContent={listContent} />
       {listData.map(({ node }) =>
-        directionType === "personal" ? (
+        listContent === "personal" ? (
           <PersonalExperienceCard key={node.id} {...node} />
         ) : (
           <WorkExperienceCard key={node.id} {...node} />

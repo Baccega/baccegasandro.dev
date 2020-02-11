@@ -11,7 +11,7 @@ const useStyles = createUseStyles(theme => ({
   },
 }))
 
-const ListHeading = ({ headerLocation }) => {
+const ListHeading = ({ listContent }) => {
   const staticData = useStaticQuery(graphql`
     query {
       allMdx(filter: { frontmatter: { type: { eq: "general" } } }) {
@@ -19,8 +19,8 @@ const ListHeading = ({ headerLocation }) => {
           node {
             frontmatter {
               type
-              right_list_heading
-              left_list_heading
+              personal_list_heading
+              work_list_heading
             }
           }
         }
@@ -31,9 +31,9 @@ const ListHeading = ({ headerLocation }) => {
   const heading = staticData.allMdx.edges[0].node.frontmatter
   return (
     <h1 className={`${styles.root} title`}>
-      {headerLocation === "right"
-        ? heading.right_list_heading
-        : heading.left_list_heading}
+      {listContent === "personal"
+        ? heading.personal_list_heading
+        : heading.work_list_heading}
     </h1>
   )
 }

@@ -15,7 +15,7 @@ const useStyles = createUseStyles(theme => ({
     borderRadius: 10,
     top: 20,
     border: `1px solid ${theme.color}`,
-    height: "calc(100% - 20px)",
+    height: "calc(100% - 40px)",
     position: "absolute",
   },
 }))

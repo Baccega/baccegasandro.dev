@@ -1,37 +1,25 @@
 import React from "react"
+import { createUseStyles } from "react-jss"
 import "../styles/bulma.scss"
 import { MDXProvider } from "@mdx-js/react"
-import { graphql, useStaticQuery } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { createUseStyles } from "react-jss"
 import { Icon } from "./Icon"
+import { useStaticQuery, graphql } from "gatsby"
 
 const useStyles = createUseStyles(theme => ({
   root: {
-    backgroundColor: theme.colorSecondary,
+    backgroundColor: theme.colorTertiary,
   },
   textContainer: {
     maxWidth: "500px",
   },
-  list: {
-    display: "grid",
-    gridTemplateColumns: "auto auto",
-    gridTemplateRows: "auto",
-    alignItems: "center",
-    gridRowGap: "15px",
-    gridColumnGap: "15px",
-  },
-  mainHeading: {
-    paddingLeft: "30px",
-    paddingBottom: "20px",
-  },
 }))
 
-export default function WhoAmI(props) {
+const ContactMe = () => {
   const styles = useStyles()
   const staticData = useStaticQuery(graphql`
     query {
-      allMdx(filter: { frontmatter: { position: { eq: "whoami" } } }) {
+      allMdx(filter: { frontmatter: { position: { eq: "contactMe" } } }) {
         edges {
           node {
             body
@@ -76,3 +64,5 @@ export default function WhoAmI(props) {
     </section>
   )
 }
+
+export default ContactMe

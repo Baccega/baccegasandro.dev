@@ -1,5 +1,6 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
+import "../styles/bulma.scss"
 
 const useStyles = createUseStyles(theme => ({
   root: {
@@ -26,7 +27,11 @@ const useStyles = createUseStyles(theme => ({
 
 const GridListLayout = props => {
   const styles = useStyles()
-  return <div className={styles.root}>{props.children}</div>
+  return (
+    <section className={`hero is-fullheight ${styles.root}`}>
+      {props.children}
+    </section>
+  )
 }
 
 export default GridListLayout

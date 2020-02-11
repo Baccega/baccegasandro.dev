@@ -38,7 +38,7 @@ const Footer = props => {
   const styles = useStyles()
   const staticData = useStaticQuery(graphql`
     query {
-      allMdx(filter: { frontmatter: { type: { eq: "general" } } }) {
+      allMdx(filter: { frontmatter: { position: { eq: "footer" } } }) {
         edges {
           node {
             body
@@ -51,22 +51,20 @@ const Footer = props => {
 
   return (
     <footer className={styles.footer}>
-      <MDXProvider
-        components={{
-          table: props => null,
-          p: props => <p {...props} />,
-          hr: props => <div className={styles.footerContainer} {...props} />,
-          img: props => (
-            <div className={styles.icon}>
-              <Icon {...props} />
-            </div>
-          ),
-          h1: props => <h1 {...props} className={`title has-text-white`} />,
-          h2: props => <h2 {...props} className={`subtitle has-text-light`} />,
-        }}
-      >
-        <MDXRenderer>{body}</MDXRenderer>
-      </MDXProvider>
+      <div className={styles.footerContainer} {...props}>
+        <MDXProvider
+          components={{
+            p: props => <p {...props} />,
+            img: props => (
+              <div className={styles.icon}>
+                <Icon {...props} />
+              </div>
+            ),
+          }}
+        >
+          <MDXRenderer>{body}</MDXRenderer>
+        </MDXProvider>
+      </div>
     </footer>
   )
 }

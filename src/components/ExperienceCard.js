@@ -2,7 +2,7 @@ import React from "react"
 import { createUseStyles } from "react-jss"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import Icon from "./NormalIcon"
+import Icon from "./Icon"
 import { TiArrowRightThick } from "react-icons/ti"
 import "../styles/bulma.scss"
 

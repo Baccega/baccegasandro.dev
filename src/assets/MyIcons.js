@@ -1,5 +1,10 @@
 import React from "react"
-import { FaRegCopyright, FaLaptopCode, FaUniversity } from "react-icons/fa"
+import {
+  FaRegCopyright,
+  FaGithub,
+  FaLaptopCode,
+  FaUniversity,
+} from "react-icons/fa"
 import { GoLocation } from "react-icons/go"
 
 const MyIcons = props => {
@@ -7,6 +12,8 @@ const MyIcons = props => {
   switch (icon) {
     case "me":
       return <FaUniversity {...props} />
+    case "github":
+      return <FaGithub {...props} />
     case "degree":
       return <FaUniversity {...props} />
     case "copyright":

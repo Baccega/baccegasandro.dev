@@ -43,7 +43,7 @@ export default function WhoAmI(props) {
   const body = staticData.allMdx.edges[0].node.body
 
   return (
-    <section id="whoami" className={`hero is-fullheight ${styles.root}`}>
+    <header id="whoami" className={`hero is-fullheight ${styles.root}`}>
       <div className={`hero-body`}>
         <div className={`container`}>
           <div className={styles.textContainer}>
@@ -52,20 +52,20 @@ export default function WhoAmI(props) {
                 ul: props => <div {...props} className={styles.list} />,
                 h1: props => (
                   <div className={styles.mainHeading}>
-                    <h1 {...props} className={`title has-text-white`} />
+                    <h1 {...props} className={`title has-text-white`}>
+                      {props.children}
+                    </h1>
                   </div>
                 ),
                 h2: props => (
                   <div>
-                    <h2 {...props} className={`subtitle has-text-light`} />
+                    <h2 {...props} className={`subtitle has-text-light`}>
+                      {props.children}
+                    </h2>
                   </div>
                 ),
                 p: props => <p {...props} />,
-                img: props => (
-                  <div>
-                    <Icon {...props} />
-                  </div>
-                ),
+                img: props => <Icon {...props} />,
               }}
             >
               <MDXRenderer>{body}</MDXRenderer>
@@ -73,6 +73,6 @@ export default function WhoAmI(props) {
           </div>
         </div>
       </div>
-    </section>
+    </header>
   )
 }

@@ -20,21 +20,28 @@ const useStyles = createUseStyles(theme => ({
   },
 }))
 
-export const Icon = props => {
-  const { dynamicWidth } = props
-  return <MyIcons {...props} width={dynamicWidth} height={dynamicWidth} />
-}
-
-const RoundedIcon = props => {
-  const styles = useStyles()
-
-  const dynamicWidth = props.is_large
+function calculateDimensions(props) {
+  return props.is_large
     ? "100px"
     : props.is_medium
     ? "70px"
     : props.is_small
     ? "30px"
     : "20px"
+}
+
+export const Icon = props => {
+  const { dynamicWidth } = props
+
+  const width = dynamicWidth ? dynamicWidth : calculateDimensions(props)
+
+  return <MyIcons {...props} width={width} height={width} />
+}
+
+const RoundedIcon = props => {
+  const styles = useStyles()
+
+  const dynamicWidth = calculateDimensions(props)
 
   const dynamicDimensions = {
     width: `calc(15px + ${dynamicWidth})`,

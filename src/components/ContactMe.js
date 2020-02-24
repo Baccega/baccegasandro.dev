@@ -40,12 +40,16 @@ const ContactMe = () => {
                 ul: props => <div {...props} className={styles.list} />,
                 h1: props => (
                   <div className={styles.mainHeading}>
-                    <h1 {...props} className={`title has-text-white`} />
+                    <h1 {...props} className={`title has-text-white`}>
+                      {props.children}
+                    </h1>
                   </div>
                 ),
                 h2: props => (
                   <div>
-                    <h2 {...props} className={`subtitle has-text-light`} />
+                    <h2 {...props} className={`subtitle has-text-light`}>
+                      {props.children}
+                    </h2>
                   </div>
                 ),
                 p: props => <p {...props} />,

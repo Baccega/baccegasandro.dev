@@ -1,6 +1,6 @@
 .externalContainer {
   padding: 20px;
-  background-color: black;
+  background-color: var(--card-outline);
   height: 100%;
   width: 100%;
   border-radius: 20px;
@@ -10,9 +10,9 @@
   height: 100%;
   width: 100%;
   display: grid;
-  background-color: white;
+  background-color: var(--card-background);
   border-radius: 20px;
-  grid-template-rows: 1fr 4em 2em 2fr;
+  grid-template-rows: 1.7fr 3rem 2rem 2fr;
   grid-template-columns: 50px 1fr;
   grid-template-areas:
     "image image"
@@ -39,19 +39,66 @@
 }
 
 .title {
-  background-color: purple;
+  transform: translateY(-40px);
   grid-area: title;
-  clip-path: inset(0% 45% 0% 45% round 10px);
+  clip-path: polygon(0 100%, 100% 100%, 96% 0, 4% 0);
+  width: 100%;
+  margin: auto;
+  background-color: var(--card-dividers-color);
+  border-top: 1px solid var(--card-dividers-color);
+  /* border-bottom: 1px solid black; */
+}
+.title h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: normal;
+  clip-path: inherit;
+  margin: auto;
+  width: calc(100% - 2px);
+  background-color: var(--card-background);
+}
+
+.smaller {
+  transform: translateY(-35px);
+}
+
+.smaller h1 {
+  font-size: 1.5rem;
 }
 
 .subtitle {
-  background-color: yellow;
+  /* border-radius: 5px; */
+  transform: translateY(-45px);
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--card-dividers-color);
   grid-area: subtitle;
+  clip-path: polygon(4% 100%, 96% 100%, 100% 0, 0 0);
+}
+
+.subtitle h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: normal;
+  clip-path: inherit;
+  margin: auto;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  background-color: var(--card-background);
 }
 
 .description {
-  padding: 10px;
-  background-color: blue;
+  transform: translateY(-1rem);
+  border: 1px solid var(--card-dividers-color);
+  margin: 0rem 1rem 1rem 1rem;
+  padding: 20px;
+  border-radius: 10px;
   grid-area: description;
 }
 

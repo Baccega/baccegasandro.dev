@@ -4,6 +4,6 @@ export interface SingleCard {
     subtitle: string;
     type: "work" | "education" | "project" | "contact" | "bio";
     description: string;
-    image: string | null;
-
+    image: string;
+    longText?: boolean;
 }

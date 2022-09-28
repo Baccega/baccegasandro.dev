@@ -6,6 +6,12 @@ h2 {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+  --background: #1e90ff;
+  --card-outline: #2f2b2b;
+  --card-background: #e2e2e2;
+  --card-dividers-color: #000000;
+  --text-color: #000000;
 }
 
 a {
@@ -21,8 +27,8 @@ a {
   html {
     color-scheme: dark;
   }
-  body {
+  /* body {
     color: white;
     background: black;
-  }
+  } */
 }

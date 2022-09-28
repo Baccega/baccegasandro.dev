@@ -20,6 +20,7 @@ const cards: SingleCard[] = [
     subtitle: "Ca' Foscari University of Venice",
     title: "Master in Computer Science",
     description: "Thesis on Computer Vision\nTeaching assistant for OOP",
+    longText: true,
   },
   {
     image: "../public/profile-picture.png",
@@ -27,6 +28,13 @@ const cards: SingleCard[] = [
     type: "work",
     subtitle: "Frontend developer",
     title: "SMC Treviso",
+  },
+  {
+    image: "../public/profile-picture.png",
+    description: "This portfolio",
+    type: "project",
+    subtitle: "This portfolio",
+    title: "Portfolio",
   },
   {
     image: "../public/profile-picture.png",

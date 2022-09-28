@@ -1,0 +1,67 @@
+.externalContainer {
+  padding: 20px;
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  background-color: white;
+  border-radius: 20px;
+  grid-template-rows: 1fr 4em 2em 2fr;
+  grid-template-columns: 50px 1fr;
+  grid-template-areas:
+    "image image"
+    "title title"
+    "subtitle subtitle"
+    "description description";
+}
+
+.type {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 30px;
+  left: 30px;
+  border-radius: 20%;
+
+  color: black;
+  background-color: salmon;
+}
+
+.image {
+  background-color: green;
+  grid-area: image;
+}
+
+.title {
+  background-color: purple;
+  grid-area: title;
+  clip-path: inset(0% 45% 0% 45% round 10px);
+}
+
+.subtitle {
+  background-color: yellow;
+  grid-area: subtitle;
+}
+
+.description {
+  padding: 10px;
+  background-color: blue;
+  grid-area: description;
+}
+
+/* 
+@media (max-width: 600px) {
+  
+}
+
+
+@media (prefers-color-scheme: dark) {
+
+} 
+*/

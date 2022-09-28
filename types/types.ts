@@ -6,4 +6,5 @@ export interface SingleCard {
     description: string;
     image: string;
     longText?: boolean;
+    scaledDown?: boolean;
 }

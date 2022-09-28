@@ -1,7 +1,7 @@
 import React from "react";
 import { SingleCard } from "../types/types";
-import { GiBarbute, GiAce, GiMailbox } from "react-icons/gi";
-import { MdWork, MdSchool } from "react-icons/md";
+import { GiBarbute, GiAce} from "react-icons/gi";
+import { MdOutlineWork, MdSchool, MdOutlineMessage } from "react-icons/md";
 import styles from "../styles/Card.module.css";
 
 interface Props {
@@ -14,13 +14,13 @@ export default function TypeIcon(props: Props) {
 
   switch (type) {
     case "work":
-      return <MdWork className={className} />;
+      return <MdOutlineWork className={className} />;
     case "education":
       return <MdSchool className={className} />;
     case "project":
       return <GiAce className={className} />;
     case "contact":
-      return <GiMailbox className={className} />;
+      return <MdOutlineMessage className={className} />;
     case "bio":
       return <GiBarbute className={className} />;
   }

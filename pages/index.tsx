@@ -11,37 +11,40 @@ const cards: SingleCard[] = [
     title: "Baccega Sandro",
     subtitle: "Web Developer - Human",
     type: "bio",
-    image: "../public/profile-picture.png",
+    image: "/../public/profile-picture.png",
     description: "test",
   },
   {
-    image: "../public/profile-picture.png",
+    image: "/../public/unive-logo.png",
     type: "education",
     subtitle: "Ca' Foscari University of Venice",
     title: "Master in Computer Science",
     description: "Thesis on Computer Vision\nTeaching assistant for OOP",
     longText: true,
+    scaledDown: true,
   },
   {
-    image: "../public/profile-picture.png",
+    image: "/../public/smc-logo.png",
     description: "Done stuff",
     type: "work",
     subtitle: "Frontend developer",
     title: "SMC Treviso",
+    scaledDown: true,
   },
+  // {
+  //   image: "/../public/profile-picture.png",
+  //   description: "This portfolio",
+  //   type: "project",
+  //   subtitle: "This portfolio",
+  //   title: "Portfolio",
+  // },
   {
-    image: "../public/profile-picture.png",
-    description: "This portfolio",
-    type: "project",
-    subtitle: "This portfolio",
-    title: "Portfolio",
-  },
-  {
-    image: "../public/profile-picture.png",
+    image: "/../public/contact-me.png",
     description: "test",
     type: "contact",
     subtitle: "Web Developer - Human",
     title: "Contact me!",
+    scaledDown: true,
   },
 ];
 cards.reverse();
@@ -78,7 +81,7 @@ const Home: NextPage = () => {
       set((i) => {
         if (index !== i) return;
         const direction = Math.random() > 0.5 ? 1 : -1;
-        const x = (100 + window.innerWidth) * direction;
+        const x = (300 + window.innerWidth) * direction;
         const scale = 1.1;
         return {
           x,

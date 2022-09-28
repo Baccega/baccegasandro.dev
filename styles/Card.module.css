@@ -1,5 +1,5 @@
 .externalContainer {
-  padding: 20px;
+  padding: 15px;
   background-color: var(--card-outline);
   height: 100%;
   width: 100%;
@@ -12,7 +12,7 @@
   display: grid;
   background-color: var(--card-background);
   border-radius: 20px;
-  grid-template-rows: 1.7fr 3rem 2rem 2fr;
+  grid-template-rows: 2fr 3rem 2rem 2fr;
   grid-template-columns: 50px 1fr;
   grid-template-areas:
     "image image"
@@ -28,15 +28,25 @@
   top: 30px;
   left: 30px;
   border-radius: 20%;
+  padding: 5px;
 
   color: black;
-  background-color: salmon;
+  border: 1px solid var(--card-dividers-color);
+  background-color: var(--card-background);
 }
 
 .image {
-  background-color: green;
+  background-color: white;
   grid-area: image;
+  position: relative;
 }
+.image img{
+  object-fit: cover;
+}
+.scaledDown img{
+  object-fit: scale-down;
+}
+
 
 .title {
   transform: translateY(-40px);
@@ -52,7 +62,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: normal;
   clip-path: inherit;
   margin: auto;
@@ -65,7 +75,7 @@
 }
 
 .smaller h1 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .subtitle {

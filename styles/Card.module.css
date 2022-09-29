@@ -129,6 +129,9 @@
 .description ul {
   padding: 0;
 }
+.description ul li span {
+  margin-right: 10px;
+}
 
 /* 
 @media (max-width: 600px) {

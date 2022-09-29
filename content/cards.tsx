@@ -9,10 +9,25 @@ import contactMe from "../public/contact-me.png";
 export const cards: SingleCard[] = [
   {
     title: "Baccega Sandro",
-    subtitle: "Web Developer",
+    subtitle: "Software Engineer",
     type: "bio",
     image: profilePicture,
-    description: <>test</>,
+    description: (
+      <ul>
+        <li>
+          <span>⚛️</span>Specialized in web development with React
+        </li>
+        <li>
+          <span>📸</span>Enjoys Computer Vision
+        </li>
+        <li>
+          <span>🤖</span>Loves automations
+        </li>
+        <li>
+          <span>🇮🇹</span>From Padua, Italy{" "}
+        </li>
+      </ul>
+    ),
   },
   {
     image: univeLogo,
@@ -21,8 +36,13 @@ export const cards: SingleCard[] = [
     title: "Master in Computer Science",
     description: (
       <ul>
-        <li>Thesis on Computer Vision with OpenCV</li>
-        <li>Teaching assistant for OOP</li>
+        <li>
+          <span>📸</span>Thesis on Computer Vision with OpenCV
+        </li>
+        <li>
+          <span>👨🏻‍🏫</span>Teaching assistant for the Object Oriented Programming
+          course
+        </li>
       </ul>
     ),
     longText: true,
@@ -30,7 +50,22 @@ export const cards: SingleCard[] = [
   },
   {
     image: smcLogo,
-    description: <>test</>,
+    description: (
+      <ul>
+        <li>
+          <span>💻</span>Developed complex data analytics dashboard in React
+        </li>
+        <li>
+          <span>🧪</span>Created custom visual regression testing software
+        </li>
+        <li>
+          <span>👨🏻‍💻</span>Mentored 3 junior devs
+        </li>
+        <li>
+          <span>⚙️</span>Revamped CI/CD pipeline
+        </li>
+      </ul>
+    ),
     type: "work",
     subtitle: "Frontend developer",
     title: "SMC Treviso",
@@ -48,8 +83,21 @@ export const cards: SingleCard[] = [
     description: (
       <ul>
         <li>Email: mail.sandro.baccega@gmail.com</li>
-        <li>Github: <Link target='_blank' href="https://github.com/Baccega">Baccega</Link></li>
-        <li>LinkedIn: <Link target='_blank' href="https://www.linkedin.com/in/sandro-baccega">sandro-baccega</Link></li>
+        <li>
+          Github:{" "}
+          <Link target="_blank" href="https://github.com/Baccega">
+            Baccega
+          </Link>
+        </li>
+        <li>
+          LinkedIn:{" "}
+          <Link
+            target="_blank"
+            href="https://www.linkedin.com/in/sandro-baccega"
+          >
+            sandro-baccega
+          </Link>
+        </li>
       </ul>
     ),
     type: "contact",

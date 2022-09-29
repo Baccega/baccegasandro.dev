@@ -4,7 +4,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { animated, to, useSprings } from "react-spring";
 import Card from "../components/Card";
-import { cards } from "../content/cards.tsx";
+import { cards } from "../content/cards";
 
 const stacked_position = (i: number) => ({
   x: 0,

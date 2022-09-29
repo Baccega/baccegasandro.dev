@@ -22,7 +22,7 @@ const random_position = (i: any) => ({
   scale: 1,
 });
 const trans = (r: number, s: any) =>
-  `perspective(850px) rotateX(22deg) rotateY(${
+  `perspective(700px) rotateX(30deg) rotateY(${
     r / 10
   }deg) rotateZ(${r}deg) scale(${s})`;
 

@@ -1,9 +1,8 @@
 import React from "react";
 import { SingleCard } from "../types/types";
 import { GiAce } from "react-icons/gi";
-import { RiBracesFill } from "react-icons/ri";
-import { MdOutlineWork, MdSchool, MdOutlineMessage } from "react-icons/md";
-import styles from "../styles/Card.module.css";
+import { RiBracesFill, RiMessage2Line } from "react-icons/ri";
+import { MdOutlineWork, MdSchool } from "react-icons/md";
 
 interface Props {
   type: SingleCard["type"];
@@ -21,7 +20,7 @@ export default function TypeIcon(props: Props) {
     case "project":
       return <GiAce className={className} />;
     case "contact":
-      return <MdOutlineMessage className={className} />;
+      return <RiMessage2Line className={className} />;
     case "bio":
       return <RiBracesFill className={className} />;
   }

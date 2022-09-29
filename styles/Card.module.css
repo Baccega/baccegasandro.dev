@@ -10,7 +10,7 @@
   height: 100%;
   width: 100%;
   display: grid;
-  background-color: var(--card-background);
+  /* background-color: var(--card-background); */
   border-radius: 20px;
   grid-template-rows: 2fr 3rem 2rem 2fr;
   grid-template-columns: 50px 1fr;
@@ -23,15 +23,15 @@
 
 .type {
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   top: 30px;
   left: 30px;
-  border-radius: 20%;
+  border-radius: 50%;
   padding: 5px;
 
   color: black;
-  border: 1px solid var(--card-dividers-color);
+  border: 3px solid var(--card-dividers-color);
   background-color: var(--card-background);
 }
 
@@ -56,9 +56,6 @@
 .image img{
   object-fit: contain;
 }
-.imageFitNone img{
-  object-fit: none;
-}
 
 
 .title {
@@ -68,7 +65,7 @@
   width: 100%;
   margin: auto;
   background-color: var(--card-dividers-color);
-  border-top: 1px solid var(--card-dividers-color);
+  border-top: 3px solid var(--card-dividers-color);
   /* border-bottom: 1px solid black; */
 }
 .title h1 {
@@ -118,12 +115,13 @@
 
 .description {
   transform: translateY(-1rem);
-  border: 1px solid var(--card-dividers-color);
+  border: 3px solid var(--card-dividers-color);
   margin: 0rem 1rem 1rem 1rem;
   padding: 10px;
   padding-left: 30px;
   border-radius: 10px;
   grid-area: description;
+  background-color: var(--card-background);
 }
 
 .description ul {

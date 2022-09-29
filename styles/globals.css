@@ -10,7 +10,8 @@ ul {
 
   --card-outline: #2f2b2b;
   --card-primary: #0870c5;
-  --card-background: #e2e2e2;
+  /* --card-background: #e2e2e2; */
+  --card-background: #fff;
   --card-dividers-color: #000000;
   --text-color: #000000;
   --text-contrast: #fff;

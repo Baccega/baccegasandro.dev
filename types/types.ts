@@ -7,5 +7,4 @@ export interface SingleCard {
     description: JSX.Element;
     image: StaticImageData;
     longText?: boolean;
-    imageFitNone?: boolean;
 }

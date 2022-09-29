@@ -4,7 +4,8 @@ import styles from "../styles/Card.module.css";
 import TypeIcon from "./TypeIcon";
 import classNames from "classnames";
 import Image from "next/image";
-import cartTexture from "../public/card-texture2.jpg";
+import cartTexture from "../public/card-texture.jpg";
+import ribbon from "../public/ribbon.png";
 
 interface Props {
   card: SingleCard;
@@ -32,13 +33,11 @@ export default function CardComponent({ card }: Props) {
         </div>
 
         <TypeIcon type={type} className={styles.type} />
-
+        
         <div className={titleClassname}>
-          <h1>{title}</h1>
-        </div>
-
-        <div className={styles.subtitle}>
-          <h2>{subtitle}</h2>
+          <Image src={ribbon} alt={title} layout="fill" />
+           <h1>{title}</h1>
+           <h2>{subtitle}</h2>
         </div>
 
         <div className={styles.description}>{description}</div>

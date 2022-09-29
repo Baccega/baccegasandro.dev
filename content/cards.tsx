@@ -3,8 +3,8 @@ import React from "react";
 import { SingleCard } from "../types/types";
 import profilePicture from "../public/profile-picture.png";
 import smcLogo from "../public/smc-logo2.png";
-import univeLogo from "../public/unive-logo5.png";
-import contactMe from "../public/contact-me2.png";
+import univeLogo from "../public/unive-logo.png";
+import contactMe from "../public/contact-me.png";
 
 export const cards: SingleCard[] = [
   {

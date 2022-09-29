@@ -10,14 +10,12 @@
   height: 100%;
   width: 100%;
   display: grid;
-  /* background-color: var(--card-background); */
   border-radius: 20px;
-  grid-template-rows: 2fr 3rem 2rem 2fr;
+  grid-template-rows: 2fr 6rem 2fr;
   grid-template-columns: 50px 1fr;
   grid-template-areas:
     "image image"
     "title title"
-    "subtitle subtitle"
     "description description";
 }
 
@@ -30,54 +28,60 @@
   border-radius: 50%;
   padding: 5px;
 
-  color: black;
+  color: var(--card-dividers-color);
   border: 3px solid var(--card-dividers-color);
   background-color: var(--card-background);
 }
 
-/* .image {
-  background-color: white;
-  grid-area: image;
-  position: relative;
-}
-.image img{
-  object-fit: cover;
-}
-.scaledDown img{
-  object-fit: scale-down;
-} */
 .image {
-  background-color: white;
   grid-area: image;
+  display: block;
   position: relative;
-  clip-path: ellipse(25% 50% at 50% 50%);
   transform: translateY(10px);
+  background-color: var(--card-dividers-color);
+  clip-path: ellipse(25% 50% at 50% 50%);
+  width: 100%;
 }
-.image img{
+.image > span {
+  width: calc(100% - 5px);
+}
+.image > span > img {
+  background-color: var(--card-background);
+  clip-path: ellipse(24% 48% at 50% 50%);
   object-fit: contain;
 }
 
-
 .title {
-  transform: translateY(-40px);
+  transform: translateY(-30px);
   grid-area: title;
-  clip-path: polygon(0 100%, 100% 100%, 96% 0, 4% 0);
   width: 100%;
-  margin: auto;
-  background-color: var(--card-dividers-color);
-  border-top: 3px solid var(--card-dividers-color);
-  /* border-bottom: 1px solid black; */
+  position: relative;
 }
-.title h1 {
+.title img {
+  width: 100%;
+  object-fit: fill;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: center;
+  display: block;
+  padding: 45px;
+}
+.title h1, .title h2 {
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
   font-size: 1.8rem;
   font-weight: normal;
-  clip-path: inherit;
-  margin: auto;
-  width: calc(100% - 2px);
-  background-color: var(--card-background);
+  width: 100%;
+  z-index: 110;
+}
+
+.title h2 {
+  font-size: 1rem;
+  transform: translate(-50%, 2rem);
 }
 
 .smaller {
@@ -88,33 +92,9 @@
   font-size: 1.2rem;
 }
 
-.subtitle {
-  /* border-radius: 5px; */
-  transform: translateY(-45px);
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--card-dividers-color);
-  grid-area: subtitle;
-  clip-path: polygon(4% 100%, 96% 100%, 100% 0, 0 0);
-}
-
-.subtitle h2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  font-weight: normal;
-  clip-path: inherit;
-  margin: auto;
-  width: calc(100% - 2px);
-  height: calc(100% - 2px);
-  background-color: var(--card-background);
-}
-
 .description {
-  transform: translateY(-1rem);
+  transform: translateY(-3rem);
+  height: 110%;
   border: 3px solid var(--card-dividers-color);
   margin: 0rem 1rem 1rem 1rem;
   padding: 10px;

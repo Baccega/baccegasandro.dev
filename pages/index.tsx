@@ -70,6 +70,7 @@ const Home: NextPage = () => {
         <meta name="description" content="Baccega Sandro Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <h1>WIP</h1>
       {props.map(({ x, y, rot, scale }, i) => (
         <animated.div
           key={i}

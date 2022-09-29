@@ -19,8 +19,8 @@
 
 .root > div > div {
   color: var(--text-color);
-  width: 45vh;
-  max-width: 450px;
+  width: 55vh;
+  max-width: 550px;
   height: 75vh;
   max-height: 750px;
   will-change: transform;

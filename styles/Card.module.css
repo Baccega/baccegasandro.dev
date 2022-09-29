@@ -35,13 +35,27 @@
   background-color: var(--card-background);
 }
 
-.image {
+/* .image {
   background-color: white;
   grid-area: image;
   position: relative;
 }
 .image img{
   object-fit: cover;
+}
+.scaledDown img{
+  object-fit: scale-down;
+} */
+.image {
+  background-color: white;
+  grid-area: image;
+  position: relative;
+  clip-path: ellipse(25% 50% at 50% 50%);
+  transform: translateY(10px);
+}
+.image img{
+  /* object-fit: cover; */
+  object-fit: scale-down;
 }
 .scaledDown img{
   object-fit: scale-down;
@@ -107,9 +121,14 @@
   transform: translateY(-1rem);
   border: 1px solid var(--card-dividers-color);
   margin: 0rem 1rem 1rem 1rem;
-  padding: 20px;
+  padding: 10px;
+  padding-left: 30px;
   border-radius: 10px;
   grid-area: description;
+}
+
+.description ul {
+  padding: 0;
 }
 
 /* 

@@ -1,10 +1,11 @@
+import { StaticImageData } from "next/image";
 
 export interface SingleCard {
     title: string;
-    subtitle: string;
+    subtitle?: string;
     type: "work" | "education" | "project" | "contact" | "bio";
-    description: string;
-    image: string;
+    description: JSX.Element;
+    image: StaticImageData;
     longText?: boolean;
     scaledDown?: boolean;
 }

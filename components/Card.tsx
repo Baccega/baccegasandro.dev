@@ -13,10 +13,12 @@ export default function CardComponent({ card }: Props) {
   const { title, subtitle, description, image, type, longText, scaledDown } = card;
 
   const titleClassname = classNames(styles.title, longText && styles.smaller);
-  const imageClassname = classNames(styles.image, scaledDown && styles.scaledDown);
+  // const imageClassname = classNames(styles.image, scaledDown && styles.scaledDown);
+  const imageClassname = classNames(styles.image);
   return (
     <div className={styles.externalContainer}>
       <div className={styles.container}>
+
         <div className={imageClassname}>
           <Image alt="card image" src={image} layout="fill" />
         </div>

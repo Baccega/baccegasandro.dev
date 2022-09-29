@@ -4,50 +4,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { animated, to, useSprings } from "react-spring";
 import Card from "../components/Card";
-import { SingleCard } from "../types/types";
-
-const cards: SingleCard[] = [
-  {
-    title: "Baccega Sandro",
-    subtitle: "Web Developer - Human",
-    type: "bio",
-    image: "/../public/profile-picture.png",
-    description: "test",
-  },
-  {
-    image: "/../public/unive-logo.png",
-    type: "education",
-    subtitle: "Ca' Foscari University of Venice",
-    title: "Master in Computer Science",
-    description: "Thesis on Computer Vision\nTeaching assistant for OOP",
-    longText: true,
-    scaledDown: true,
-  },
-  {
-    image: "/../public/smc-logo.png",
-    description: "Done stuff",
-    type: "work",
-    subtitle: "Frontend developer",
-    title: "SMC Treviso",
-    scaledDown: true,
-  },
-  // {
-  //   image: "/../public/profile-picture.png",
-  //   description: "This portfolio",
-  //   type: "project",
-  //   subtitle: "This portfolio",
-  //   title: "Portfolio",
-  // },
-  {
-    image: "/../public/contact-me.png",
-    description: "test",
-    type: "contact",
-    subtitle: "Web Developer - Human",
-    title: "Contact me!",
-    scaledDown: true,
-  },
-];
-cards.reverse();
+import { cards } from "../content/cards.tsx";
 
 const stacked_position = (i: number) => ({
   x: 0,

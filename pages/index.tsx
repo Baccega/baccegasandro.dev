@@ -5,6 +5,7 @@ import styles from "../styles/Home.module.css";
 import { animated, to, useSprings } from "react-spring";
 import Card from "../components/Card";
 import { cards } from "../content/cards";
+import background from "../public/background.jpg";
 
 const stacked_position = (i: number) => ({
   x: 0,
@@ -21,7 +22,7 @@ const random_position = (i: any) => ({
   scale: 1,
 });
 const trans = (r: number, s: any) =>
-  `perspective(1500px) rotateX(10deg) rotateY(${
+  `perspective(850px) rotateX(22deg) rotateY(${
     r / 10
   }deg) rotateZ(${r}deg) scale(${s})`;
 
@@ -64,7 +65,15 @@ const Home: NextPage = () => {
   };
 
   return (
-    <div className={styles.root}>
+    <div
+      className={styles.root}
+      style={{
+        backgroundImage: `url(${background.src})`,
+        backgroundSize: "cover",
+        width: "100%",
+        height: "100%",
+      }}
+    >
       <Head>
         <title>Baccega Sandro</title>
         <meta name="description" content="Baccega Sandro Portfolio" />

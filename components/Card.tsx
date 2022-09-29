@@ -10,11 +10,10 @@ interface Props {
 }
 
 export default function CardComponent({ card }: Props) {
-  const { title, subtitle, description, image, type, longText, scaledDown } = card;
+  const { title, subtitle, description, image, type, longText, imageFitNone } = card;
 
   const titleClassname = classNames(styles.title, longText && styles.smaller);
-  // const imageClassname = classNames(styles.image, scaledDown && styles.scaledDown);
-  const imageClassname = classNames(styles.image);
+  const imageClassname = classNames(styles.image, imageFitNone && styles.imageFitNone);
   return (
     <div className={styles.externalContainer}>
       <div className={styles.container}>
@@ -33,7 +32,7 @@ export default function CardComponent({ card }: Props) {
           <h2>{subtitle}</h2>
         </div>
 
-        <p className={styles.description}>{description}</p>
+        <div className={styles.description}>{description}</div>
       </div>
     </div>
   );

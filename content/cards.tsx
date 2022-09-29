@@ -3,7 +3,7 @@ import React from "react";
 import { SingleCard } from "../types/types";
 import profilePicture from "../public/profile-picture.png";
 import smcLogo from "../public/smc-logo.png";
-import univeLogo from "../public/unive-logo.png";
+import univeLogo from "../public/unive-logo4.png";
 import contactMe from "../public/contact-me.png";
 
 export const cards: SingleCard[] = [
@@ -26,7 +26,7 @@ export const cards: SingleCard[] = [
       </ul>
     ),
     longText: true,
-    scaledDown: true,
+    imageFitNone: true,
   },
   {
     image: smcLogo,
@@ -34,7 +34,7 @@ export const cards: SingleCard[] = [
     type: "work",
     subtitle: "Frontend developer",
     title: "SMC Treviso",
-    scaledDown: true,
+    imageFitNone: true,
   },
   // {
   //   image: "/public/profile-picture.png",
@@ -54,7 +54,7 @@ export const cards: SingleCard[] = [
     ),
     type: "contact",
     title: "Contact me!",
-    scaledDown: true,
+    imageFitNone: true,
   },
 ];
 

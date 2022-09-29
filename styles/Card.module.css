@@ -54,11 +54,10 @@
   transform: translateY(10px);
 }
 .image img{
-  /* object-fit: cover; */
-  object-fit: scale-down;
+  object-fit: contain;
 }
-.scaledDown img{
-  object-fit: scale-down;
+.imageFitNone img{
+  object-fit: none;
 }
 
 

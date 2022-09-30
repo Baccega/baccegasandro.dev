@@ -1,9 +1,10 @@
 import React from "react";
 import { SingleCard } from "../types/types";
 import profilePicture from "../public/profile-picture.png";
-import smcLogo from "../public/smc-logo2.png";
+import smcLogo from "../public/smc-logo.png";
 import univeLogo from "../public/unive-logo.png";
-import contactMe from "../public/contact-me.png";
+import contactMe from "../public/contact-me3.jpg";
+import styles from "../styles/Card.module.css";
 import { RiGithubFill, RiLinkedinBoxFill, RiMailLine } from "react-icons/ri";
 
 export const cards: SingleCard[] = [
@@ -24,7 +25,7 @@ export const cards: SingleCard[] = [
           <span>🤖</span>Loves automations
         </li>
         <li>
-          <span>🇮🇹</span>From Padua, Italy{" "}
+          <span>📍</span>From Padua, Italy{" "}
         </li>
       </ul>
     ),
@@ -81,7 +82,7 @@ export const cards: SingleCard[] = [
     image: contactMe,
     description: (
       <ul>
-        <li>
+        <li className={styles.smallerFontSize}>
           <span>
             <RiMailLine size={30} />
           </span>{" "}

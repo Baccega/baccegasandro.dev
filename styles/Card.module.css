@@ -101,7 +101,7 @@
   transform: translateY(-3rem);
   height: 110%;
   border: 3px solid var(--card-dividers-color);
-  margin: 0rem 1rem 1rem 1rem;
+  margin: 0.5rem 1rem 1rem 1rem;
   padding: 10px 12px;
   border-radius: 10px;
   grid-area: description;
@@ -130,12 +130,17 @@
   color: var(--card-primary);
 }
 
-/* 
-@media (max-width: 600px) {
-  
+.smallerFontSize {
+  font-size: medium;
 }
 
+@media (max-width: 600px) {
+  .smallerFontSize {
+    font-size: small;
+  }
+}
 
+/*
 @media (prefers-color-scheme: dark) {
 
 } 

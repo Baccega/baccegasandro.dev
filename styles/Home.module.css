@@ -19,16 +19,15 @@
 
 .root > div > div {
   color: var(--text-color);
-  width: 40vh;
-  min-width: 350px;
-  max-width: 400px;
-  height: 60vh;
-  min-height: 500px;
-  max-height: 600px;
+  width: clamp(200px,90vw, 400px);
+  height: clamp(300px,75vh, 600px);
   will-change: transform;
   border-radius: 20px;
   border: 1px solid rgb(163, 163, 163);
-  box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3);
+  box-shadow: -40px 40px 100px 15px rgba(0, 0, 0, 0.4);
+}
+.root > div > div > div:last-child {
+  box-shadow: none;
 }
 
 /* 

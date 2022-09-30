@@ -13,7 +13,7 @@ const stacked_position = (i: number) => ({
   x: 0,
   y: i * -4,
   scale: 1,
-  rot: Math.random() * 8,
+  rot: Math.random() * 5,
   delay: i * 100,
 });
 const up_position = (i: any) => ({ x: 0, rot: 0, scale: 1.5, y: -1000 });
@@ -24,7 +24,7 @@ const random_position = (i: any) => ({
   scale: 1,
 });
 const trans = (r: number, s: any) =>
-  `perspective(700px) rotateX(30deg) rotateY(${
+  `rotateY(${
     r / 10
   }deg) rotateZ(${r}deg) scale(${s}) translate3d(0px, -100px, 0px)`;
 
@@ -71,7 +71,8 @@ const Home: NextPage = () => {
       className={styles.root}
       style={{
         backgroundImage: `url(${background.src})`,
-        backgroundSize: "cover",
+        backgroundSize: "auto",
+        backgroundPositionX: "center",
         width: "100%",
         height: "100%",
       }}

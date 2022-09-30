@@ -28,9 +28,9 @@
   border-radius: 50%;
   padding: 5px;
 
-  color: var(--card-dividers-color);
+  color: var(--text-contrast);
   border: 3px solid var(--card-dividers-color);
-  background-color: var(--card-background);
+  background-color: var(--card-primary);
 }
 
 .image {
@@ -76,7 +76,7 @@
   text-align: center;
   left: 50%;
   transform: translateX(-50%);
-  color: white;
+  color: var(--text-contrast);
   font-size: 1.8rem;
   font-weight: normal;
   width: 100%;

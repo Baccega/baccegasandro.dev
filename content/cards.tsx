@@ -1,10 +1,10 @@
-import Link from "next/link";
 import React from "react";
 import { SingleCard } from "../types/types";
 import profilePicture from "../public/profile-picture.png";
 import smcLogo from "../public/smc-logo2.png";
 import univeLogo from "../public/unive-logo.png";
 import contactMe from "../public/contact-me.png";
+import { RiGithubFill, RiLinkedinBoxFill, RiMailLine } from "react-icons/ri";
 
 export const cards: SingleCard[] = [
   {
@@ -81,21 +81,29 @@ export const cards: SingleCard[] = [
     image: contactMe,
     description: (
       <ul>
-        <li>Email: mail.sandro.baccega@gmail.com</li>
         <li>
-          Github:{" "}
-          <Link target="_blank" href="https://github.com/Baccega">
-            Baccega
-          </Link>
+          <span>
+            <RiMailLine size={30} />
+          </span>{" "}
+          <a target="_blank" rel="noreferrer" href="mailto:mail.sandro.baccega@gmail.com">
+            mail.sandro.baccega@gmail.com
+          </a>
         </li>
         <li>
-          LinkedIn:{" "}
-          <Link
-            target="_blank"
-            href="https://www.linkedin.com/in/sandro-baccega"
-          >
+          <span>
+            <RiGithubFill size={30} />
+          </span>{" "}
+          <a target="_blank" rel="noreferrer" href="https://github.com/Baccega">
+            Baccega
+          </a>
+        </li>
+        <li>
+          <span>
+            <RiLinkedinBoxFill color="#0173b2" size={30} />
+          </span>{" "}
+          <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/sandro-baccega">
             sandro-baccega
-          </Link>
+          </a>
         </li>
       </ul>
     ),

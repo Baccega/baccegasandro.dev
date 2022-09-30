@@ -118,6 +118,12 @@
 }
 .description ul li span {
   margin-right: 10px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+.description a:hover {
+  color: var(--card-primary);
 }
 
 /* 

@@ -97,8 +97,7 @@
   height: 110%;
   border: 3px solid var(--card-dividers-color);
   margin: 0rem 1rem 1rem 1rem;
-  padding: 10px;
-  padding-left: 30px;
+  padding: 10px 20px;
   border-radius: 10px;
   grid-area: description;
   background-color: var(--card-background);
@@ -106,6 +105,11 @@
 
 .description ul {
   padding: 0;
+}
+.description ul li{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 .description ul li span {
   margin-right: 10px;

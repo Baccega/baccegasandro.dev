@@ -52,7 +52,8 @@ export const cards: SingleCard[] = [
     description: (
       <ul>
         <li>
-          <span>💻</span>Developed complex data analytics dashboard in React
+          <span>💻</span>Developed a complex data analytics dashboard product in
+          React
         </li>
         <li>
           <span>🧪</span>Created custom visual regression testing software

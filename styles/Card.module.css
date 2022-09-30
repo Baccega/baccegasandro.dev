@@ -102,7 +102,7 @@
   height: 110%;
   border: 3px solid var(--card-dividers-color);
   margin: 0rem 1rem 1rem 1rem;
-  padding: 10px 20px;
+  padding: 10px 12px;
   border-radius: 10px;
   grid-area: description;
   background-color: var(--card-background);
@@ -121,6 +121,10 @@
   font-size: 1.5rem;
   display: flex;
   align-items: center;
+}
+.description a {
+  overflow: hidden;
+  word-break: break-all;
 }
 .description a:hover {
   color: var(--card-primary);

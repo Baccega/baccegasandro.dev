@@ -5,7 +5,7 @@ import TypeIcon from "./TypeIcon";
 import classNames from "classnames";
 import Image from "next/image";
 import cartTexture from "../public/card-texture.jpg";
-import ribbon from "../public/ribbon.png";
+import ribbon from "../public/ribbon2.png";
 
 interface Props {
   card: SingleCard;

@@ -54,14 +54,14 @@ const Home: NextPage = () => {
       if (index === 0) {
         setTimeout(() => {
           set((i) => random_position(i));
-        }, 1000);
+        }, 500);
         setTimeout(() => {
           set((i) => up_position(i));
-        }, 2000);
+        }, 1500);
         setTimeout(() => {
           setPosition(cards.length - 1);
           set((i) => stacked_position(i));
-        }, 2500);
+        }, 2000);
       }
     }
   };

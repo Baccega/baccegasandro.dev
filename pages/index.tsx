@@ -2,10 +2,12 @@ import React from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import buttonStyles from "../styles/Button3D.module.scss";
 import { animated, to, useSprings } from "react-spring";
 import Card from "../components/Card";
 import { cards } from "../content/cards";
 import background from "../public/background.jpg";
+import Button3D from "../components/Button3D";
 
 const stacked_position = (i: number) => ({
   x: 0,
@@ -24,18 +26,18 @@ const random_position = (i: any) => ({
 const trans = (r: number, s: any) =>
   `perspective(700px) rotateX(30deg) rotateY(${
     r / 10
-  }deg) rotateZ(${r}deg) scale(${s})`;
+  }deg) rotateZ(${r}deg) scale(${s}) translate3d(0px, -100px, 0px)`;
 
 const Home: NextPage = () => {
-  const [gone] = React.useState(() => new Set());
+  const [position, setPosition] = React.useState(cards.length - 1);
   const [props, set] = useSprings(cards.length, (i) => ({
     ...stacked_position(i),
     from: up_position(i),
   }));
 
-  const handleFlick = (index: number) => () => {
-    if (gone.size < cards.length) {
-      gone.add(index);
+  const handleClick = (index: number) => (e: any) => {
+    if (index >= 0) {
+      setPosition(index - 1);
       set((i) => {
         if (index !== i) return;
         const direction = Math.random() > 0.5 ? 1 : -1;
@@ -49,7 +51,7 @@ const Home: NextPage = () => {
           config: { friction: 50, tension: 200 },
         };
       });
-      if (gone.size === cards.length) {
+      if (index === 0) {
         setTimeout(() => {
           set((i) => random_position(i));
         }, 1000);
@@ -57,7 +59,7 @@ const Home: NextPage = () => {
           set((i) => up_position(i));
         }, 2000);
         setTimeout(() => {
-          gone.clear();
+          setPosition(cards.length - 1);
           set((i) => stacked_position(i));
         }, 2500);
       }
@@ -88,7 +90,6 @@ const Home: NextPage = () => {
           }}
         >
           <animated.div
-            onClick={handleFlick(i)}
             style={{
               transform: to([rot, scale], trans),
             }}
@@ -97,6 +98,16 @@ const Home: NextPage = () => {
           </animated.div>
         </animated.div>
       ))}
+      <div className={buttonStyles.container}>
+        <Button3D icon="ok" text="Next" onClick={handleClick(position)} />
+        {/* <Button3D
+          icon="ok"
+          text="test"
+          onClick={(e) => {
+            console.log("OK");
+          }}
+        /> */}
+      </div>
     </div>
   );
 };

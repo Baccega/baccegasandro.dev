@@ -6,6 +6,7 @@ import univeLogo from "../public/unive-logo.png";
 import contactMe from "../public/contact-me3.jpg";
 import styles from "../styles/Card.module.css";
 import { RiGithubFill, RiLinkedinBoxFill, RiMailLine } from "react-icons/ri";
+import { MdOutlineFileDownload } from "react-icons/md";
 
 export const cards: SingleCard[] = [
   {
@@ -16,16 +17,28 @@ export const cards: SingleCard[] = [
     description: (
       <ul>
         <li>
-          <span>⚛️</span>Specialized in web development with React
+          <span>⚛️</span>Specialized in React web development
         </li>
         <li>
           <span>📸</span>Enjoys Computer Vision
         </li>
         <li>
-          <span>🤖</span>Loves automations
+          <span>🤖</span>Loves automating stuff
         </li>
         <li>
           <span>📍</span>From Padua, Italy{" "}
+        </li>
+        <li>
+          <span>
+            <MdOutlineFileDownload size={30} />
+          </span>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/Baccega/baccegasandro.dev/blob/main/public/cv.pdf"
+          >
+            Download my full resume here!
+          </a>
         </li>
       </ul>
     ),
@@ -44,6 +57,14 @@ export const cards: SingleCard[] = [
           <span>👨🏻‍🏫</span>Teaching assistant for the Object Oriented Programming
           course
         </li>
+        {/* <li>
+          <span>
+            <RiGithubFill size={30} />
+          </span>{" "}
+          <a target="_blank" rel="noreferrer" href="https://github.com/Baccega/smartphone-based-rti">
+            Check out my thesis here!
+          </a>
+        </li> */}
       </ul>
     ),
     longText: true,
@@ -68,16 +89,39 @@ export const cards: SingleCard[] = [
       </ul>
     ),
     type: "work",
-    subtitle: "Frontend developer",
+    subtitle: "Frontend developer - Treviso, Italy",
     title: "SMC Treviso",
   },
-  // {
-  //   image: "/public/profile-picture.png",
-  //   description: "This portfolio",
-  //   type: "project",
-  //   subtitle: "This portfolio",
-  //   title: "Portfolio",
-  // },
+  {
+    image: contactMe,
+    description: (
+      <ul>
+        <li>
+          <span>⚛️</span>React.js + Next.js
+        </li>
+        <li>
+          <span>💫</span>React-Spring
+        </li>
+        <li>
+          <span>🎨</span>SCSS
+        </li>
+        <li>
+          <span>
+            <RiGithubFill size={30} />
+          </span>{" "}
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/Baccega/baccegasandro.dev"
+          >
+            Check out the source code here!
+          </a>
+        </li>
+      </ul>
+    ),
+    type: "project",
+    title: "This portfolio",
+  },
   {
     image: contactMe,
     description: (
@@ -86,7 +130,11 @@ export const cards: SingleCard[] = [
           <span>
             <RiMailLine size={30} />
           </span>{" "}
-          <a target="_blank" rel="noreferrer" href="mailto:mail.sandro.baccega@gmail.com">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="mailto:mail.sandro.baccega@gmail.com"
+          >
             mail.sandro.baccega@gmail.com
           </a>
         </li>
@@ -102,7 +150,11 @@ export const cards: SingleCard[] = [
           <span>
             <RiLinkedinBoxFill color="#0173b2" size={30} />
           </span>{" "}
-          <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/sandro-baccega">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.linkedin.com/in/sandro-baccega"
+          >
             sandro-baccega
           </a>
         </li>

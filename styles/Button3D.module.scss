@@ -13,7 +13,7 @@
     background-color: var(--card-background);
     border-radius: 20px;
     border: 6px solid var(--card-dividers-color);
-    box-shadow: -50px 50px 50px 15px rgba(0, 0, 0, 0.4);
+    box-shadow: -20px 20px 50px 15px rgba(0, 0, 0, 0.4);
     box-sizing: border-box;
     color: var(--text-color);
     cursor: pointer;
@@ -31,7 +31,7 @@
     will-change: box-shadow, transform;
     font-size: 3rem;
     &:hover:enabled {
-      box-shadow: -50px 50px 50px 15px rgba(0, 0, 0, 0.5);
+      box-shadow: -20px 20px 50px 15px rgba(0, 0, 0, 0.5);
       transform: translateY(-3px);
       // background-color: var(--card-primary);
       // color: var(--text-contrast);

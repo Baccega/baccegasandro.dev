@@ -2,16 +2,18 @@ html,
 body,
 h1,
 h2,
-ul {
+ul,
+button {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 
   --card-outline: #2f2b2b;
   --card-primary: #007918;
   /* --card-background: #e2e2e2; */
   --card-background: #fff;
+  --card-background-disabled: rgb(237, 237, 237);
   --card-dividers-color: #000000;
   --text-color: #000000;
   --text-contrast: #fff;

@@ -1,73 +1,50 @@
-// $bg: #fff;
-$text: var(--text-contrast);
-$light-pink: #fe5c5c;
-$pink: #ec4e4e;
-$dark-pink: #bc3d3d;
-$pink-border: #2e2e2e;
-$pink-shadow: #2e2e2e;
 
 .container {
   height: auto !important;
-  bottom: 50px;
-  transform: rotateX(25deg) rotateY(0deg) rotateZ(0deg) scale(1);
+  bottom: -1vh;
+  transform: scale(0.5);
   display: flex;
 
-  .button3D {
-    position: relative;
-    display: inline-block;
+  .button30 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    appearance: none;
+    background-color: var(--card-background);
+    border-radius: 20px;
+    border: 6px solid var(--card-dividers-color);
+    box-shadow: -50px 50px 50px 15px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    color: var(--text-color);
     cursor: pointer;
-    outline: none;
-    border: 0;
-    min-width: 100px;
-    min-height: 100px;
-    vertical-align: middle;
-    text-decoration: none;
-    font-size: inherit;
-    font-family: inherit;
-    font-weight: 600;
-    color: $text;
-    text-transform: uppercase;
-    padding: 1.25em 2em;
-    background: $light-pink;
-    border: 2px solid $pink-border;
-    border-radius: 50%;
-    transform-style: preserve-3d;
-    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
-    background 150ms cubic-bezier(0, 0, 0.58, 1);
-    // &:first-child {
-    //   margin-right: 30px;
-    // }
-    &::before {
-      position: absolute;
-      content: "";
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: $dark-pink;
-      border-radius: inherit;
-      box-shadow: 0 0 0 2px $pink-border, 0 0.625em 0 0 $pink-shadow;
-      transform: translate3d(0, 0.75em, -1em);
-      transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
-        box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+    height: 150px;
+    width: 350px;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    transition: box-shadow 0.15s, transform 0.15s;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 3rem;
+    &:hover:enabled {
+      box-shadow: -50px 50px 50px 15px rgba(0, 0, 0, 0.5);
+      transform: translateY(-3px);
+      // background-color: var(--card-primary);
+      // color: var(--text-contrast);
     }
-    &:hover {
-      background: $light-pink;
-      transform: translate(0, 0.25em);
-      &::before {
-        box-shadow: 0 0 0 2px $pink-border, 0 0.5em 0 0 $pink-shadow;
-        // transform: translate3d(0, 0.5em, -1em);
-      }
+    &:active:enabled {
+      box-shadow: rgba(0, 0, 0, 0.3) -10px 10px 20px inset;
+      transform: translateY(3px);
+      background-color: var(--card-background-disabled);
     }
-    &:active {
-      background: $pink;
-      transform: translate(0em, 0.75em);
-      &::before {
-        box-shadow: 0 0 0 2px $pink-border, 0 0 $pink-shadow;
-        transform: translate3d(0, 0, -1em);
-      }
+    &:disabled {
+      background-color: var(--card-background-disabled);
+      box-shadow: rgba(0, 0, 0, 0.4) -10px 10px 20px inset;
+      transform: translateY(3px);
     }
   }
 }

@@ -8,6 +8,8 @@ import Card from "../components/Card";
 import { cards } from "../content/cards";
 import background from "../public/background.jpg";
 import Button3D from "../components/Button3D";
+import { MdArrowForward } from "react-icons/md";
+import { GiSandsOfTime } from "react-icons/gi";
 
 const stacked_position = (i: number) => ({
   x: 0,
@@ -100,7 +102,7 @@ const Home: NextPage = () => {
         </animated.div>
       ))}
       <div className={buttonStyles.container}>
-        <Button3D icon="ok" text="Next" onClick={handleClick(position)} />
+        <Button3D disabled={position < 0} icon={position < 0? <GiSandsOfTime /> : <MdArrowForward />} text={position < 0? "Reshuffling" : "Next card"} onClick={handleClick(position)} />
         {/* <Button3D
           icon="ok"
           text="test"

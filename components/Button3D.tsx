@@ -1,11 +1,11 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { IconType } from "react-icons";
 import styles from "../styles/Button3D.module.scss";
 
 interface Props {
   onClick: (event: any) => void;
   text: string;
-  icon: IconType;
+  icon: IconType | ReactElement;
   disabled: boolean;
 }
 

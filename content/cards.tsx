@@ -30,14 +30,14 @@ export const cards: SingleCard[] = [
         </li>
         <li>
           <span>
-            <MdOutlineFileDownload size={30} />
+            <MdOutlineFileDownload size={25} />
           </span>
           <a
             target="_blank"
             rel="noreferrer"
             href="https://github.com/Baccega/baccegasandro.dev/blob/main/public/cv.pdf"
           >
-            Download my full resume here!
+            Download my full CV here!
           </a>
         </li>
       </ul>
@@ -59,7 +59,7 @@ export const cards: SingleCard[] = [
         </li>
         {/* <li>
           <span>
-            <RiGithubFill size={30} />
+            <RiGithubFill size={25} />
           </span>{" "}
           <a target="_blank" rel="noreferrer" href="https://github.com/Baccega/smartphone-based-rti">
             Check out my thesis here!
@@ -107,7 +107,7 @@ export const cards: SingleCard[] = [
         </li>
         <li>
           <span>
-            <RiGithubFill size={30} />
+            <RiGithubFill size={25} />
           </span>{" "}
           <a
             target="_blank"
@@ -128,7 +128,7 @@ export const cards: SingleCard[] = [
       <ul>
         <li className={styles.smallerFontSize}>
           <span>
-            <RiMailLine size={30} />
+            <RiMailLine size={25} />
           </span>{" "}
           <a
             target="_blank"
@@ -140,7 +140,7 @@ export const cards: SingleCard[] = [
         </li>
         <li>
           <span>
-            <RiGithubFill size={30} />
+            <RiGithubFill size={25} />
           </span>{" "}
           <a target="_blank" rel="noreferrer" href="https://github.com/Baccega">
             Baccega
@@ -148,7 +148,7 @@ export const cards: SingleCard[] = [
         </li>
         <li>
           <span>
-            <RiLinkedinBoxFill color="#0173b2" size={30} />
+            <RiLinkedinBoxFill color="#0173b2" size={25} />
           </span>{" "}
           <a
             target="_blank"

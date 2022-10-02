@@ -11,7 +11,7 @@
   width: 100%;
   display: grid;
   border-radius: 20px;
-  grid-template-rows: 2fr 6rem 2fr;
+  grid-template-rows: 3fr 6rem 2fr;
   grid-template-columns: 50px 1fr;
   grid-template-areas:
     "image image"
@@ -34,6 +34,7 @@
 }
 
 .image {
+  min-height: 200px;
   grid-area: image;
   display: block;
   position: relative;
@@ -56,11 +57,11 @@
   grid-area: title;
   width: 100%;
   position: relative;
+  z-index: 500;
 }
 .title img {
   width: 100%;
   object-fit: fill;
-  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,10 +100,11 @@
 
 .description {
   transform: translateY(-3rem);
+  min-height: 12rem;
   height: 110%;
   border: 3px solid var(--card-dividers-color);
-  margin: 0.5rem 1rem 1rem 1rem;
-  padding: 10px 12px;
+  margin: 0.5rem 1.2rem 1rem 1.2rem;
+  padding: 10px 12px 0px 12px;
   border-radius: 10px;
   grid-area: description;
   background-color: var(--card-background);
@@ -137,6 +139,14 @@
 @media (max-width: 600px) {
   .smallerFontSize {
     font-size: small;
+  }
+}
+@media (max-height: 800px) {
+  .description {
+    transform: translateY(-5rem);
+  }
+  .title{
+    transform: translateY(-3rem);
   }
 }
 

@@ -50,6 +50,10 @@
   background-color: var(--card-background);
   clip-path: ellipse(24% 48% at 50% 50%);
   object-fit: contain;
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  image-rendering: -o-crisp-edges; /* Opera */
+  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
 }
 
 .title {
@@ -145,7 +149,7 @@
   .description {
     transform: translateY(-5rem);
   }
-  .title{
+  .title {
     transform: translateY(-3rem);
   }
 }

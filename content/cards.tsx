@@ -3,7 +3,8 @@ import { SingleCard } from "../types/types";
 import profilePicture from "../public/profile-picture.png";
 import smcLogo from "../public/smc-logo.png";
 import univeLogo from "../public/unive-logo.png";
-import contactMe from "../public/contact-me3.jpg";
+import contactMe from "../public/contact-me.jpg";
+import portfolio from "../public/portfolio.png";
 import styles from "../styles/Card.module.css";
 import { RiGithubFill, RiLinkedinBoxFill, RiMailLine } from "react-icons/ri";
 import { MdOutlineFileDownload } from "react-icons/md";
@@ -93,7 +94,7 @@ export const cards: SingleCard[] = [
     title: "SMC Treviso",
   },
   {
-    image: contactMe,
+    image: portfolio,
     description: (
       <ul>
         <li>

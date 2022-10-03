@@ -81,7 +81,7 @@ const Home: NextPage = () => {
     >
       <Head>
         <title>Baccega Sandro</title>
-        <meta name="description" content="Baccega Sandro Portfolio" />
+        <meta name="description" content="Baccega Sandro - Online Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {props.map(({ x, y, rot, scale }, i) => (

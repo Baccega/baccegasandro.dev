@@ -31,7 +31,7 @@ export const cards: SingleCard[] = [
         </li>
         <li>
           <span>
-            <MdOutlineFileDownload size={25} />
+            <MdOutlineFileDownload size="1.5rem" />
           </span>
           <a
             target="_blank"
@@ -60,7 +60,7 @@ export const cards: SingleCard[] = [
         </li>
         {/* <li>
           <span>
-            <RiGithubFill size={25} />
+            <RiGithubFill size="1.5rem" />
           </span>{" "}
           <a target="_blank" rel="noreferrer" href="https://github.com/Baccega/smartphone-based-rti">
             Check out my thesis here!
@@ -108,7 +108,7 @@ export const cards: SingleCard[] = [
         </li>
         <li>
           <span>
-            <RiGithubFill size={25} />
+            <RiGithubFill size="1.5rem" />
           </span>{" "}
           <a
             target="_blank"
@@ -129,7 +129,7 @@ export const cards: SingleCard[] = [
       <ul>
         <li className={styles.smallerFontSize}>
           <span>
-            <RiMailLine size={25} />
+            <RiMailLine size="1.5rem" />
           </span>{" "}
           <a
             target="_blank"
@@ -141,7 +141,7 @@ export const cards: SingleCard[] = [
         </li>
         <li>
           <span>
-            <RiGithubFill size={25} />
+            <RiGithubFill size="1.5rem" />
           </span>{" "}
           <a target="_blank" rel="noreferrer" href="https://github.com/Baccega">
             Baccega
@@ -149,7 +149,7 @@ export const cards: SingleCard[] = [
         </li>
         <li>
           <span>
-            <RiLinkedinBoxFill color="#0173b2" size={25} />
+            <RiLinkedinBoxFill color="#0173b2" size="1.5rem" />
           </span>{" "}
           <a
             target="_blank"

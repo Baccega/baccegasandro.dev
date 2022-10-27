@@ -10,6 +10,7 @@ import background from "../public/background.jpg";
 import Button3D from "../components/Button3D";
 import { MdArrowForward } from "react-icons/md";
 import { GiSandsOfTime } from "react-icons/gi";
+import Image from "next/image";
 
 function randomIntFromInterval(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -78,16 +79,15 @@ const Home: NextPage = () => {
   };
 
   return (
-    <div
-      className={styles.root}
-      style={{
-        backgroundImage: `url(${background.src})`,
-        backgroundSize: "auto",
-        backgroundPositionX: "center",
-        width: "100%",
-        height: "100%",
-      }}
-    >
+    <div className={styles.root}>
+      <Image
+        src={background}
+        layout="fill"
+        objectFit="cover"
+        placeholder="blur"
+        priority={false}
+        alt="Background"
+      />
       <Head>
         <title>Baccega Sandro</title>
         <meta name="description" content="Baccega Sandro - Online Portfolio" />

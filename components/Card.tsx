@@ -19,23 +19,36 @@ export default function CardComponent({ card }: Props) {
   const imageClassname = classNames(styles.image);
   return (
     <div className={styles.externalContainer}>
-      <div
-        className={styles.container}
-        style={{
-          backgroundImage: `url(${cartTexture.src})`,
-          width: "100%",
-          height: "100%",
-          backgroundSize: "cover",
-        }}
-      >
+      <div className={styles.container}>
+        <Image
+          src={cartTexture}
+          layout="fill"
+          objectFit="cover"
+          placeholder="blur"
+          priority={false}
+          alt="card-background"
+          style={{ borderRadius: 20 }}
+        />
         <div className={imageClassname}>
-          <Image priority={false} alt="card image" src={image} layout="fill" />
+          <Image
+            placeholder="blur"
+            priority={false}
+            alt="card-image"
+            src={image}
+            layout="fill"
+          />
         </div>
 
         <TypeIcon type={type} className={styles.type} />
         
         <div className={titleClassname}>
-          <Image priority src={ribbon} alt={title} layout="fill" />
+          <Image
+            placeholder="blur"
+            priority
+            src={ribbon}
+            alt={title}
+            layout="fill"
+          />
            <h1>{title}</h1>
            <h2>{subtitle}</h2>
         </div>

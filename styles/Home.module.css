@@ -19,8 +19,8 @@
 
 .root > div > div {
   color: var(--text-color);
-  width: clamp(200px, 90vw, 400px);
-  height: clamp(300px, 75vh, 600px);
+  width: clamp(200px, 90vw, 375px);
+  aspect-ratio: 0.7 / 1 ;
   will-change: transform;
   border-radius: 20px;
   border: 1px solid rgb(163, 163, 163);

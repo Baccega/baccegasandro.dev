@@ -33,7 +33,7 @@ const random_position = (i: any) => ({
 const trans = (r: number, s: any) =>
   `rotateY(${
     r / 10
-  }deg) rotateZ(${r}deg) scale(${s}) translate3d(0px, -100px, 0px)`;
+  }deg) rotateZ(${r}deg) scale(${s}) translate3d(0px, -30px, 0px)`;
 
 const Home: NextPage = () => {
   const [position, setPosition] = React.useState(cards.length - 1);

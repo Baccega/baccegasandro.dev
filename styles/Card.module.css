@@ -35,7 +35,8 @@
 }
 
 .image {
-  min-height: 200px;
+  /* min-height: 200px; */
+  aspect-ratio: 1.5 / 1;
   grid-area: image;
   display: block;
   position: relative;
@@ -104,12 +105,12 @@
 }
 
 .description {
-  transform: translateY(-3rem);
-  min-height: 12rem;
-  height: 110%;
+  transform: translateY(-5.5rem);
+  aspect-ratio: 1 / 0.8;
+  width: 90%;
   border: 3px solid var(--card-dividers-color);
   margin: 0.5rem 1.2rem 1rem 1.2rem;
-  padding: 10px 12px 0px 12px;
+  padding: 30px 13px 0px 13px;
   border-radius: 10px;
   grid-area: description;
   background-color: var(--card-background);
@@ -148,7 +149,8 @@
 }
 @media (max-height: 800px) {
   .description {
-    transform: translateY(-5rem);
+    transform: translateY(-6.5rem);
+    aspect-ratio: 1 / 0.85;
   }
   .title {
     transform: translateY(-3rem);

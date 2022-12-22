@@ -59,7 +59,7 @@
 }
 
 .title {
-  transform: translateY(-30px);
+  transform: translateY(-40px);
   grid-area: title;
   width: 100%;
   position: relative;
@@ -105,9 +105,10 @@
 }
 
 .description {
-  transform: translateY(-5.5rem);
+  transform: translateY(-6rem);
   aspect-ratio: 1 / 0.8;
   width: 90%;
+  overflow: hidden;
   border: 3px solid var(--card-dividers-color);
   margin: 0.5rem 1.2rem 1rem 1.2rem;
   padding: 30px 13px 0px 13px;
@@ -147,15 +148,14 @@
     font-size: small;
   }
 }
-@media (max-height: 800px) {
+@media (max-height: 850px) {
   .description {
-    transform: translateY(-6.5rem);
-    aspect-ratio: 1 / 0.85;
+    font-size: 0.9rem;
   }
-  .title {
-    transform: translateY(-3rem);
+  .description ul li {
+    margin-bottom: 5px;
   }
-}
+}  
 
 /*
 @media (prefers-color-scheme: dark) {

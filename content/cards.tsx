@@ -81,9 +81,9 @@ export const cards: SingleCard[] = [
         <li>
           <span>🧪</span>Created custom visual regression testing software
         </li>
-        <li>
+        {/* <li>
           <span>👨🏻‍💻</span>Mentored 3 junior devs
-        </li>
+        </li> */}
         <li>
           <span>⚙️</span>Revamped CI/CD pipeline
         </li>

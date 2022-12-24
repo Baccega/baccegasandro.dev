@@ -75,22 +75,21 @@ export const cards: SingleCard[] = [
     description: (
       <ul>
         <li>
-          <span>💻</span>Developed a complex data analytics dashboard product in
-          React
+          <span>💻</span>Refined a complex data analytics dashboard product in React
         </li>
         <li>
-          <span>🧪</span>Created custom visual regression testing software
+          <span>🧪</span>Introduced a custom visual regression testing software in order to have a robust UI 
         </li>
-        {/* <li>
+        <li>
           <span>👨🏻‍💻</span>Mentored 3 junior devs
-        </li> */}
+        </li>
         <li>
-          <span>⚙️</span>Revamped CI/CD pipeline
+          <span>⚙️</span>Improved CI/CD pipeline performance up to 4x
         </li>
       </ul>
     ),
     type: "work",
-    subtitle: "Frontend developer - Treviso, Italy",
+    subtitle: "Frontend engineer - Treviso, Italy",
     title: "SMC Treviso",
   },
   {

@@ -16,6 +16,12 @@ function randomIntFromInterval(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+function wait(time: number) {
+  return new Promise<number>((resolve) => {
+    setTimeout(resolve, time)
+  })
+}
+
 const stacked_position = (i: number) => ({
   x: 0,
   y: i * -4,
@@ -42,7 +48,7 @@ const Home: NextPage = () => {
     from: up_position(i),
   }));
 
-  const handleClick = (index: number) => (e: any) => {
+  const handleClick = (index: number) => async (e: any) => {
     if (index >= 0) {
       setPosition(index - 1);
       api.start((i) => {
@@ -64,16 +70,13 @@ const Home: NextPage = () => {
         };
       });
       if (index === 0) {
-        setTimeout(() => {
-          api.start((i) => random_position(i));
-        }, 500);
-        setTimeout(() => {
-          api.start((i) => up_position(i));
-        }, 1500);
-        setTimeout(() => {
-          setPosition(cards.length - 1);
-          api.start((i) => stacked_position(i));
-        }, 2000);
+        await wait(500);
+        await api.start((i) => random_position(i));
+        await wait(1000);
+        await api.start((i) => up_position(i));
+        await wait(500);
+        setPosition(cards.length - 1)
+        await api.start((i) => stacked_position(i));
       }
     }
   };

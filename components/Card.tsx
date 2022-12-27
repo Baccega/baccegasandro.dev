@@ -5,23 +5,43 @@ import TypeIcon from "./TypeIcon";
 import classNames from "classnames";
 import Image from "next/image";
 import cartTexture from "../public/card-texture.jpg";
+import cartTexture1 from "../public/card-texture.jpg";
+import cartTexture2 from "../public/card-texture2.jpg";
+import cartTexture3 from "../public/card-texture3.jpg";
+import cartTexture4 from "../public/card-texture5.jpg";
+import cartTexture5 from "../public/card-texture6.jpg";
 import ribbon from "../public/ribbon.png";
 
 interface Props {
   card: SingleCard;
 }
 
+function getCardTexture(type: SingleCard["type"]) {
+  switch (type) {
+    case "bio":
+    case "contact":
+      return cartTexture1;
+    case "work":
+      return cartTexture2;
+    case "education":
+      return cartTexture3;
+    case "project":
+      return cartTexture4;
+  }
+}
+
 export default function CardComponent({ card }: Props) {
-  const { title, subtitle, description, image, type, longText } =
-    card;
+  const { title, subtitle, description, image, type, longText } = card;
 
   const titleClassname = classNames(styles.title, longText && styles.smaller);
   const imageClassname = classNames(styles.image);
+
+  const texture = getCardTexture(type);
   return (
     <div className={styles.externalContainer}>
       <div className={styles.container}>
         <Image
-          src={cartTexture}
+          src={texture}
           layout="fill"
           objectFit="cover"
           placeholder="blur"
@@ -40,7 +60,7 @@ export default function CardComponent({ card }: Props) {
         </div>
 
         <TypeIcon type={type} className={styles.type} />
-        
+
         <div className={titleClassname}>
           <Image
             placeholder="blur"
@@ -49,8 +69,8 @@ export default function CardComponent({ card }: Props) {
             alt={title}
             layout="fill"
           />
-           <h1>{title}</h1>
-           <h2>{subtitle}</h2>
+          <h1>{title}</h1>
+          <h2>{subtitle}</h2>
         </div>
 
         <div className={styles.description}>{description}</div>

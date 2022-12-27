@@ -17,16 +17,24 @@
   justify-content: center;
 }
 
-.root > div > div {
+.animatedPacket {
   color: var(--text-color);
   width: clamp(200px, 90vw, 375px);
-  aspect-ratio: 0.7 / 1 ;
+  aspect-ratio: 0.7 / 1.05 ;
+  will-change: transform;
+  z-index: 1000;
+}
+
+.animatedCard {
+  z-index: 500;
+  color: var(--text-color);
+  width: clamp(200px, 90vw, 375px);
+  aspect-ratio: 0.7 / 1;
   will-change: transform;
   border-radius: 20px;
   border: 1px solid rgb(163, 163, 163);
-  box-shadow: -40px 40px 100px 15px rgba(0, 0, 0, 0.4);
 }
-.root > div > div > div:last-child {
+.animatedCard > div:last-child {
   box-shadow: none;
 }
 

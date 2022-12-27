@@ -1,0 +1,63 @@
+$borderSize: 20px;
+$accent: var(--card-dividers-color);
+
+.container {
+  z-index: 1000;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: $borderSize 1fr $borderSize;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "border"
+    "content"
+    "border2";
+  position: relative;
+}
+
+.border {
+  grid-area: border;
+}
+.border2 {
+  grid-area: border2;
+}
+
+.rotated {
+  transform: rotateX(180deg);
+}
+
+.divider {
+  position: absolute;
+  will-change: transform;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: $accent;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -$borderSize;
+    height: $borderSize;
+    background-image: linear-gradient(45deg, transparent 80%, $accent 80%),
+      linear-gradient(-45deg, transparent 75%, $accent 75%);
+    background-position: center;
+    background-size: $borderSize $borderSize;
+  }
+}
+
+.content {
+  grid-area: content;
+  border: 5px solid var(--card-dividers-color);
+  border-top: 0;
+  border-bottom: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: lightgray;
+  .title {
+
+  }
+}

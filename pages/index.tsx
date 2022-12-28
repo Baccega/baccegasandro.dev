@@ -28,16 +28,15 @@ const PACKET_FULL_CLIPPATH = [0, 0, 100, 0, 100, 100, 0, 100];
 
 const showcase_position = (i: number) => ({
   x: 0,
-  y: 0,
+  y: 30,
   scale: 1.1,
   rot: 0,
   clipPath: PACKET_FULL_CLIPPATH,
-  dropShadow: [-40, 30, 10, 0.4]
+  dropShadow: [-40, 40, 15, 0.5],
 });
 const clip = (i: number) => ({
-  // polygon(0 5%, 100% 3%, 100% 100%, 0% 100%);,
-  clipPath: [0, 5, 100, 3, 100, 100, 0, 100],
-  config: config.stiff
+  clipPath: [0, 7, 100, 8, 100, 100, 0, 100],
+  config: config.stiff,
 });
 const stacked_position = (i: number) => ({
   x: 0,
@@ -48,7 +47,7 @@ const stacked_position = (i: number) => ({
   clipPath: PACKET_FULL_CLIPPATH,
   boxShadow: CARD_BOXSHADOW_TRANSPARENCY,
   // drop-shadow(-15px 8px 8px rgba(0, 0, 0, 0.5))
-  dropShadow: [-15, 8, 8, 0.4]
+  dropShadow: [-20, 20, 10, 0.6],
   // dropShadow: [-40, 30, 10, 0.5]
 });
 const up_position = (i: any) => ({
@@ -66,7 +65,7 @@ const above_position = (i: any) => ({
   y: -1000,
   clipPath: PACKET_FULL_CLIPPATH,
   boxShadow: 0,
-  dropShadow: [0, 0, 0, 0.0]
+  dropShadow: [0, 0, 0, 0.0],
 });
 const random_position = (i: any) => ({
   x: randomIntFromInterval(-200, 200),
@@ -117,7 +116,7 @@ const Home: NextPage = () => {
         };
       });
       if (index === 0) {
-        await wait(500);
+        await wait(1000);
         await cardsApi.start((i) => random_position(i));
         await wait(1000);
         await cardsApi.start((i) => above_position(i));
@@ -169,7 +168,7 @@ const Home: NextPage = () => {
               [dropShadow],
               (dropShadow) =>
                 `drop-shadow(${dropShadow[0]}px ${dropShadow[1]}px ${dropShadow[2]}px rgba(0, 0, 0, ${dropShadow[3]}))`
-            ) 
+            ),
           }}
         >
           <animated.div
@@ -209,12 +208,12 @@ const Home: NextPage = () => {
           </animated.div>
         </animated.div>
       ))}
-      {packetSelected !== -1 ? (
+      {packetSelected !== -1 && cardsPosition >= 0 ? (
         <div className={buttonStyles.container}>
           <Button3D
-            disabled={cardsPosition < 0}
-            icon={cardsPosition < 0 ? <GiSandsOfTime /> : <MdArrowForward />}
-            text={cardsPosition < 0 ? "Reshuffling" : "Next card"}
+            icon={<MdArrowForward />}
+            text={"Next card"}
+            disabled={false}
             onClick={handleNextCard(cardsPosition)}
           />
         </div>

@@ -1,18 +1,19 @@
-$borderSize: 20px;
-$accent: var(--card-dividers-color);
+$borderSize: 25px;
+$accent: rgb(229, 229, 229);
 
 .container {
   z-index: 1000;
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-rows: $borderSize 1fr $borderSize;
+  grid-template-rows: calc($borderSize + 10px) 1fr calc($borderSize + 10px);
   grid-template-columns: 1fr;
   grid-template-areas:
     "border"
     "content"
     "border2";
   position: relative;
+  cursor: pointer;
 }
 
 .border {
@@ -50,14 +51,9 @@ $accent: var(--card-dividers-color);
 
 .content {
   grid-area: content;
-  border: 5px solid var(--card-dividers-color);
-  border-top: 0;
-  border-bottom: 0;
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: lightgray;
   .title {
-
   }
 }

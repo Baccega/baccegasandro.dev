@@ -20,7 +20,7 @@
 .animatedPacket {
   color: var(--text-color);
   width: clamp(200px, 90vw, 375px);
-  aspect-ratio: 0.7 / 1.05 ;
+  aspect-ratio: 0.7 / 1.1 ;
   will-change: transform;
   z-index: 1000;
 }

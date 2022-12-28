@@ -17,12 +17,21 @@
   justify-content: center;
 }
 
-.animatedPacket {
+.animatedPackContainer {
+  z-index: 1000;
+  will-change: transform, filter;
+}
+
+.animatedPack {
   color: var(--text-color);
   width: clamp(200px, 90vw, 375px);
   aspect-ratio: 0.7 / 1.1 ;
+  will-change: transform, clip-path;
+  /* z-index: 1000; */
+}
+
+.animatedCardContainer {
   will-change: transform;
-  z-index: 1000;
 }
 
 .animatedCard {
@@ -30,7 +39,7 @@
   color: var(--text-color);
   width: clamp(200px, 90vw, 375px);
   aspect-ratio: 0.7 / 1;
-  will-change: transform;
+  will-change: transform, box-shadow;
   border-radius: 20px;
   border: 1px solid rgb(163, 163, 163);
 }

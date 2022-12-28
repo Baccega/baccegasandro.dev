@@ -11,7 +11,8 @@ import Button3D from "../components/Button3D";
 import { MdArrowForward } from "react-icons/md";
 import { GiSandsOfTime } from "react-icons/gi";
 import Image from "next/image";
-import Packet from "../components/Packet";
+import Pack from "../components/Pack";
+import aboutMeDeck from "../content/about-me";
 
 function randomIntFromInterval(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -24,15 +25,15 @@ function wait(time: number) {
 }
 
 const CARD_BOXSHADOW_TRANSPARENCY = 0.4;
-const PACKET_FULL_CLIPPATH = [0, 0, 100, 0, 100, 100, 0, 100];
+const PACK_FULL_CLIPPATH = [0, 0, 100, 0, 100, 100, 0, 100];
 
 const showcase_position = (i: number) => ({
   x: 0,
   y: 30,
   scale: 1.1,
   rot: 0,
-  clipPath: PACKET_FULL_CLIPPATH,
-  dropShadow: [-40, 40, 15, 0.5],
+  clipPath: PACK_FULL_CLIPPATH,
+  dropShadow: [-40, 40, 10, 0.5],
 });
 const clip = (i: number) => ({
   clipPath: [0, 7, 100, 8, 100, 100, 0, 100],
@@ -44,51 +45,51 @@ const stacked_position = (i: number) => ({
   scale: 1,
   rot: Math.random() * 5,
   delay: i * 100,
-  clipPath: PACKET_FULL_CLIPPATH,
+  clipPath: PACK_FULL_CLIPPATH,
   boxShadow: CARD_BOXSHADOW_TRANSPARENCY,
-  // drop-shadow(-15px 8px 8px rgba(0, 0, 0, 0.5))
   dropShadow: [-20, 20, 10, 0.6],
-  // dropShadow: [-40, 30, 10, 0.5]
 });
 const up_position = (i: any) => ({
   x: 0,
   rot: 0,
   scale: 1,
   y: -1000,
-  clipPath: PACKET_FULL_CLIPPATH,
-  boxShadow: 0,
+  clipPath: PACK_FULL_CLIPPATH,
+  boxShadow: CARD_BOXSHADOW_TRANSPARENCY,
 });
 const above_position = (i: any) => ({
   x: 0,
   rot: 0,
   scale: 1.5,
   y: -1000,
-  clipPath: PACKET_FULL_CLIPPATH,
-  boxShadow: 0,
+  clipPath: PACK_FULL_CLIPPATH,
+  boxShadow: CARD_BOXSHADOW_TRANSPARENCY,
   dropShadow: [0, 0, 0, 0.0],
 });
 const random_position = (i: any) => ({
   x: randomIntFromInterval(-200, 200),
   y: randomIntFromInterval(-200, 200),
   rot: randomIntFromInterval(-100, 100),
-  scale: 1,
-  clipPath: PACKET_FULL_CLIPPATH,
   boxShadow: 0,
+  scale: 1,
 });
+
 const trans = (r: number, s: any) =>
   `rotateY(${
     r / 10
   }deg) rotateZ(${r}deg) scale(${s}) translate3d(0px, -30px, 0px)`;
 
 const Home: NextPage = () => {
-  const packets = [cards[0]];
+  const packs = [aboutMeDeck];
+
+
+  const [packSelected, setPackSelected] = React.useState(-1);
   const [cardsPosition, setCardsPosition] = React.useState(cards.length - 1);
-  const [packetSelected, setPacketSelected] = React.useState(-1);
 
   const [cardsSprings, cardsApi] = useSprings(cards.length, (i) => ({
     ...above_position(i),
   }));
-  const [packetsSprings, packetsApi] = useSprings(1, (i) => ({
+  const [packsSprings, packsApi] = useSprings(1, (i) => ({
     ...stacked_position(i),
     from: above_position(i),
   }));
@@ -122,23 +123,23 @@ const Home: NextPage = () => {
         await cardsApi.start((i) => above_position(i));
         await wait(1000);
         setCardsPosition(cards.length - 1);
-        setPacketSelected(-1);
-        await packetsApi.start((i) => stacked_position(i));
+        setPackSelected(-1);
+        await packsApi.start((i) => stacked_position(i));
       }
     }
   };
 
-  const handlePacketClick = async (index: number) => {
-    await packetsApi.start((i) => showcase_position(i));
-    await wait(500);
-    await packetsApi.start((i) => clip(i));
+  const handlePackClick = async (index: number) => {
+    await packsApi.start((i) => showcase_position(i));
+    await wait(1000);
+    await packsApi.start((i) => clip(i));
     cardsApi.set({ x: 0, y: 0, scale: 1, boxShadow: 0 });
     await wait(1500);
     await cardsApi.start((i) => up_position(i));
     await wait(1000);
-    await packetsApi.start((i) => above_position(i));
+    await packsApi.start((i) => above_position(i));
     await wait(500);
-    setPacketSelected(index);
+    setPackSelected(index);
     await cardsApi.start((i) => stacked_position(i));
   };
 
@@ -158,12 +159,12 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {packetsSprings.map(({ x, y, rot, scale, clipPath, dropShadow }, i) => (
+      {packsSprings.map(({ x, y, rot, scale, clipPath, dropShadow }, i) => (
         <animated.div
           key={i}
+          className={styles.animatedPackContainer}
           style={{
             transform: to([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`),
-            zIndex: 1000,
             filter: to(
               [dropShadow],
               (dropShadow) =>
@@ -172,7 +173,7 @@ const Home: NextPage = () => {
           }}
         >
           <animated.div
-            className={styles.animatedPacket}
+            className={styles.animatedPack}
             style={{
               clipPath: to(
                 [clipPath],
@@ -182,13 +183,14 @@ const Home: NextPage = () => {
               transform: to([rot, scale], trans),
             }}
           >
-            <Packet packet={packets[i]} onClick={() => handlePacketClick(i)} />
+            <Pack pack={packs[i]} onClick={() => handlePackClick(i)} />
           </animated.div>
         </animated.div>
       ))}
       {cardsSprings.map(({ x, y, rot, scale, boxShadow }, i) => (
         <animated.div
           key={i}
+          className={styles.animatedCardContainer}
           style={{
             transform: to([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`),
           }}
@@ -208,7 +210,7 @@ const Home: NextPage = () => {
           </animated.div>
         </animated.div>
       ))}
-      {packetSelected !== -1 && cardsPosition >= 0 ? (
+      {packSelected !== -1 && cardsPosition >= 0 ? (
         <div className={buttonStyles.container}>
           <Button3D
             icon={<MdArrowForward />}

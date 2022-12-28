@@ -8,3 +8,10 @@ export interface SingleCard {
     image: StaticImageData;
     longText?: boolean;
 }
+
+export interface Pack {
+    title: string;
+    type: "work" | "education" | "project" | "contact" | "bio";
+    deck: SingleCard[];
+    image: StaticImageData;
+}

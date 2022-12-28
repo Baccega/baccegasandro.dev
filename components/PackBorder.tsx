@@ -1,15 +1,15 @@
 import classNames from "classnames";
 import React from "react";
-import styles from "../styles/Packet.module.scss";
+import styles from "../styles/Pack.module.scss";
 
 type Props = {
     className: string;
     rotated?: boolean;
 }
 
-export default function PacketBorder(props: Props) {
+export default function PackBorderComponent(props: Props) {
   const { className, rotated=false } = props
-    const combined = classNames(styles.divider, props.className);
+    const combined = classNames(styles.divider, className);
 
   if(rotated) return (
     <div className={styles.rotated}>

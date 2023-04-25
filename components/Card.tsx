@@ -4,12 +4,11 @@ import styles from "../styles/Card.module.css";
 import TypeIcon from "./TypeIcon";
 import classNames from "classnames";
 import Image from "next/image";
-import cartTexture from "../public/card-texture.jpg";
-import cartTexture1 from "../public/card-texture.jpg";
-import cartTexture2 from "../public/card-texture2.jpg";
-import cartTexture3 from "../public/card-texture3.jpg";
-import cartTexture4 from "../public/card-texture5.jpg";
-import cartTexture5 from "../public/card-texture6.jpg";
+import cardTexture1 from "../public/card-texture.jpeg";
+import cardTexture2 from "../public/card-texture-2.jpeg";
+import cardTexture3 from "../public/card-texture-3.jpeg";
+import cardTexture4 from "../public/card-texture-4.jpeg";
+import cardTexture5 from "../public/card-texture-5.jpeg";
 import ribbon from "../public/ribbon.png";
 
 interface Props {
@@ -19,14 +18,15 @@ interface Props {
 function getCardTexture(type: SingleCard["type"]) {
   switch (type) {
     case "bio":
-    case "contact":
-      return cartTexture1;
+      return cardTexture1;
     case "work":
-      return cartTexture2;
-    case "education":
-      return cartTexture3;
+      return cardTexture2;
     case "project":
-      return cartTexture4;
+      return cardTexture3;
+    case "education":
+      return cardTexture4;
+    case "contact":
+      return cardTexture5;
   }
 }
 

@@ -18,13 +18,13 @@ export const cards: SingleCard[] = [
     description: (
       <ul>
         <li>
-          <span>⚛️</span>Specialized in React web development
+          <span>⚛️</span>Expertise in React Web Development
         </li>
         <li>
-          <span>📸</span>Enjoys Computer Vision
+          <span>🎨</span> UI/UX enthusiast
         </li>
         <li>
-          <span>🤖</span>Loves automating stuff
+          <span>🤖</span>Passionate about Automation
         </li>
         <li>
           <span>📍</span>From Padua, Italy{" "}
@@ -75,16 +75,16 @@ export const cards: SingleCard[] = [
     description: (
       <ul>
         <li>
-          <span>💻</span>Refined a complex data analytics dashboard product in React
+          <span>💻</span>Refined a complex data analytics dashboard utilizing React
         </li>
         <li>
-          <span>🧪</span>Introduced a custom visual regression testing software in order to have a robust UI 
+          <span>🧪</span>Created custom visual regression testing software for better UI stability
         </li>
         <li>
-          <span>👨🏻‍💻</span>Mentored 3 junior devs
+          <span>👨🏻‍💻</span>Mentored three junior developers
         </li>
         <li>
-          <span>⚙️</span>Improved CI/CD pipeline performance up to 4x
+          <span>⚙️</span>Improved CI/CD pipeline runtime by 4x, streamlining processes
         </li>
       </ul>
     ),

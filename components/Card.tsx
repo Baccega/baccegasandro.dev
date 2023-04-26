@@ -47,7 +47,7 @@ export default function CardComponent({ card }: Props) {
           placeholder="blur"
           priority={false}
           alt="card-background"
-          style={{ borderRadius: 20 }}
+          style={{ borderRadius: 20, filter: "brightness(0.9)" }}
         />
         <div className={imageClassname}>
           <Image

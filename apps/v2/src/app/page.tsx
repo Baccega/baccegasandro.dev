@@ -1,5 +1,5 @@
 "use client"
-import { useSpring, animated, to, useSprings } from "@react-spring/web";
+import { useSpring, animated, to, useSprings, config } from "@react-spring/web";
 import { Packet } from "@/components/packet";
 
 import texture1 from "/public/textures/card-texture-1.jpeg";
@@ -69,7 +69,7 @@ const above_position = (i: number) => ({
 	rot: 0,
 	scale: 1.5,
 	y: -1000,
-	// clipPath: PACK_FULL_CLIPPATH,
+	clipPath: PACK_FULL_CLIPPATH,
 	// boxShadow: CARD_BOXSHADOW_TRANSPARENCY,
 	// dropShadow: [0, 0, 0, 0.0],
 });
@@ -81,18 +81,25 @@ const showcase_position = () => ({
 });
 const stacked_position = (i: number) => ({
 	x: 0,
-	y: i * -4,
+	y: i * 4,
 	scale: 1,
 	rot: Math.random() * 5,
 	delay: i * 100,
 
-	// clipPath: PACK_FULL_CLIPPATH,
+	clipPath: PACK_FULL_CLIPPATH,
 	// boxShadow: CARD_BOXSHADOW_TRANSPARENCY,
 	// dropShadow: [-20, 20, 10, 0.6],
 });
 const trans = (r: number, s: number) =>
 	`rotateY(${r / 10
 	}deg) rotateZ(${r}deg) scale(${s}) translate3d(0px, -30px, 0px)`;
+
+
+const PACK_FULL_CLIPPATH = [0, 0, 100, 0, 100, 100, 0, 100];
+const clip = (i: number) => ({
+	clipPath: [0, 7, 100, 8, 100, 100, 0, 100],
+	config: config.stiff,
+});
 
 export default function Home() {
 	// const [{ x, y, scale, rot }, api] = useSpring(stacked_position);
@@ -116,11 +123,21 @@ export default function Home() {
 	// Triggering the selected packet cards animation
 	useEffect(() => {
 		const anim = async () => {
+			if (selectedPacket === undefined) return;
 			setIsAnimating(true);
+			api.start((i) => {
+				if (selectedPacket !== i) return above_position(i);
+				return showcase_position();
+			})
+			await wait(1000);
+			api.start((i) => {
+				if (selectedPacket !== i) return;
+				return clip(i)
+			});
 			setIsAnimating(false);
 		}
 		anim()
-	}, []);
+	}, [api, selectedPacket]);
 
 	async function handleNextPacket(e: React.MouseEvent<HTMLButtonElement>) {
 		e.preventDefault();
@@ -158,24 +175,31 @@ export default function Home() {
 		setCurrentPacket(prevPacket);
 	}
 
-	function handlePacketClick(e: React.MouseEvent<HTMLButtonElement>) {
+	function handlePacketClick(e: React.MouseEvent<HTMLDivElement>) {
 		e.preventDefault();
 		setSelectedPacket(currentPacket);
 	}
 
 	return <>
-		{packetsProps.map(({ x, y, rot, scale }, i) => (
+		{packetsProps.map(({ x, y, rot, scale, clipPath }, i) => (
 			<animated.div
 				key={PACKETS[i].id}
-				className="absolute"
+				className="absolute inset-auto"
 				style={{
 					transform: to([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`),
 				}}
 			>
 				<animated.div
+					className="relative"
 					style={{
 						transform: to([rot, scale], trans),
+						clipPath: to(
+							[clipPath],
+							(clipPath) =>
+								`polygon(${clipPath[0]}% ${clipPath[1]}%, ${clipPath[2]}% ${clipPath[3]}%, ${clipPath[4]}% ${clipPath[5]}%, ${clipPath[6]}% ${clipPath[7]}%)`
+						),
 					}}
+					onMouseDown={handlePacketClick}
 				>
 					<Packet title={PACKETS[i].title} texture={PACKETS[i].texture} />
 				</animated.div>

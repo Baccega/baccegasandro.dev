@@ -28,7 +28,7 @@ export default function RootLayout({
 					fill
 					priority={false}
 				/>
-				<main className="flex gap-10 h-screen w-full items-center justify-center relative pb-10 tablet:pb-0">
+				<main className="flex h-screen w-full items-center justify-center relative pb-10 tablet:pb-0">
 					{children}
 				</main>
 			</body>

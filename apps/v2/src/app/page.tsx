@@ -1,5 +1,5 @@
 "use client"
-import { useSpring, animated, to, useSprings, config } from "@react-spring/web";
+import { animated, to, useSprings, config } from "@react-spring/web";
 import { Packet } from "@/components/packet";
 
 import texture1 from "/public/textures/card-texture-1.jpeg";
@@ -7,6 +7,8 @@ import texture2 from "/public/textures/card-texture-2.jpeg";
 import texture3 from "/public/textures/card-texture-3.jpeg";
 import texture4 from "/public/textures/card-texture-4.jpeg";
 import React, { useEffect } from "react";
+import { AnimatedDeck } from "@/components/animatedDeck";
+import { above_position, stacked_position } from "@/lib/positions";
 
 const PACKETS = [
 	{
@@ -31,7 +33,7 @@ const PACKETS = [
 	},
 ];
 
-const CARDS = [
+const TEST_CARDS = [
 	{
 		id: 1,
 		title: "Card Title",
@@ -56,88 +58,75 @@ const CARDS = [
 		description: "Card Description",
 		texture: texture4,
 	},
+	{
+		id: 5,
+		title: "Card Title",
+		description: "Card Description",
+		texture: texture1,
+	},
+	{
+		id: 6,
+		title: "Card Title",
+		description: "Card Description",
+		texture: texture2,
+	},
+	{
+		id: 7,
+		title: "Card Title",
+		description: "Card Description",
+		texture: texture3,
+	},
+	{
+		id: 8,
+		title: "Card Title",
+		description: "Card Description",
+		texture: texture4,
+	},
 ];
 
-function wait(time: number) {
-	return new Promise<number>((resolve) => {
-		setTimeout(resolve, time);
-	});
-}
+export const CARDS = {
+	0: TEST_CARDS,
+	1: TEST_CARDS,
+	2: TEST_CARDS,
+	3: TEST_CARDS,
+} as const
 
-const above_position = (i: number) => ({
-	x: 0,
-	rot: 0,
-	scale: 1.5,
-	y: -1000,
-	clipPath: PACK_FULL_CLIPPATH,
-	// boxShadow: CARD_BOXSHADOW_TRANSPARENCY,
-	// dropShadow: [0, 0, 0, 0.0],
-});
-const showcase_position = () => ({
-	x: 0,
-	y: 30,
-	scale: 1.1,
-	rot: 0,
-});
-const stacked_position = (i: number) => ({
-	x: 0,
-	y: i * 4,
-	scale: 1,
-	rot: Math.random() * 5,
-	delay: i * 100,
 
-	clipPath: PACK_FULL_CLIPPATH,
-	// boxShadow: CARD_BOXSHADOW_TRANSPARENCY,
-	// dropShadow: [-20, 20, 10, 0.6],
-});
-const trans = (r: number, s: number) =>
+export const trans = (r: number, s: number) =>
 	`rotateY(${r / 10
 	}deg) rotateZ(${r}deg) scale(${s}) translate3d(0px, -30px, 0px)`;
 
 
-const PACK_FULL_CLIPPATH = [0, 0, 100, 0, 100, 100, 0, 100];
-const clip = (i: number) => ({
-	clipPath: [0, 7, 100, 8, 100, 100, 0, 100],
-	config: config.stiff,
-});
-
 export default function Home() {
 	// const [{ x, y, scale, rot }, api] = useSpring(stacked_position);
 	const [currentPacket, setCurrentPacket] = React.useState(0);
-	const [selectedPacket, setSelectedPacket] = React.useState<number>();
+	const [selectedPacket, setSelectedPacket] = React.useState<keyof typeof CARDS>();
 	const [isAnimating, setIsAnimating] = React.useState(false);
-	const [packetsProps, api] = useSprings(PACKETS.length, (i) => ({
+	const [packetsProps, packetsApi] = useSprings(PACKETS.length, (i) => ({
 		from: above_position(i),
 		to: stacked_position(i),
 		immediate: false,
 	}));
 
+	const selectedDeck = selectedPacket !== undefined ? CARDS[selectedPacket] : [];
+
 	// Triggering the first packet fall animation on load
 	useEffect(() => {
-		api.start((i) => {
+		packetsApi.start((i) => {
 			if (i !== 0) return;
 			return stacked_position(i);
 		})
-	}, [api]);
+	}, [packetsApi]);
 
 	// Triggering the selected packet cards animation
 	useEffect(() => {
 		const anim = async () => {
 			if (selectedPacket === undefined) return;
-			setIsAnimating(true);
-			api.start((i) => {
-				if (selectedPacket !== i) return above_position(i);
-				return showcase_position();
-			})
-			await wait(1000);
-			api.start((i) => {
-				if (selectedPacket !== i) return;
-				return clip(i)
-			});
-			setIsAnimating(false);
+			// setIsAnimating(true);
+			// setIsAnimating(false);
 		}
 		anim()
-	}, [api, selectedPacket]);
+	}, [selectedPacket]);
 
 	async function handleNextPacket(e: React.MouseEvent<HTMLButtonElement>) {
 		e.preventDefault();
@@ -152,7 +141,7 @@ export default function Home() {
 		// 	setIsAnimating(false);
 		// 	return;
 		// }
-		api.start((i) => {
+		packetsApi.start((i) => {
 			if (nextPacket !== i) return;
 			return stacked_position(i);
 		})
@@ -167,7 +156,7 @@ export default function Home() {
 
 		setIsAnimating(true);
 
-		api.start((i) => {
+		packetsApi.start((i) => {
 			if (i <= prevPacket) return;
 			return above_position(i);
 		})
@@ -177,10 +166,12 @@ export default function Home() {
 
 	function handlePacketClick(e: React.MouseEvent<HTMLDivElement>) {
 		e.preventDefault();
-		setSelectedPacket(currentPacket);
+		setSelectedPacket(currentPacket as keyof typeof CARDS);
 	}
 
 	return <>
+		{selectedDeck && <AnimatedDeck deck={selectedDeck} selectedPacket={selectedPacket} packetsApi={packetsApi} />}
+
 		{packetsProps.map(({ x, y, rot, scale, clipPath }, i) => (
 			<animated.div
 				key={PACKETS[i].id}
@@ -203,8 +194,10 @@ export default function Home() {
 				>
 					<Packet title={PACKETS[i].title} texture={PACKETS[i].texture} />
 				</animated.div>
+
 			</animated.div>
 		))}
+
 		<div className="absolute bottom-10 flex gap-10">
 			<button disabled={isAnimating || currentPacket === 0} type="button" className="text-white" onClick={handlePrevPacket}>Prev</button>
 			<button disabled={isAnimating || currentPacket === PACKETS.length - 1} type="button" className="text-white" onClick={handleNextPacket}>Next</button>

@@ -53,7 +53,7 @@ export const stacked_position = (i: number, inverted = false) => ({
 	scale: 1,
 	rot: Math.random() * 5,
 	delay: i * 100,
-	// clipPath: PACK_FULL_CLIPPATH,
+	clipPath: PACK_FULL_CLIPPATH,
 	// boxShadow: CARD_BOXSHADOW_TRANSPARENCY,
 	// dropShadow: [-20, 20, 10, 0.6],
 });

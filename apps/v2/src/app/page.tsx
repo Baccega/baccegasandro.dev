@@ -1,37 +1,39 @@
 "use client"
-import { animated, to, useSprings, config } from "@react-spring/web";
-import { Packet } from "@/components/packet";
+import { useSprings } from "@react-spring/web";
 
 import texture1 from "/public/textures/card-texture-1.jpeg";
 import texture2 from "/public/textures/card-texture-2.jpeg";
 import texture3 from "/public/textures/card-texture-3.jpeg";
 import texture4 from "/public/textures/card-texture-4.jpeg";
 import type React from "react";
-import { useEffect, useRef } from "react";
 import { AnimatedDeck } from "@/components/animatedDeck";
-import { above_position, stacked_position } from "@/lib/positions";
 import { usePortfolioStore } from "@/lib/store";
 import { NavigationButtons } from "@/components/navigationButtons";
 import { AnimatedPackets } from "@/components/animatedPackets";
+import { packets_above_position } from "@/lib/packetsPositions";
 
 export const PACKETS = [
 	{
 		id: 1,
+		slug: "about-me",
 		title: "About me",
 		texture: texture1,
 	},
 	{
 		id: 2,
+		slug: "work-experience",
 		title: "Work Experience",
 		texture: texture2,
 	},
 	{
 		id: 3,
+		slug: "projects",
 		title: "Projects",
 		texture: texture3,
 	},
 	{
 		id: 4,
+		slug: "contact-me",
 		title: "Contact me",
 		texture: texture4,
 	},
@@ -105,7 +107,7 @@ export const trans = (r: number, s: number) =>
 export default function Home() {
 	const selectedPacket = usePortfolioStore((state) => state.selectedPacket);
 	const [packetsProps, packetsApi] = useSprings(PACKETS.length, (i) => ({
-		...above_position(i)
+		...packets_above_position(i)
 	}));
 
 

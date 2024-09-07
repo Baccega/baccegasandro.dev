@@ -1,29 +1,17 @@
 "use client"
 
 import { PACKETS, trans, type CARDS } from "@/app/page";
-import { animated, to, type SpringValue, type SpringRef } from "@react-spring/web";
+import { animated, to, type SpringValue, type SpringRef, config } from "@react-spring/web";
 import { useEffect, useRef } from "react";
-import { above_position, stacked_position } from "@/lib/positions";
 import { usePortfolioStore } from "@/lib/store";
 import { Packet } from "./packet";
 import { wait } from "@/lib/utils";
+import { packets_above_position, packets_stacked_position, type PacketSpringApi, type PacketSpringProps } from "@/lib/packetsPositions";
 
 
 export function AnimatedPackets(props: {
-    packetsProps: {
-        x: SpringValue<number>;
-        rot: SpringValue<number>;
-        scale: SpringValue<number>;
-        y: SpringValue<number>;
-        clipPath: SpringValue<number[]>;
-    }[];
-    packetsApi: SpringRef<{
-        x: number;
-        rot: number;
-        scale: number;
-        y: number;
-        clipPath: number[];
-    }>
+    packetsProps: PacketSpringProps[];
+    packetsApi: PacketSpringApi
 }) {
     const previousPacket = useRef<number | null>(null);
     const setIsAnimating = usePortfolioStore((state) => state.setIsAnimating);
@@ -32,6 +20,7 @@ export function AnimatedPackets(props: {
 
     function handlePacketClick(e: React.MouseEvent<HTMLDivElement>) {
         e.preventDefault();
+        if (selectedPacket !== undefined) return;
         // This will trigger the packet showcase animation in the deck
         setSelectedPacket(currentPacket as keyof typeof CARDS);
         previousPacket.current = null;
@@ -46,13 +35,13 @@ export function AnimatedPackets(props: {
                 // Going back animation
                 props.packetsApi.start((i) => {
                     if (i !== currentPacket + 1) return;
-                    return above_position(i);
+                    return packets_above_position(i);
                 })
             } else {
                 // Fall animation
                 props.packetsApi.start((i) => {
                     if (currentPacket !== i) return;
-                    return stacked_position(i);
+                    return { ...packets_stacked_position(i), config: { ...config.stiff, clamp: true } };
                 })
             }
             previousPacket.current = currentPacket;
@@ -63,12 +52,17 @@ export function AnimatedPackets(props: {
     }, [selectedPacket, props.packetsApi, currentPacket, setIsAnimating]);
 
     return <>
-        {props.packetsProps.map(({ x, y, rot, scale, clipPath }, i) => (
+        {props.packetsProps.map(({ x, y, rot, scale, clipPath, dropShadow }, i) => (
             <animated.div
                 key={PACKETS[i].id}
                 className="absolute inset-auto"
                 style={{
                     transform: to([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`),
+                    filter: to(
+                        [dropShadow],
+                        (dropShadow) =>
+                            `drop-shadow(${dropShadow[0]}px ${dropShadow[1]}px ${dropShadow[2]}px rgba(0, 0, 0, ${dropShadow[3]}))`
+                    ),
                 }}
             >
                 <animated.div

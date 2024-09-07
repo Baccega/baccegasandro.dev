@@ -4,23 +4,18 @@ import { type CARDS, trans } from "@/app/page";
 import { useSprings, animated, to, type SpringRef, config } from "@react-spring/web";
 import { Card } from "./card";
 import { useEffect, useRef, useState } from "react";
-import { above_position, clip, random_position, scattered_position, showcase_position, stacked_position, up_position } from "@/lib/positions";
 import { wait } from "@/lib/utils";
 import { usePortfolioStore } from "@/lib/store";
+import { packets_above_position, packets_clip, packets_scattered_position, packets_showcase_position, type PacketSpringApi } from "@/lib/packetsPositions";
+import { cards_above_position, cards_scattered_position, cards_stacked_position, cards_up_position } from "@/lib/cardPositions";
 
 
 export function AnimatedDeck(props: {
-    deck: typeof CARDS[keyof typeof CARDS], selectedPacket?: number, packetsApi: SpringRef<{
-        x: number;
-        rot: number;
-        scale: number;
-        y: number;
-        clipPath: number[];
-    }>
+    deck: typeof CARDS[keyof typeof CARDS], selectedPacket?: number, packetsApi: PacketSpringApi
 }) {
     const [spawned, setSpawned] = useState(false);
     const previousCard = useRef<number | null>(null);
-    const [cardsProps, cardsApi] = useSprings(props.deck.length, (i) => ({ x: 0, y: i * 2, rot: 0, scale: 1, boxShadow: 0, delay: 300 }));
+    const [cardsProps, cardsApi] = useSprings(props.deck.length, (i) => ({ x: 0, y: i, rot: 0, scale: 1, boxShadow: 0, delay: 1000, immediate: true }));
     const currentCard = usePortfolioStore((state) => state.currentCard);
     const setIsAnimating = usePortfolioStore((state) => state.setIsAnimating);
 
@@ -31,27 +26,27 @@ export function AnimatedDeck(props: {
             if (props.selectedPacket === undefined) return;
             setIsAnimating(true);
             await props.packetsApi.start((i) => {
-                if (props.selectedPacket !== i) return above_position(i);
-                return showcase_position();
+                if (props.selectedPacket !== i) return packets_above_position(i);
+                return packets_showcase_position();
             })
             await wait(1000);
             await props.packetsApi.start((i) => {
                 if (props.selectedPacket !== i) return;
-                return clip(i)
+                return packets_clip(i)
             });
             await wait(1000);
-            await cardsApi.start(up_position)
+            await cardsApi.start(cards_up_position)
             await wait(500);
             await props.packetsApi.start((i) => {
                 if (props.selectedPacket !== i) return;
-                return scattered_position(i)
+                return packets_scattered_position(i)
             });
             await wait(500);
             props.packetsApi.start((i) => ({
-                ...above_position(i),
+                ...packets_above_position(i),
                 immediate: true
             }));
-            cardsApi.start((i) => ({ from: above_position(i), ...stacked_position(i, true) }
+            cardsApi.start((i) => ({ from: cards_above_position(i), ...cards_stacked_position(i, true) }
             ))
             await wait(1000);
             setIsAnimating(false);
@@ -71,13 +66,13 @@ export function AnimatedDeck(props: {
                 console.log("Re-Stack", invertedCard)
                 await cardsApi.start((i) => {
                     if (i !== invertedCard - 1) return;
-                    return ({ ...stacked_position(i, true), delay: 0 });
+                    return ({ ...cards_stacked_position(i, true), delay: 0 });
                 })
             } else {
                 // Scatter animation
                 await cardsApi.start((i) => {
                     if (i !== invertedCard) return;
-                    return ({ ...scattered_position(i) });
+                    return ({ ...cards_scattered_position(i) });
                 })
             }
             await wait(200);

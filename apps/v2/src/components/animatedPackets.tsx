@@ -1,12 +1,13 @@
 "use client"
 
-import { PACKETS, trans, type CARDS } from "@/app/page";
+import { trans } from "@/app/page";
 import { animated, to, type SpringValue, type SpringRef, config } from "@react-spring/web";
 import { useEffect, useRef } from "react";
 import { usePortfolioStore } from "@/lib/store";
 import { Packet } from "./packet";
 import { wait } from "@/lib/utils";
 import { packets_above_position, packets_stacked_position, type PacketSpringApi, type PacketSpringProps } from "@/lib/packetsPositions";
+import { Deck, PACKETS } from "@/content/packets";
 
 
 export function AnimatedPackets(props: {
@@ -22,7 +23,7 @@ export function AnimatedPackets(props: {
         e.preventDefault();
         if (selectedPacket !== undefined) return;
         // This will trigger the packet showcase animation in the deck
-        setSelectedPacket(currentPacket as keyof typeof CARDS);
+        setSelectedPacket(currentPacket);
         previousPacket.current = null;
     }
 

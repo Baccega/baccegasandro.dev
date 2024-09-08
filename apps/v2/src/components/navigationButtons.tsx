@@ -1,6 +1,6 @@
 "use client"
 
-import { CARDS, PACKETS, trans } from "@/app/page";
+import { PACKETS } from "@/content/packets";
 import { usePortfolioStore } from "@/lib/store";
 import { wait } from "@/lib/utils";
 import { useEffect } from "react";
@@ -13,7 +13,7 @@ export function NavigationButtons() {
     const [selectedPacket, setSelectedPacket] = usePortfolioStore((state) => [state.selectedPacket, state.setSelectedPacket]);
     const [currentCard, setCurrentCard] = usePortfolioStore((state) => [state.currentCard, state.setCurrentCard]);
 
-    const selectedDeck = (selectedPacket !== undefined) ? CARDS[selectedPacket] : []
+    const selectedDeck = (selectedPacket !== undefined) ? PACKETS[selectedPacket].deck : []
 
     const isPrevDisabled = isAnimating || (selectedPacket === undefined && currentPacket === 0) || (selectedPacket !== undefined && currentCard === 0);
     const isNextDisabled = isAnimating || (selectedPacket === undefined && currentPacket >= PACKETS.length) || (selectedPacket !== undefined && currentCard >= selectedDeck.length);

@@ -1,6 +1,5 @@
-import { PACKETS } from "@/content/packets";
 import { create } from "zustand";
-import { devtools, persist } from "zustand/middleware";
+import { devtools } from "zustand/middleware";
 
 interface AnimationState {
 	currentPacket: number;
@@ -13,14 +12,23 @@ interface AnimationState {
 	setIsAnimating: (newState: boolean) => void;
 }
 
-export const usePortfolioStore = create<AnimationState>((set) => ({
-	currentPacket: 0,
-	setCurrentPacket: (newPacket: number) => set({ currentPacket: newPacket }),
-	currentCard: 0,
-	setCurrentCard: (newCard: number) => set({ currentCard: newCard }),
-	selectedPacket: undefined,
-	setSelectedPacket: (newPacket: number | undefined) =>
-		set({ selectedPacket: newPacket, currentCard: 0, currentPacket: 0 }),
-	isAnimating: false,
-	setIsAnimating: (newState: boolean) => set({ isAnimating: newState }),
-}));
+export const usePortfolioStore = create<AnimationState>()(
+	devtools((set) => ({
+		currentPacket: 0,
+		setCurrentPacket: (newPacket: number) =>
+			set({ currentPacket: newPacket }, false, "setCurrentPacket"),
+		currentCard: 0,
+		setCurrentCard: (newCard: number) =>
+			set({ currentCard: newCard }, false, "setCurrentCard"),
+		selectedPacket: undefined,
+		setSelectedPacket: (newPacket: number | undefined) =>
+			set(
+				{ selectedPacket: newPacket, currentCard: 0, currentPacket: 0 },
+				false,
+				"setSelectedPacket",
+			),
+		isAnimating: false,
+		setIsAnimating: (newState: boolean) =>
+			set({ isAnimating: newState }, false, "setIsAnimating"),
+	})),
+);

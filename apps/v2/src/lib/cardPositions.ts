@@ -53,7 +53,7 @@ export const cards_above_position = (i: number) => ({
 	x: 0,
 	rot: 0,
 	scale: 1.5,
-	y: -window.innerHeight,
+	y: -window?.innerHeight ?? -1000,
 	boxShadow: CARD_BOXSHADOW_TRANSPARENCY,
 });
 export const cards_showcase_position = () => ({

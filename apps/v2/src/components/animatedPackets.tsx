@@ -22,9 +22,9 @@ export function AnimatedPackets(props: {
     function handlePacketClick(e: React.MouseEvent<HTMLDivElement>) {
         e.preventDefault();
         if (selectedPacket !== undefined) return;
+        previousPacket.current = null;
         // This will trigger the packet showcase animation in the deck
         setSelectedPacket(currentPacket);
-        previousPacket.current = null;
     }
 
     // Triggering the current packet fall animation
@@ -45,9 +45,9 @@ export function AnimatedPackets(props: {
                     return { ...packets_stacked_position(i), config: { ...config.stiff, clamp: true } };
                 })
             }
-            previousPacket.current = currentPacket;
-            await wait(200);
+            await wait(400);
             setIsAnimating(false);
+            previousPacket.current = currentPacket;
         }
         anim()
     }, [selectedPacket, props.packetsApi, currentPacket, setIsAnimating]);

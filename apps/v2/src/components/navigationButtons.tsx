@@ -16,7 +16,7 @@ export function NavigationButtons() {
     const selectedDeck = (selectedPacket !== undefined) ? PACKETS[selectedPacket].deck : []
 
     const isPrevDisabled = isAnimating || (selectedPacket === undefined && currentPacket === 0) || (selectedPacket !== undefined && currentCard === 0);
-    const isNextDisabled = isAnimating || (selectedPacket === undefined && currentPacket >= PACKETS.length) || (selectedPacket !== undefined && currentCard >= selectedDeck.length);
+    const isNextDisabled = isAnimating || (selectedPacket === undefined && currentPacket >= PACKETS.length - 1) || (selectedPacket !== undefined && currentCard >= selectedDeck.length);
 
     // Deck is finished
     useEffect(() => {
@@ -69,7 +69,7 @@ export function NavigationButtons() {
 
 
     return <div className="absolute bottom-10 flex gap-10">
-        <button disabled={isPrevDisabled} type="button" className="text-white" onClick={handlePrev}>{isAnimating ? "Disabled" : "Prev"}</button>
-        <button disabled={isNextDisabled} type="button" className="text-white" onClick={handleNext}>{isAnimating ? "Disabled" : "Next"}</button>
+        <button disabled={isPrevDisabled} type="button" className="text-white" onClick={handlePrev}>{isPrevDisabled ? "Disabled" : "Prev"}</button>
+        <button disabled={isNextDisabled} type="button" className="text-white" onClick={handleNext}>{isNextDisabled ? "Disabled" : "Next"}</button>
     </div>
 }

@@ -54,7 +54,7 @@ export const packets_above_position = (i: number) => ({
 	x: 0,
 	rot: 0,
 	scale: 1.5,
-	y: -window.innerHeight,
+	y: -window?.innerHeight ?? -1000,
 	clipPath: PACK_FULL_CLIPPATH,
 	dropShadow: [0, 0, 0, 0.0],
 });
@@ -69,7 +69,7 @@ export const packets_stacked_position = (i: number, inverted = false) => ({
 	x: 0,
 	y: i * (inverted ? -4 : 4) + 10,
 	scale: 1,
-	rot: Math.random() * 5,
+	rot: Math.random() * 6,
 	delay: i * 100,
 	clipPath: PACK_FULL_CLIPPATH,
 	dropShadow: [-20, 20, 10, 0.6],

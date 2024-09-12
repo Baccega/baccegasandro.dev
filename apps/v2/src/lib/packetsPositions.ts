@@ -54,7 +54,7 @@ export const packets_above_position = (i: number) => ({
 	x: 0,
 	rot: 0,
 	scale: 1.5,
-	y: -window?.innerHeight ?? -1000,
+	y: -2000,
 	clipPath: PACK_FULL_CLIPPATH,
 	dropShadow: [0, 0, 0, 0.0],
 });

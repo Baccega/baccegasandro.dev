@@ -4,11 +4,11 @@ import { PACKETS } from "@/content/packets";
 import { usePortfolioStore } from "@/lib/store";
 import { wait } from "@/lib/utils";
 import { useEffect } from "react";
+import { useShallow } from "zustand/react/shallow";
 
 
 export function NavigationButtons() {
-
-    const [isAnimating, setIsAnimating] = usePortfolioStore((state) => [state.isAnimating, state.setIsAnimating]);
+    const [isAnimating, setIsAnimating] = usePortfolioStore(useShallow((state) => [state.isAnimating, state.setIsAnimating]));
     const [currentPacket, setCurrentPacket] = usePortfolioStore((state) => [state.currentPacket, state.setCurrentPacket]);
     const [selectedPacket, setSelectedPacket] = usePortfolioStore((state) => [state.selectedPacket, state.setSelectedPacket]);
     const [currentCard, setCurrentCard] = usePortfolioStore((state) => [state.currentCard, state.setCurrentCard]);
@@ -20,7 +20,7 @@ export function NavigationButtons() {
 
     // Deck is finished
     useEffect(() => {
-        if (currentCard !== selectedDeck.length) return;
+        if (currentCard !== selectedDeck.length || selectedDeck.length === 0) return;
 
         const backToPackets = async () => {
             await wait(1000);
@@ -60,10 +60,6 @@ export function NavigationButtons() {
             if (currentPacket === 0) return;
             const prevPacket = currentPacket - 1;
             setCurrentPacket(prevPacket);
-            // packetsApi.start((i) => {
-            //     if (i <= prevPacket) return;
-            //     return above_position(i);
-            // })
         }
     }
 

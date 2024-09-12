@@ -64,7 +64,6 @@ export function AnimatedDeck(props: {
             const invertedCard = props.deck.length - currentCard
             if (currentCard < (previousCard?.current ?? 0)) {
                 // Re-Stack animation
-                console.log("Re-Stack", invertedCard)
                 await cardsApi.start((i) => {
                     if (i !== invertedCard - 1) return;
                     return ({ ...cards_stacked_position(i, true), delay: 0 });

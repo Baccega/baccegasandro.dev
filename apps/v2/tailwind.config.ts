@@ -30,6 +30,9 @@ const config: Config = {
 			},
 			boxShadow: {
 				card: "-40px 40px 100px 15px rgba(0,0,0,.4)",
+				button: "0px 5px 5px 0px rgba(0,0,0,0.6)",
+				"button-hover": "0px 10px 5px 0px rgba(0,0,0,0.5)",
+				"button-pressed": "inset 0px 3px 5px 0px rgba(0,0,0,0.75)",
 			},
 		},
 	},

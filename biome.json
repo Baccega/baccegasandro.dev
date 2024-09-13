@@ -3,12 +3,20 @@
 	"organizeImports": {
 		"enabled": true
 	},
+	"formatter": {
+		"lineWidth": 80,
+		"ignore": [
+			"apps/v1"
+		]
+	},
 	"linter": {
 		"enabled": true,
 		"rules": {
 			"recommended": true
 		},
-		"ignore": ["apps/v1"]
+		"ignore": [
+			"apps/v1"
+		]
 	},
 	"vcs": {
 		"enabled": true,

@@ -60,8 +60,12 @@ export function AnimatedDeck(props: {
     useEffect(() => {
         if (!spawned) return;
         const anim = async () => {
-            setIsAnimating(true);
             const invertedCard = props.deck.length - currentCard
+            // Disable button if end of deck
+            if (invertedCard === 0) {
+                setIsAnimating(true);
+            }
+
             if (currentCard < (previousCard?.current ?? 0)) {
                 // Re-Stack animation
                 await cardsApi.start((i) => {
@@ -74,11 +78,6 @@ export function AnimatedDeck(props: {
                     if (i !== invertedCard) return;
                     return ({ ...cards_scattered_position(i) });
                 })
-            }
-            await wait(200);
-            // Keep button disabled if end of deck
-            if (invertedCard !== 0) {
-                setIsAnimating(false);
             }
             previousCard.current = currentCard;
         }

@@ -31,7 +31,6 @@ export function AnimatedPackets(props: {
     useEffect(() => {
         if (selectedPacket !== undefined) return;
         const anim = async () => {
-            setIsAnimating(true);
             if (currentPacket < (previousPacket?.current ?? 0)) {
                 // Going back animation
                 props.packetsApi.start((i) => {
@@ -45,12 +44,10 @@ export function AnimatedPackets(props: {
                     return { ...packets_stacked_position(i), config: { ...config.stiff, clamp: true } };
                 })
             }
-            await wait(400);
-            setIsAnimating(false);
             previousPacket.current = currentPacket;
         }
         anim()
-    }, [selectedPacket, props.packetsApi, currentPacket, setIsAnimating]);
+    }, [selectedPacket, props.packetsApi, currentPacket]);
 
     return <>
         {props.packetsProps.map(({ x, y, rot, scale, clipPath, dropShadow }, i) => (

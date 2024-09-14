@@ -1,11 +1,7 @@
-import type { StaticImageData } from "next/image";
+import type { Card } from "@/content/packets";
 import Image from "next/image";
 
-export function Card(props: {
-	title: string;
-	description: string;
-	texture: StaticImageData;
-}) {
+export default function CardComponent(props: Card) {
 	return (
 		<div className="relative rounded-xl border-card-border p-3 -z-20 w-card h-card border bg-card-outline">
 			<div className="relative flex flex-col items-center justify-center rounded-2xl w-full h-full p-4">
@@ -21,7 +17,9 @@ export function Card(props: {
 					{props.title}
 				</h2>
 				<div className="bg-card-background border-2 border-card-outline rounded-b-lg">
-					<p className="text-foreground">{props.description}</p>
+					{props.description.map((paragraph) => (
+						<p key={paragraph} className="text-foreground">{paragraph}</p>
+					))}
 				</div>
 			</div>
 		</div>

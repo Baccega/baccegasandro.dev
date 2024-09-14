@@ -2,7 +2,7 @@
 
 import { trans } from "@/app/page";
 import { useSprings, animated, to, type SpringRef, config } from "@react-spring/web";
-import { Card } from "./card";
+import Card from "./card";
 import { useEffect, useRef, useState } from "react";
 import { wait } from "@/lib/utils";
 import { usePortfolioStore } from "@/lib/store";
@@ -104,7 +104,7 @@ export function AnimatedDeck(props: {
                         ),
                     }}
                 >
-                    <Card description={props.deck[i].description} title={props.deck[i].title} texture={props.deck[i].texture} />
+                    <Card {...props.deck[i]} />
                     {/* <div className="bg-red-400 w-card h-card shadow-xl">Hello</div> */}
                 </animated.div>
             </animated.div>

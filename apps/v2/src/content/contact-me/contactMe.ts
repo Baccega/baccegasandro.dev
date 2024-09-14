@@ -1,3 +1,4 @@
+import type { Deck, Packet } from "../packets";
 import leafTexture from "/public/textures/card-texture-1.jpeg";
 import waveTexture from "/public/textures/card-texture-2.jpeg";
 import circuitTexture from "/public/textures/card-texture-3.jpeg";
@@ -7,28 +8,28 @@ const deck = [
 	{
 		id: 1,
 		title: "Card Title",
-		description: "Card Description",
+		description: ["Card Description"],
 		texture: waveTexture,
 	},
 	{
 		id: 2,
 		title: "Card Title",
-		description: "Card Description",
+		description: ["Card Description"],
 		texture: waveTexture,
 	},
 	{
 		id: 3,
 		title: "Card Title",
-		description: "Card Description",
+		description: ["Card Description"],
 		texture: waveTexture,
 	},
 	{
 		id: 4,
 		title: "Card Title",
-		description: "Card Description",
+		description: ["Card Description"],
 		texture: waveTexture,
 	},
-];
+] satisfies Deck;
 
 export const CONTACT_ME = {
 	id: 2,
@@ -36,4 +37,4 @@ export const CONTACT_ME = {
 	title: "Contact me",
 	texture: waveTexture,
 	deck: deck,
-};
+} satisfies Packet;

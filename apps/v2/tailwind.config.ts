@@ -34,6 +34,9 @@ const config: Config = {
 				"button-hover": "0px 10px 5px 0px rgba(0,0,0,0.5)",
 				"button-pressed": "inset 0px 3px 5px 0px rgba(0,0,0,0.75)",
 			},
+			backgroundImage: {
+				ribbon: "url('/shapes/ribbon-bended.svg')",
+			},
 		},
 	},
 	plugins: [],

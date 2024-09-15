@@ -37,4 +37,6 @@ next-env.d.ts
 
 # Affinity files
 *.afphoto
+*.afphoto*
 *.afdesign
+*.afdesign*

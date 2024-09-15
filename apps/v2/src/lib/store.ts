@@ -20,7 +20,7 @@ export const usePortfolioStore = create<AnimationState>()(
 		currentCard: 0,
 		setCurrentCard: (newCard: number) =>
 			set({ currentCard: newCard }, false, "setCurrentCard"),
-		selectedPacket: undefined,
+		selectedPacket: 0,
 		setSelectedPacket: (newPacket: number | undefined) =>
 			set(
 				{ selectedPacket: newPacket, currentCard: 0, currentPacket: 0 },

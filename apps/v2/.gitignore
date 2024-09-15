@@ -35,5 +35,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Affinity Photo files
+# Affinity files
 *.afphoto
+*.afdesign

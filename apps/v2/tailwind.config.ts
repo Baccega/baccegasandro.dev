@@ -36,6 +36,8 @@ const config: Config = {
 			},
 			backgroundImage: {
 				ribbon: "url('/shapes/ribbon-bended.svg')",
+				"card-description": "url('/shapes/card-description.svg')",
+				"card-portrait": "url('/shapes/card-portrait.svg')",
 			},
 		},
 	},

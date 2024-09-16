@@ -21,7 +21,7 @@ const cardWrapperVariants = cva(
 );
 
 const cardContainerVariants = cva(
-	"relative grid grid-rows-[1fr,80px,1fr] grid-cols-1 pb-2 items-center justify-center rounded-2xl w-full h-full",
+	"relative grid grid-rows-[1fr,80px,1fr] grid-cols-1 items-center justify-center rounded-2xl w-full h-full",
 	{
 		variants: {
 			variant: {
@@ -47,11 +47,11 @@ export default function CardComponent({ card, variant }: CardProps) {
 	return (
 		<div className={cn(cardWrapperVariants({ variant }))}>
 			<div className={cn(cardContainerVariants({ variant }))}>
-				<div className="w-full h-full bg-red-500 border-2 px-2" />
+				<div className="bg-card-portrait bg-no-repeat h-[104%] mx-6 translate-y-5 shadow-inner" />
 				<h2 className="relative flex justify-center text-center w-full h-full bg-no-repeat bg-cover text-2xl font-semibold text-foreground bg-ribbon">
 					<CurvedText size={headingSize} text={title} />
 				</h2>
-				<div className="text-center bg-card-background border-2 border-card-outline rounded-b-lg">
+				<div className="text-center bg-card-description bg-no-repeat h-[102%] -translate-y-4 mx-6 pt-4">
 					{description.map((paragraph) => (
 						<p key={paragraph} className="text-foreground">{paragraph}</p>
 					))}

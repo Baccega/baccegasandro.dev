@@ -23,6 +23,7 @@ const deck = [
 		title: "Moved to Graz, Austria",
 		description: ["January 2021"],
 		texture: leafTexture,
+		headingSize: "small",
 	},
 	{
 		id: 6,
@@ -39,6 +40,7 @@ const deck = [
 		title: "Master in Computer Science",
 		description: ["From Ca' Foscari University of Venice"],
 		texture: leafTexture,
+		headingSize: "small",
 	},
 	{
 		id: 5,
@@ -49,12 +51,14 @@ const deck = [
 			"First side jobs during high school",
 		],
 		texture: leafTexture,
+		headingSize: "small",
 	},
 	{
 		id: 3,
 		title: "Born north of Padua, Italy",
 		description: ["Camposampiero (PD)"],
 		texture: leafTexture,
+		headingSize: "small",
 	},
 	{
 		id: 1,

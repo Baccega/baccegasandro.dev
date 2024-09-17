@@ -21,40 +21,40 @@ export function AnimatedDeck(props: {
     const setIsAnimating = usePortfolioStore((state) => state.setIsAnimating);
 
     // Triggering the showcase animation for the selected packet
-    // useEffect(() => {
-    //     if (spawned) return;
-    //     const anim = async () => {
-    //         if (props.selectedPacket === undefined) return;
-    //         setIsAnimating(true);
-    //         await props.packetsApi.start((i) => {
-    //             if (props.selectedPacket !== i) return packets_above_position(i);
-    //             return packets_showcase_position();
-    //         })
-    //         await wait(1000);
-    //         await props.packetsApi.start((i) => {
-    //             if (props.selectedPacket !== i) return;
-    //             return packets_clip(i)
-    //         });
-    //         await wait(1000);
-    //         await cardsApi.start(cards_up_position)
-    //         await wait(500);
-    //         await props.packetsApi.start((i) => {
-    //             if (props.selectedPacket !== i) return;
-    //             return packets_scattered_position(i)
-    //         });
-    //         await wait(500);
-    //         props.packetsApi.start((i) => ({
-    //             ...packets_above_position(i),
-    //             immediate: true
-    //         }));
-    //         cardsApi.start((i) => ({ from: cards_above_position(i), ...cards_stacked_position(i, true) }
-    //         ))
-    //         await wait(1000);
-    //         setIsAnimating(false);
-    //         setSpawned(true);
-    //     }
-    //     anim()
-    // }, [spawned, cardsApi, props.packetsApi, props.selectedPacket, setIsAnimating]);
+    useEffect(() => {
+        if (spawned) return;
+        const anim = async () => {
+            if (props.selectedPacket === undefined) return;
+            setIsAnimating(true);
+            await props.packetsApi.start((i) => {
+                if (props.selectedPacket !== i) return packets_above_position(i);
+                return packets_showcase_position();
+            })
+            await wait(1000);
+            await props.packetsApi.start((i) => {
+                if (props.selectedPacket !== i) return;
+                return packets_clip(i)
+            });
+            await wait(1000);
+            await cardsApi.start(cards_up_position)
+            await wait(500);
+            await props.packetsApi.start((i) => {
+                if (props.selectedPacket !== i) return;
+                return packets_scattered_position(i)
+            });
+            await wait(500);
+            props.packetsApi.start((i) => ({
+                ...packets_above_position(i),
+                immediate: true
+            }));
+            cardsApi.start((i) => ({ from: cards_above_position(i), ...cards_stacked_position(i, true) }
+            ))
+            await wait(1000);
+            setIsAnimating(false);
+            setSpawned(true);
+        }
+        anim()
+    }, [spawned, cardsApi, props.packetsApi, props.selectedPacket, setIsAnimating]);
 
     // Triggering the current card scatter or stack animation
     useEffect(() => {

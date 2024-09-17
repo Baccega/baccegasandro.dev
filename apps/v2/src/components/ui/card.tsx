@@ -47,7 +47,10 @@ export default function CardComponent({ card, variant }: CardProps) {
 	return (
 		<div className={cn(cardWrapperVariants({ variant }))}>
 			<div className={cn(cardContainerVariants({ variant }))}>
-				<div className="bg-card-portrait bg-no-repeat h-[104%] mx-6 translate-y-5 shadow-inner" />
+				<div className="relative h-[104%] mx-6 translate-y-5 shadow-inner before:absolute before:inset-0 before:bg-[url(/textures/card-texture-11.jpeg)] before:bg-no-repeat before:bg-cover before:content-[''] before:clip-card-portrait">
+					<div className="relative h-full bg-card-portrait bg-no-repeat" />
+				</div>
+
 				<h2 className="relative flex justify-center text-center w-full h-full bg-no-repeat bg-cover text-2xl font-semibold text-foreground bg-ribbon">
 					<CurvedText size={headingSize} text={title} />
 				</h2>

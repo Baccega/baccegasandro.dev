@@ -11,18 +11,21 @@ const deck = [
 		title: "Contact me",
 		description: ["See the options"],
 		texture: magmaTexture,
+		image: "/textures/card-texture-1.jpeg",
 	},
 	{
 		id: 7,
 		title: "Wirecube GmbH",
 		description: ["Fullstack engineer", "Graz, Austria", "Find out more!"],
 		texture: stormTexture,
+		image: "/textures/card-texture-2.jpeg",
 	},
 	{
 		id: 4,
 		title: "Moved to Graz, Austria",
 		description: ["January 2021"],
 		texture: leafTexture,
+		image: "/textures/card-texture-2.jpeg",
 		headingSize: "small",
 	},
 	{
@@ -34,23 +37,26 @@ const deck = [
 			"Find out more!",
 		],
 		texture: stormTexture,
+		image: "/textures/card-texture-3.jpeg",
 	},
 	{
 		id: 2,
 		title: "Master in Computer Science",
 		description: ["From Ca' Foscari University of Venice"],
 		texture: leafTexture,
+		image: "/textures/card-texture-4.jpeg",
 		headingSize: "small",
 	},
 	{
 		id: 5,
-		title: "Passionate about technology",
+		title: "Technology enthusiast",
 		description: [
 			"Loves videogames",
 			"Started coding at 12",
 			"First side jobs during high school",
 		],
 		texture: leafTexture,
+		image: "/textures/card-texture-5.jpeg",
 		headingSize: "small",
 	},
 	{
@@ -58,6 +64,7 @@ const deck = [
 		title: "Born north of Padua, Italy",
 		description: ["Camposampiero (PD)"],
 		texture: leafTexture,
+		image: "/textures/card-texture-6.jpeg",
 		headingSize: "small",
 	},
 	{
@@ -65,6 +72,7 @@ const deck = [
 		title: "Baccega Sandro",
 		description: ["Software Engineer", "Card Description"],
 		texture: leafTexture,
+		image: "/textures/card-texture-7.jpeg",
 	},
 ] satisfies Deck;
 

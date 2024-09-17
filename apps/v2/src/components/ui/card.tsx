@@ -43,18 +43,24 @@ export interface CardProps
 
 
 export default function CardComponent({ card, variant }: CardProps) {
-	const { texture, description, id, title, subtitle, headingSize = "default" } = card;
+	const { texture, description, image, title, subtitle, headingSize = "default" } = card;
+
+	// Need to use as because typescript does not like CSS variables
+	const imageInlineStyle = {
+		"--image": `url(${image})`
+	} as React.CSSProperties;
+
 	return (
 		<div className={cn(cardWrapperVariants({ variant }))}>
 			<div className={cn(cardContainerVariants({ variant }))}>
-				<div className="relative h-[104%] mx-6 translate-y-5 shadow-inner before:absolute before:inset-0 before:bg-[url(/textures/card-texture-11.jpeg)] before:bg-no-repeat before:bg-cover before:content-[''] before:clip-card-portrait">
+				<div className="relative h-[104%] mx-6 translate-y-5 shadow-inner before:card-portrait" style={imageInlineStyle}>
 					<div className="relative h-full bg-card-portrait bg-no-repeat" />
 				</div>
 
 				<h2 className="relative flex justify-center text-center w-full h-full bg-no-repeat bg-cover text-2xl font-semibold text-foreground bg-ribbon">
 					<CurvedText size={headingSize} text={title} />
 				</h2>
-				<div className="text-center bg-card-description bg-no-repeat h-[102%] -translate-y-4 mx-6 pt-4">
+				<div className="text-center bg-card-description bg-no-repeat h-[102%] -translate-y-[1.2rem] mx-6 pt-6 px-4 flex flex-col gap-2">
 					{description.map((paragraph) => (
 						<p key={paragraph} className="text-foreground">{paragraph}</p>
 					))}

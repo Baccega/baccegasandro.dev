@@ -18,6 +18,7 @@ export type Card = {
 	subtitle?: string;
 	description: string[];
 	texture: StaticImageData;
+	image: string;
 	headingSize?: "small" | "default";
 };
 

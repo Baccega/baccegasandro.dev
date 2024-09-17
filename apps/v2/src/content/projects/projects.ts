@@ -10,24 +10,28 @@ const deck = [
 		title: "Card Title",
 		description: ["Card Description"],
 		texture: circuitTexture,
+		image: "/textures/card-texture-11.jpeg",
 	},
 	{
 		id: 2,
 		title: "Card Title",
 		description: ["Card Description"],
 		texture: circuitTexture,
+		image: "/textures/card-texture-11.jpeg",
 	},
 	{
 		id: 3,
 		title: "Card Title",
 		description: ["Card Description"],
 		texture: circuitTexture,
+		image: "/textures/card-texture-11.jpeg",
 	},
 	{
 		id: 4,
 		title: "Card Title",
 		description: ["Card Description"],
 		texture: circuitTexture,
+		image: "/textures/card-texture-11.jpeg",
 	},
 ] satisfies Deck;
 

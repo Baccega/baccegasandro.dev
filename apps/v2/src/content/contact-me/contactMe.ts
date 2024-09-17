@@ -6,28 +6,25 @@ import stormTexture from "/public/textures/card-texture-4.jpeg";
 
 const deck = [
 	{
-		id: 1,
-		title: "Card Title",
+		id: 3,
+		title: "Twitter (X)",
 		description: ["Card Description"],
 		texture: waveTexture,
+		image: "/textures/card-texture-11.jpeg",
 	},
 	{
 		id: 2,
-		title: "Card Title",
+		title: "LinkedIn",
 		description: ["Card Description"],
 		texture: waveTexture,
+		image: "/textures/card-texture-11.jpeg",
 	},
 	{
-		id: 3,
-		title: "Card Title",
+		id: 1,
+		title: "E-Mail",
 		description: ["Card Description"],
 		texture: waveTexture,
-	},
-	{
-		id: 4,
-		title: "Card Title",
-		description: ["Card Description"],
-		texture: waveTexture,
+		image: "/textures/card-texture-11.jpeg",
 	},
 ] satisfies Deck;
 

@@ -5,7 +5,17 @@ import Image from "next/image";
 import backgroundImage from "/public/textures/background-texture-4.jpeg";
 import { cn } from "@/lib/utils";
 
-const inter = Inter({ subsets: ["latin"] });
+import localFont from 'next/font/local'
+
+const magicMedieval = localFont({
+	src: [
+		{
+			path: '../../public/fonts/magic-medieval-font/Magicmedieval.ttf',
+			weight: '400',
+			style: 'normal',
+		},
+	],
+})
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -19,7 +29,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={cn(inter.className, "relative")}>
+			<body className={cn(magicMedieval.className, "relative")}>
 				<Image
 					className="-z-50 absolute inset-0 object-cover bg-repeat"
 					src={backgroundImage}

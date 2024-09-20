@@ -7,8 +7,8 @@ const curvedTextPathVariants = cva(
     {
         variants: {
             size: {
-                small: "text-[70px]",
-                default: "text-[90px]",
+                small: "text-[90px]",
+                default: "text-[110px]",
             },
         },
         defaultVariants: {

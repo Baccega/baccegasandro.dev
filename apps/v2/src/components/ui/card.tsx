@@ -62,7 +62,7 @@ export default function CardComponent({ card, variant }: CardProps) {
 				</h2>
 				<div className="text-center bg-card-description bg-no-repeat h-[102%] -translate-y-[1.2rem] mx-6 pt-6 px-4 flex flex-col gap-2">
 					{description.map((paragraph) => (
-						<p key={paragraph} className="text-foreground">{paragraph}</p>
+						<p key={paragraph} className="text-foreground text-2xl">{paragraph}</p>
 					))}
 				</div>
 				<Image

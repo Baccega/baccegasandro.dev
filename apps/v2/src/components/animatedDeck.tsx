@@ -16,7 +16,7 @@ export function AnimatedDeck(props: {
 }) {
     const [spawned, setSpawned] = useState(false);
     const previousCard = useRef<number | null>(null);
-    const [cardsProps, cardsApi] = useSprings(props.deck.length, (i) => ({ x: 0, y: i, rot: 0, scale: 1, boxShadow: 0, delay: 1000, immediate: true }));
+    const [cardsProps, cardsApi] = useSprings(props.deck.length, () => ({ x: 5000, y: 5000, rot: 0, scale: 1, boxShadow: 0 }));
     const currentCard = usePortfolioStore((state) => state.currentCard);
     const setIsAnimating = usePortfolioStore((state) => state.setIsAnimating);
 
@@ -31,6 +31,7 @@ export function AnimatedDeck(props: {
                 return packets_showcase_position();
             })
             await wait(1000);
+            await cardsApi.start((i) => ({ x: 0, y: i, immediate: true }))
             await props.packetsApi.start((i) => {
                 if (props.selectedPacket !== i) return;
                 return packets_clip(i)

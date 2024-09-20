@@ -19,8 +19,8 @@ const config: Config = {
 				"foreground-contrast": "#fff",
 			},
 			width: {
-				packet: "min(22.5rem,95dvw)",
-				card: "min(22rem,88dvw)",
+				packet: "min(22.5rem,97dvw)",
+				card: "min(22rem,95dvw)",
 				ribbon: "100%",
 			},
 			height: {

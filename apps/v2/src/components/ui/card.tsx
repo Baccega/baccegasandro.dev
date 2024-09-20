@@ -21,7 +21,7 @@ const cardWrapperVariants = cva(
 );
 
 const cardContainerVariants = cva(
-	"relative grid grid-rows-[1fr,80px,1fr] grid-cols-1 items-center justify-center rounded-2xl w-full h-full",
+	"relative grid grid-rows-[1fr,80px,1fr] grid-cols-[1.5rem,1fr,1.5rem] items-center justify-center rounded-2xl w-full h-full",
 	{
 		variants: {
 			variant: {
@@ -53,14 +53,14 @@ export default function CardComponent({ card, variant }: CardProps) {
 	return (
 		<div className={cn(cardWrapperVariants({ variant }))}>
 			<div className={cn(cardContainerVariants({ variant }))}>
-				<div className="relative h-[104%] mx-6 translate-y-5 shadow-inner before:card-portrait" style={imageInlineStyle}>
-					<div className="relative h-full bg-card-portrait bg-no-repeat" />
+				<div className="relative h-[104%] col-start-2 translate-y-5 shadow-inner before:card-portrait" style={imageInlineStyle}>
+					<div className="relative h-full bg-card-portrait bg-no-repeat bg-cover bg-center" />
 				</div>
 
-				<h2 className="relative flex justify-center text-center w-full h-full bg-no-repeat bg-cover text-2xl font-semibold text-foreground bg-ribbon">
+				<h2 className="col-span-3 relative bg-center flex justify-center text-center w-full h-full bg-no-repeat bg-cover text-2xl font-semibold text-foreground bg-ribbon">
 					<CurvedText size={headingSize} text={title} />
 				</h2>
-				<div className="text-center bg-card-description bg-no-repeat h-[102%] -translate-y-[1.2rem] mx-6 pt-6 px-4 flex flex-col gap-2">
+				<div className="col-start-2 text-center bg-card-description bg-no-repeat h-[102%] -translate-y-[1.2rem] pt-6 px-4 flex flex-col gap-2">
 					{description.map((paragraph) => (
 						<p key={paragraph} className="text-foreground text-2xl">{paragraph}</p>
 					))}

@@ -17,6 +17,7 @@ body {
 
   .card-portrait {
     background-image: var(--image);
+    background-position: center;
     position: absolute;
     top: 0;
     left: 0;

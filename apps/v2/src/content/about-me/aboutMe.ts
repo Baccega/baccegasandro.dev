@@ -82,4 +82,5 @@ export const ABOUT_ME = {
 	title: "About me",
 	texture: leafTexture,
 	deck: deck,
+	portrait: "/textures/card-texture-10.jpeg",
 } satisfies Packet;

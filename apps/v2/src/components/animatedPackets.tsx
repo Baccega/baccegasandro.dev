@@ -75,7 +75,7 @@ export function AnimatedPackets(props: {
                     }}
                     onMouseDown={handlePacketClick}
                 >
-                    <Packet title={PACKETS[i].title} texture={PACKETS[i].texture} />
+                    <Packet title={PACKETS[i].title} texture={PACKETS[i].texture} portrait={PACKETS[i].portrait} />
                 </animated.div>
             </animated.div>
         ))}

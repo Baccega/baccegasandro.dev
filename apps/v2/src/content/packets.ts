@@ -10,6 +10,7 @@ export type Packet = {
 	title: string;
 	texture: StaticImageData;
 	deck: Deck;
+	portrait: string;
 };
 
 export type Card = {

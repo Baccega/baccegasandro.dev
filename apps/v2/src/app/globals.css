@@ -29,6 +29,11 @@ body {
     clip-path: polygon(evenodd, 0% 9.5%, 11.25% 5.5%, 29% 2%, 50% 0%, 68.25% 2.25%, 83% 4.25%, 100% 9.5%, 100% 90%, 93.5% 92%, 86% 94%, 77.25% 96.25%, 67.5% 98.25%, 51% 100%, 35.5% 98%, 21.54% 96.41%, 10.75% 93.5%, 0% 90.5%);
   }
 
+  .packet-portrait-scale {
+    --tw-scale-y: 1;
+    --tw-scale-x: 0.8;
+  }
+
   .packet {
     position: absolute;
     will-change: transform;

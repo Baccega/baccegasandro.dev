@@ -38,6 +38,7 @@ const config: Config = {
 				ribbon: "url('/shapes/ribbon-bended.svg')",
 				"card-description": "url('/shapes/card-description.svg')",
 				"card-portrait": "url('/shapes/card-portrait.svg')",
+				"packet-portrait": "url('/shapes/packet-portrait.svg')",
 			},
 		},
 	},

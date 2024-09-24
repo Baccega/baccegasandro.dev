@@ -41,5 +41,5 @@ export const WORK_EXPERIENCE = {
 	title: "Work Experience",
 	texture: stormTexture,
 	deck: deck,
-	portrait: "/textures/card-texture-10.jpeg",
+	portrait: "/images/work-experience.jpeg",
 } satisfies Packet;

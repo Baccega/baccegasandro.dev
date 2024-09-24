@@ -5,11 +5,6 @@ import { CurvedText } from "./ui/curvedText";
 
 export function Packet(props: { title: string; texture: StaticImageData, portrait: string }) {
 
-	// Need to use as because typescript does not like CSS variables
-	const imageInlineStyle = {
-		"--image": `url(${props.portrait})`
-	} as React.CSSProperties;
-
 	return (<div className="hover:cursor-pointer relative rounded-xl py-8 px-0 w-packet h-packet bg-packet-silver shadow-card overflow-hidden">
 		<div className="relative rounded-2xl w-full h-full">
 			<Image
@@ -24,17 +19,26 @@ export function Packet(props: { title: string; texture: StaticImageData, portrai
 				<span className="relative flex items-center justify-center col-span-3">
 					<Image
 						className="z-50 object-cover"
-						src="/images/cards-logo.png"
+						src="/images/brand-logo.png"
 						alt="Baccega Sandro, The Portfolio"
 						width={250}
 						height={150}
 						priority={false}
 					/>
 				</span>
-				<div className="col-start-2 relative w-[121%] h-[102%] scale-90 packet-portrait-scale -translate-x-[33px] translate-y-5 shadow-inner before:card-portrait" style={imageInlineStyle}>
-					<div className="relative h-full bg-card-portrait bg-no-repeat bg-cover bg-center" />
+				<span className="relative col-start-2 col-end-3 row-start-2 row-end-3 mr-[1px]">
+					<Image
+						className="object-cover portrait-clip"
+						src={props.portrait}
+						alt={props.title}
+						fill
+						priority={false}
+					/>
+				</span>
+				<div className="col-start-2 col-end-3 row-start-2 row-end-3 relative w-full h-full shadow-inner">
+					<div className="relative h-full bg-packet-portrait bg-no-repeat bg-cover bg-center" />
 				</div>
-				<h2 className="absolute bottom-[15%] bg-center flex justify-center text-center w-full h-[90px] bg-no-repeat bg-cover text-2xl font-semibold text-foreground bg-ribbon">
+				<h2 className="absolute bottom-[10%] bg-center flex justify-center text-center w-full h-[90px] bg-no-repeat bg-cover text-2xl font-semibold text-foreground bg-ribbon">
 					<CurvedText size="default" text={props.title} />
 				</h2>
 			</div>

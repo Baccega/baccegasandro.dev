@@ -41,5 +41,5 @@ export const PROJECTS = {
 	title: "Projects",
 	texture: circuitTexture,
 	deck: deck,
-	portrait: "/textures/card-texture-10.jpeg",
+	portrait: "/images/projects.jpeg",
 } satisfies Packet;

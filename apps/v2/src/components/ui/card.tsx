@@ -53,7 +53,7 @@ export default function CardComponent({ card, variant }: CardProps) {
 	return (
 		<div className={cn(cardWrapperVariants({ variant }))}>
 			<div className={cn(cardContainerVariants({ variant }))}>
-				<div className="relative h-[104%] col-start-2 translate-y-5 shadow-inner before:card-portrait" style={imageInlineStyle}>
+				<div className="relative h-[104%] col-start-2 translate-y-5 shadow-inner before:svg-portrait" style={imageInlineStyle}>
 					<div className="relative h-full bg-card-portrait bg-no-repeat bg-cover bg-center" />
 				</div>
 

@@ -5,10 +5,11 @@ import { CurvedText } from "./ui/curvedText";
 
 export function Packet(props: { title: string; texture: StaticImageData, portrait: string }) {
 
-	return (<div className="hover:cursor-pointer relative rounded-xl py-8 px-0 w-packet h-packet bg-packet-silver shadow-card overflow-hidden">
-		<div className="relative rounded-2xl w-full h-full">
+	return (<div className="hover:cursor-pointer relative px-0 w-packet h-packet shadow-card overflow-hidden grid grid-rows-[2rem,1fr,2rem]">
+		<span className="bg-packet-border bg-no-repeat bg-cover w-full h-full" />
+		<div className="relative w-full h-full">
 			<Image
-				className="z-10 rounded-xl absolute inset-0 object-cover"
+				className="z-10 absolute inset-0 object-cover brightness-90"
 				src={props.texture}
 				placeholder="blur"
 				alt={props.title}
@@ -43,5 +44,6 @@ export function Packet(props: { title: string; texture: StaticImageData, portrai
 				</h2>
 			</div>
 		</div>
+		<span className="rotate-180 bg-packet-border bg-no-repeat bg-cover w-full h-full" />
 	</div>)
 }

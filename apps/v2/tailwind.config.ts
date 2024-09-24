@@ -24,7 +24,7 @@ const config: Config = {
 				ribbon: "100%",
 			},
 			height: {
-				packet: "34rem",
+				packet: "calc(30rem + 4rem)",
 				card: "33rem",
 				ribbon: "5rem",
 			},
@@ -39,6 +39,7 @@ const config: Config = {
 				"card-description": "url('/shapes/card-description.svg')",
 				"card-portrait": "url('/shapes/card-portrait.svg')",
 				"packet-portrait": "url('/shapes/packet-portrait.svg')",
+				"packet-border": "url('/shapes/packet-border.svg')",
 			},
 		},
 	},

@@ -20,7 +20,7 @@ export function Packet(props: { title: string; texture: StaticImageData, portrai
 				<span className="relative flex items-center justify-center col-span-3">
 					<Image
 						className="z-50 object-cover"
-						src="/images/brand-logo.png"
+						src="/shapes/brand-logo.svg"
 						alt="Baccega Sandro, The Portfolio"
 						width={250}
 						height={150}

@@ -36,7 +36,7 @@ export const cards: SingleCard[] = [
 					<a
 						target="_blank"
 						rel="noreferrer"
-						href="https://github.com/Baccega/baccegasandro.dev/blob/main/public/cv.pdf"
+						href="https://github.com/Baccega/baccegasandro.dev/blob/main/apps/v1/public/cv.pdf"
 					>
 						Download my full CV here!
 					</a>

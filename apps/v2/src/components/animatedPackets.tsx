@@ -1,11 +1,10 @@
 "use client"
 
-import { trans } from "@/app/page";
 import { animated, to, type SpringValue, type SpringRef, config } from "@react-spring/web";
 import { useEffect, useRef } from "react";
 import { usePortfolioStore } from "@/lib/store";
 import { Packet } from "./packet";
-import { wait } from "@/lib/utils";
+import { trans } from "@/lib/utils";
 import { packets_above_position, packets_stacked_position, type PacketSpringApi, type PacketSpringProps } from "@/lib/packetsPositions";
 import { Deck, PACKETS } from "@/content/packets";
 

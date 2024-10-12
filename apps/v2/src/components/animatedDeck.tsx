@@ -1,10 +1,9 @@
 "use client"
 
-import { trans } from "@/app/page";
 import { useSprings, animated, to, type SpringRef, config } from "@react-spring/web";
 import Card from "./ui/card";
 import { useEffect, useRef, useState } from "react";
-import { wait } from "@/lib/utils";
+import { trans, wait } from "@/lib/utils";
 import { usePortfolioStore } from "@/lib/store";
 import { packets_above_position, packets_clip, packets_scattered_position, packets_showcase_position, type PacketSpringApi } from "@/lib/packetsPositions";
 import { cards_above_position, cards_scattered_position, cards_stacked_position, cards_up_position } from "@/lib/cardPositions";

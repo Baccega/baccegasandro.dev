@@ -7,7 +7,6 @@ import stormTexture from "/public/textures/card-texture-4.jpeg";
 import magmaTexture from "/public/textures/card-texture-9.jpeg";
 import { RealisticButton } from "@/components/ui/realisticButton";
 import { Download } from "lucide-react";
-import Link from "next/link";
 
 const deck = [
 	{

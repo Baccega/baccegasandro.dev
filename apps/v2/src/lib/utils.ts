@@ -14,3 +14,8 @@ export function wait(time: number) {
 export function randomIntFromInterval(min: number, max: number): number {
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+export const trans = (r: number, s: number) =>
+	`rotateY(${
+		r / 10
+	}deg) rotateZ(${r}deg) scale(${s}) translate3d(0px, -30px, 0px)`;

@@ -13,6 +13,7 @@ export type PacketSpringProps = {
 	zIndex: SpringValue<number>;
 };
 export type PacketSpringApi = SpringRef<{
+	zIndex: number;
 	x: number;
 	rot: number;
 	scale: number;

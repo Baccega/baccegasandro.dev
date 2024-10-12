@@ -18,7 +18,7 @@ export type Card = {
 	id: number;
 	title: string;
 	subtitle?: string;
-	description: string[];
+	description: Array<string | JSX.Element>;
 	texture: StaticImageData;
 	image: string;
 	headingSize?: "small" | "default";

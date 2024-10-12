@@ -17,10 +17,15 @@ const realisticButtonVariants = cva(
                     "text-stone-950 bg-stone-600 border-stone-950 hover:shadow-button-pressed shadow-button-pressed scale-100 cursor-not-allowed hover:scale-100",
                 ghost: "",
             },
+            width: {
+                default: "",
+                wide: "py-2 w-full"
+            }
         },
         defaultVariants: {
             variant: "default",
             direction: "prev",
+            width: "default",
         },
     },
 );
@@ -32,10 +37,10 @@ export interface ButtonProps
 }
 
 const RealisticButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
-    ({ className, variant, direction, ...props }, ref) => {
+    ({ className, variant, direction, width, ...props }, ref) => {
         return (
             <button
-                className={cn(realisticButtonVariants({ direction, variant, className }))}
+                className={cn(realisticButtonVariants({ direction, variant, width, className }))}
                 ref={ref}
                 {...props}
             />

@@ -90,7 +90,7 @@ export function NavigationButtons() {
                 onClick={handlePrev}
                 direction="prev"
             >
-                {isStartOfStack ? <Ban size="30" /> : <ChevronLeft size="30" />}
+                {isStartOfStack ? <Ban strokeWidth={3} size="30" /> : <ChevronLeft strokeWidth={3} size="30" />}
             </RealisticButton>
             <RealisticButton
                 variant={isNextDisabled ? "disabled" : "default"}
@@ -98,7 +98,7 @@ export function NavigationButtons() {
                 onClick={handleNext}
                 direction="next"
             >
-                {isEndOfStack ? <Ban size="30" /> : <ChevronRight size="30" />}
+                {isEndOfStack ? <Ban strokeWidth={3} size="30" /> : <ChevronRight strokeWidth={3} size="30" />}
             </RealisticButton>
         </div >
     );

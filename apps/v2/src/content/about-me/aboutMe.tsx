@@ -1,9 +1,13 @@
+import React from "react";
 import type { Deck, Packet } from "../packets";
 import leafTexture from "/public/textures/card-texture-8.jpeg";
 import waveTexture from "/public/textures/card-texture-2.jpeg";
 import circuitTexture from "/public/textures/card-texture-3.jpeg";
 import stormTexture from "/public/textures/card-texture-4.jpeg";
 import magmaTexture from "/public/textures/card-texture-9.jpeg";
+import { RealisticButton } from "@/components/ui/realisticButton";
+import { Download } from "lucide-react";
+import Link from "next/link";
 
 const deck = [
 	{
@@ -78,7 +82,18 @@ const deck = [
 		id: 1,
 		wip: true,
 		title: "Baccega Sandro",
-		description: ["Software Engineer", "Card Description"],
+		description: ["Software Engineer",
+			<RealisticButton width="wide" key="cv-link" className="text-xl border-[3px]">
+				<a
+					target="_blank"
+					rel="noreferrer"
+					href="https://github.com/Baccega/baccegasandro.dev/blob/main/common/assets/cv.pdf"
+					className="flex items-center justify-evenly gap-2"
+				>
+					<Download size="20" strokeWidth={2.8} /> Download my CV here!
+				</a>
+			</RealisticButton>
+		],
 		texture: leafTexture,
 		image: "/textures/card-texture-7.jpeg",
 	},

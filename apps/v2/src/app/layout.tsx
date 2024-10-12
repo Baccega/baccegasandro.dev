@@ -38,7 +38,7 @@ export default function RootLayout({
 					fill
 					priority={false}
 				/>
-				<main className="flex h-screen w-full items-center justify-center relative pb-10 tablet:pb-0 overflow-hidden">
+				<main className="flex h-[100dvh] w-full items-center justify-center relative pb-10 tablet:pb-0 overflow-hidden">
 					{children}
 				</main>
 			</body>

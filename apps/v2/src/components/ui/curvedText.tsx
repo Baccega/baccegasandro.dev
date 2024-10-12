@@ -47,15 +47,19 @@ const CurvedText = React.forwardRef<HTMLOrSVGElement, CurvedTextProps>(
 
         // Set the start offset of the text to center it on the path
         React.useEffect(() => {
-            if (pathRef.current && textRef.current) {
-                const path = pathRef.current;
-                const text = textRef.current;
+            const path = pathRef.current;
+            const text = textRef.current;
+            if (!path || !text) return;
 
-                const pathLength = path.getTotalLength();
-                const textLength = text.getComputedTextLength();
-                setStartOffset((pathLength - textLength) / 2);
-            }
-        }, []);
+            const pathLength = path.getTotalLength();
+            const textLength = text.getComputedTextLength();
+
+            const newOffset = (pathLength - textLength) / 2;
+
+            if (startOffset === newOffset) return;
+
+            setStartOffset(newOffset);
+        }, [startOffset]);
 
         return (
             <svg viewBox="0 0 1249 92" width="100%" height="75">

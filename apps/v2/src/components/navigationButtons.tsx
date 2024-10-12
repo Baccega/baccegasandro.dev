@@ -83,7 +83,7 @@ export function NavigationButtons() {
     }
 
     return (
-        <div className="absolute bottom-10 flex gap-10">
+        <div className="absolute bottom-2 md:bottom-10 flex gap-10">
             <RealisticButton
                 variant={isPrevDisabled ? "disabled" : "default"}
                 disabled={isPrevDisabled}

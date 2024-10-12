@@ -49,11 +49,12 @@ export function AnimatedPackets(props: {
     }, [selectedPacket, props.packetsApi, currentPacket]);
 
     return <>
-        {props.packetsProps.map(({ x, y, rot, scale, clipPath, dropShadow }, i) => (
+        {props.packetsProps.map(({ x, y, rot, scale, clipPath, dropShadow, zIndex }, i) => (
             <animated.div
                 key={PACKETS[i].id}
                 className="absolute inset-auto"
                 style={{
+                    zIndex: zIndex,
                     transform: to([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`),
                     filter: to(
                         [dropShadow],

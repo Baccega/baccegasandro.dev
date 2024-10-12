@@ -10,6 +10,7 @@ export type PacketSpringProps = {
 	y: SpringValue<number>;
 	clipPath: SpringValue<number[]>;
 	dropShadow: SpringValue<number[]>;
+	zIndex: SpringValue<number>;
 };
 export type PacketSpringApi = SpringRef<{
 	x: number;
@@ -21,6 +22,7 @@ export type PacketSpringApi = SpringRef<{
 }>;
 
 export const packets_up_position = (i: number) => ({
+	zIndex: 0,
 	x: 0,
 	rot: 0,
 	scale: 1,
@@ -29,6 +31,7 @@ export const packets_up_position = (i: number) => ({
 });
 
 export const packets_random_position = (i: number) => ({
+	zIndex: 0,
 	x: randomIntFromInterval(-200, 200),
 	y: randomIntFromInterval(-200, 200),
 	rot: randomIntFromInterval(-100, 100),
@@ -44,6 +47,7 @@ export const packets_scattered_position = (i: number) => {
 		x,
 		y,
 		scale,
+		zIndex: 0,
 		rot: 200 * direction,
 		delay: undefined,
 		config: config.slow,
@@ -51,6 +55,7 @@ export const packets_scattered_position = (i: number) => {
 };
 
 export const packets_above_position = (i: number) => ({
+	zIndex: 0,
 	x: 0,
 	rot: 0,
 	scale: 1.5,
@@ -59,6 +64,7 @@ export const packets_above_position = (i: number) => ({
 	dropShadow: [0, 0, 0, 0.0],
 });
 export const packets_showcase_position = () => ({
+	zIndex: 20,
 	x: 0,
 	y: 30,
 	scale: 1.1,
@@ -66,6 +72,7 @@ export const packets_showcase_position = () => ({
 	dropShadow: [-40, 40, 10, 0.5],
 });
 export const packets_stacked_position = (i: number, inverted = false) => ({
+	zIndex: 0,
 	x: 0,
 	y: i * (inverted ? -4 : 4) + 10,
 	scale: 1,

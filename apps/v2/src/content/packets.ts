@@ -11,6 +11,7 @@ export type Packet = {
 	texture: StaticImageData;
 	deck: Deck;
 	portrait: string;
+	wip?: boolean;
 };
 
 export type Card = {
@@ -21,6 +22,7 @@ export type Card = {
 	texture: StaticImageData;
 	image: string;
 	headingSize?: "small" | "default";
+	wip?: boolean;
 };
 
 export type Deck = Card[];

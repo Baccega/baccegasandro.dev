@@ -7,6 +7,7 @@ import stormTexture from "/public/textures/card-texture-4.jpeg";
 const deck = [
 	{
 		id: 3,
+		wip: true,
 		title: "Twitter (X)",
 		description: ["Card Description"],
 		texture: waveTexture,
@@ -14,6 +15,7 @@ const deck = [
 	},
 	{
 		id: 2,
+		wip: true,
 		title: "LinkedIn",
 		description: ["Card Description"],
 		texture: waveTexture,
@@ -21,6 +23,7 @@ const deck = [
 	},
 	{
 		id: 1,
+		wip: true,
 		title: "E-Mail",
 		description: ["Card Description"],
 		texture: waveTexture,
@@ -30,6 +33,7 @@ const deck = [
 
 export const CONTACT_ME = {
 	id: 2,
+	wip: true,
 	slug: "contact-me",
 	title: "Contact me",
 	texture: waveTexture,

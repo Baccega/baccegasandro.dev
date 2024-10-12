@@ -8,6 +8,7 @@ import magmaTexture from "/public/textures/card-texture-9.jpeg";
 const deck = [
 	{
 		id: 8,
+		wip: true,
 		title: "Contact me",
 		description: ["See the options"],
 		texture: magmaTexture,
@@ -15,6 +16,7 @@ const deck = [
 	},
 	{
 		id: 7,
+		wip: true,
 		title: "Wirecube GmbH",
 		description: ["Fullstack engineer", "Graz, Austria", "Find out more!"],
 		texture: stormTexture,
@@ -22,6 +24,7 @@ const deck = [
 	},
 	{
 		id: 4,
+		wip: true,
 		title: "Moved to Graz, Austria",
 		description: ["January 2021"],
 		texture: leafTexture,
@@ -30,6 +33,7 @@ const deck = [
 	},
 	{
 		id: 6,
+		wip: true,
 		title: "SMC Treviso",
 		description: [
 			"First internship and job as a Frontend engineer",
@@ -41,6 +45,7 @@ const deck = [
 	},
 	{
 		id: 2,
+		wip: true,
 		title: "Master in Computer Science",
 		description: ["From Ca' Foscari University of Venice"],
 		texture: leafTexture,
@@ -49,6 +54,7 @@ const deck = [
 	},
 	{
 		id: 5,
+		wip: true,
 		title: "Technology enthusiast",
 		description: [
 			"Loves videogames",
@@ -61,6 +67,7 @@ const deck = [
 	},
 	{
 		id: 3,
+		wip: true,
 		title: "Born north of Padua, Italy",
 		description: ["Camposampiero (PD)"],
 		texture: leafTexture,
@@ -69,6 +76,7 @@ const deck = [
 	},
 	{
 		id: 1,
+		wip: true,
 		title: "Baccega Sandro",
 		description: ["Software Engineer", "Card Description"],
 		texture: leafTexture,
@@ -78,6 +86,7 @@ const deck = [
 
 export const ABOUT_ME = {
 	id: 1,
+	wip: true,
 	slug: "about-me",
 	title: "About me",
 	texture: leafTexture,

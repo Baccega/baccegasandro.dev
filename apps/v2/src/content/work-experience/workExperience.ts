@@ -7,6 +7,7 @@ import stormTexture from "/public/textures/card-texture-4.jpeg";
 const deck = [
 	{
 		id: 1,
+		wip: true,
 		title: "Card Title",
 		description: ["Card Description"],
 		texture: stormTexture,
@@ -14,6 +15,7 @@ const deck = [
 	},
 	{
 		id: 2,
+		wip: true,
 		title: "Card Title",
 		description: ["Card Description"],
 		texture: stormTexture,
@@ -21,6 +23,7 @@ const deck = [
 	},
 	{
 		id: 3,
+		wip: true,
 		title: "Card Title",
 		description: ["Card Description"],
 		texture: stormTexture,
@@ -28,6 +31,7 @@ const deck = [
 	},
 	{
 		id: 4,
+		wip: true,
 		title: "Card Title",
 		description: ["Card Description"],
 		texture: stormTexture,
@@ -37,6 +41,7 @@ const deck = [
 
 export const WORK_EXPERIENCE = {
 	id: 4,
+	wip: true,
 	slug: "work-experience",
 	title: "Work Experience",
 	texture: stormTexture,

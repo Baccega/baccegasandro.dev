@@ -3,7 +3,7 @@ import Image from "next/image";
 import ribbon from "../resources/ribbon-1.png";
 import { CurvedText } from "./ui/curvedText";
 
-export function Packet(props: { title: string; texture: StaticImageData, portrait: string }) {
+export function Packet(props: { title: string; texture: StaticImageData, portrait: string, wip: boolean }) {
 
 	return (<div className="hover:cursor-pointer relative px-0 w-packet h-packet shadow-card overflow-hidden grid grid-rows-[2rem,1fr,2rem]">
 		<span className="bg-packet-border bg-no-repeat bg-cover w-full h-full" />
@@ -28,6 +28,7 @@ export function Packet(props: { title: string; texture: StaticImageData, portrai
 					/>
 				</span>
 				<span className="relative col-start-2 col-end-3 row-start-2 row-end-3 mr-[1px]">
+					{props.wip ? <p className="text-white text-shadow-black text relative flex w-full h-2/3 justify-center items-center text-3xl z-50">Work in Progress</p> : null}
 					<Image
 						className="object-cover portrait-clip"
 						src={props.portrait}

@@ -11,6 +11,10 @@ body {
 }
 
 @layer utilities {
+  .text-shadow-black {
+    text-shadow: #000000 0 0 4px;
+  }
+
   .text-balance {
     text-wrap: balance;
   }

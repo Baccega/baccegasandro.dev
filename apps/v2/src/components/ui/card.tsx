@@ -43,7 +43,7 @@ export interface CardProps
 
 
 export default function CardComponent({ card, variant }: CardProps) {
-	const { texture, description, image, title, subtitle, headingSize = "default" } = card;
+	const { texture, description, image, title, subtitle, headingSize = "default", wip } = card;
 
 	// Need to use as because typescript does not like CSS variables
 	const imageInlineStyle = {
@@ -55,6 +55,7 @@ export default function CardComponent({ card, variant }: CardProps) {
 			<div className={cn(cardContainerVariants({ variant }))}>
 				<div className="relative h-[104%] col-start-2 translate-y-5 shadow-inner before:svg-portrait" style={imageInlineStyle}>
 					<div className="relative h-full bg-card-portrait bg-no-repeat bg-cover bg-center" />
+					{wip ? <p className="absolute top-20 left-10 text-white text-shadow-black flex text-3xl">Work in Progress</p> : null}
 				</div>
 
 				<h2 className="col-span-3 relative bg-center flex justify-center text-center w-full h-full bg-no-repeat bg-cover text-2xl font-semibold text-foreground bg-ribbon">

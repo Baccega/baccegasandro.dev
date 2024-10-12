@@ -86,7 +86,7 @@ const deck = [
 				<a
 					target="_blank"
 					rel="noreferrer"
-					href="https://github.com/Baccega/baccegasandro.dev/blob/main/common/assets/cv.pdf"
+					href="https://github.com/Baccega/baccegasandro.dev/blob/main/packages/common/assets/cv.pdf"
 					className="flex items-center justify-evenly gap-2"
 				>
 					<Download size="20" strokeWidth={2.8} /> Download my CV here!

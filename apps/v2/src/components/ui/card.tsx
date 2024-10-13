@@ -80,6 +80,7 @@ export default function CardComponent({ card, variant }: CardProps) {
 					placeholder="blur"
 					alt={title}
 					fill
+					sizes="346px"
 					priority={false}
 				/>
 			</div>

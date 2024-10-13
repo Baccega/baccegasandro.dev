@@ -34,6 +34,7 @@ export function Packet(props: { title: string; texture: StaticImageData, portrai
 						src={props.portrait}
 						alt={props.title}
 						fill
+						sizes="332px"
 						priority={false}
 					/>
 				</span>

@@ -6,6 +6,7 @@ import backgroundImage from "/public/textures/background-texture-4.jpeg";
 import { cn } from "@/lib/utils";
 
 import localFont from 'next/font/local'
+import { LoadingOverlay } from "@/components/loadingOverlay";
 
 const magicMedieval = localFont({
 	src: [
@@ -30,6 +31,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={cn(magicMedieval.className, "relative")}>
+				<LoadingOverlay />
 				<Image
 					className="-z-50 absolute inset-0 object-cover bg-repeat"
 					src={backgroundImage}

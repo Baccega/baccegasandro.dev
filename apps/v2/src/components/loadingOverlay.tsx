@@ -20,6 +20,10 @@ export function LoadingOverlay() {
                 setImagesLoaded(true);
             })
         }, 1000);
+
+        setTimeout(() => {
+            setImagesLoaded(true);
+        }, 4000);
     }, []);
 
 

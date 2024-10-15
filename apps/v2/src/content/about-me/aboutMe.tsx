@@ -3,7 +3,7 @@ import type { Deck, Packet } from "../packets";
 import leafTexture from "/public/textures/card-texture-8.jpeg";
 import waveTexture from "/public/textures/card-texture-2.jpeg";
 import circuitTexture from "/public/textures/card-texture-3.jpeg";
-import stormTexture from "/public/textures/card-texture-4.jpeg";
+import stormTexture from "/public/textures/card-texture-7.jpeg";
 import magmaTexture from "/public/textures/card-texture-9.jpeg";
 import { RealisticButton } from "@/components/ui/realisticButton";
 import { Download } from "lucide-react";
@@ -21,15 +21,15 @@ const deck = [
 		id: 7,
 		wip: true,
 		title: "Wirecube GmbH",
-		description: ["Fullstack engineer", "Graz, Austria", "Find out more!"],
+		description: ["Fullstack developer", "Graz, Austria", "2023 - 2024"],
 		texture: stormTexture,
-		image: "/textures/card-texture-2.jpeg",
+		image: "/textures/card-texture-11.jpeg",
 	},
 	{
 		id: 4,
 		wip: true,
 		title: "Moved to Graz, Austria",
-		description: ["January 2021"],
+		description: ["January 2023"],
 		texture: leafTexture,
 		image: "/textures/card-texture-2.jpeg",
 		headingSize: "small",
@@ -38,13 +38,9 @@ const deck = [
 		id: 6,
 		wip: true,
 		title: "SMC Treviso",
-		description: [
-			"First internship and job as a Frontend engineer",
-			"Treviso, Italy",
-			"Find out more!",
-		],
+		description: ["Frontend Developer", "Treviso, Italy", "2019 - 2022"],
 		texture: stormTexture,
-		image: "/textures/card-texture-3.jpeg",
+		image: "/textures/card-texture-11.jpeg",
 	},
 	{
 		id: 2,

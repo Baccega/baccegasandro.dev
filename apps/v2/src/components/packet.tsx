@@ -16,16 +16,18 @@ export function Packet(props: { title: string; texture: StaticImageData, portrai
 				fill
 				priority={false}
 			/>
-			<div className="relative grid grid-rows-[1fr,2fr] grid-cols-[20px,1fr,20px] z-20 w-full h-full pb-8">
+			<div className="relative grid grid-rows-[1fr,2fr] grid-cols-[20px,1fr,20px] z-20 w-full h-full py-4">
 				<span className="relative flex items-center justify-center col-span-3">
-					<Image
-						className="z-50 object-cover"
-						src="/shapes/brand-logo.svg"
-						alt="Baccega Sandro, The Portfolio"
-						width={250}
-						height={150}
-						priority={false}
-					/>
+					<div className="relative">
+						<Image
+							className="z-50 object-cover w-full h-auto"
+							src="/shapes/brand-logo.svg"
+							alt="Baccega Sandro, The Portfolio"
+							width={200}
+							height={103}
+							priority={true}
+						/>
+					</div>
 				</span>
 				<span className="relative col-start-2 col-end-3 row-start-2 row-end-3 mr-[1px]">
 					{props.wip ? <p className="text-white text-shadow-black text relative flex w-full h-2/3 justify-center items-center text-3xl z-50">Work in Progress</p> : null}
@@ -34,7 +36,7 @@ export function Packet(props: { title: string; texture: StaticImageData, portrai
 						src={props.portrait}
 						alt={props.title}
 						fill
-						sizes="332px"
+						sizes="329px"
 						priority={false}
 					/>
 				</span>

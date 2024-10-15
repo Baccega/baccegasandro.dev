@@ -28,14 +28,16 @@ export function LoadingOverlay() {
 
 
     return (<div aria-hidden style={{ opacity: imagesLoaded ? 0 : 1, visibility: imagesLoaded ? 'hidden' : 'visible', transition: 'visibility 0.5s, opacity 0.5s linear;' }} className="z-[100] absolute w-[100dvw] h-[100dvh] bg-black flex flex-col justify-center items-center gap-4">
-        <Image
-            className="object-cover"
-            src="/shapes/brand-logo.svg"
-            alt="Loading logo"
-            width={250}
-            height={150}
-            priority={true}
-        />
+        <div className="relative">
+            <Image
+                className="object-cover w-full h-auto"
+                src="/shapes/brand-logo.svg"
+                alt="Loading logo"
+                width={250}
+                height={103}
+                priority={true}
+            />
+        </div>
         <p aria-hidden className="text-white text-3xl pt-2">Loading assets</p>
         <Spinner />
     </div>)

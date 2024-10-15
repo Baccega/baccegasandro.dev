@@ -21,9 +21,12 @@ export function LoadingOverlay() {
             })
         }, 1000);
 
-        setTimeout(() => {
+        // Fallback in case some images still don't load after 2 seconds
+        const fallbackTimeout = setTimeout(() => {
             setImagesLoaded(true);
-        }, 4000);
+        }, 2000);
+
+        return () => clearTimeout(fallbackTimeout);  // Clean up the timeout when the component unmounts
     }, []);
 
 

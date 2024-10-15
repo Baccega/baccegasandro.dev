@@ -38,7 +38,8 @@ export default function RootLayout({
 					placeholder="blur"
 					alt="wood planks background"
 					fill
-					priority={false}
+					sizes="100vw"
+					priority={true}
 				/>
 				<main className="flex h-[100dvh] w-full items-center justify-center relative pb-10 tablet:pb-0 overflow-hidden">
 					{children}

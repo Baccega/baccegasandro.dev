@@ -9,7 +9,7 @@ import { Link } from "lucide-react";
 const deck = [
 	{
 		id: 5,
-		wip: true,
+		wip: false,
 		title: "Various automation scripts",
 		description: [
 			<RealisticButton width="wide" key="covid-link" className="text-xl border-[3px]">
@@ -19,7 +19,7 @@ const deck = [
 					href="https://github.com/Baccega/check-vaccine-prenotation-available"
 					className="flex items-center justify-evenly gap-2"
 				>
-					<Link size="20" strokeWidth={2.8} /> <span className="leading-5">Check COVID-19 vaccine availability</span>
+					<Link size="30" strokeWidth={2.8} /> <span className="leading-5">Check COVID-19 vaccine availability</span>
 				</a>
 			</RealisticButton>,
 			<RealisticButton width="wide" key="backup-link" className="text-xl border-[3px]">
@@ -29,7 +29,7 @@ const deck = [
 					href="https://github.com/Baccega/altervista-backup-automation"
 					className="flex items-center justify-evenly gap-2"
 				>
-					<Link size="20" strokeWidth={2.8} /> <span className="leading-5">Automatically backup Altervista websites</span>
+					<Link size="30" strokeWidth={2.8} /> <span className="leading-5">Automatically backup Altervista websites</span>
 				</a>
 			</RealisticButton>,
 			<RealisticButton width="wide" key="custom-heading-link" className="text-xl border-[3px]">
@@ -39,17 +39,17 @@ const deck = [
 					href="https://github.com/Baccega/add-custom-heading-to-videos"
 					className="flex items-center justify-evenly gap-2"
 				>
-					<Link size="20" strokeWidth={2.8} /> <span className="leading-5">Add custom heading to videos with FFMPEG</span>
+					<Link size="30" strokeWidth={2.8} /> <span className="leading-5">Add custom heading to videos with FFMPEG</span>
 				</a>
 			</RealisticButton>
 		],
 		headingSize: "small",
 		texture: circuitTexture,
-		image: "/textures/card-texture-11.jpeg",
+		image: "/images/machinery.jpeg",
 	},
 	{
 		id: 1,
-		wip: true,
+		wip: false,
 		title: "Page Rank and HITS",
 		description: [
 			"C++ implementation of PageRank (Google) and HITS (Ask.com)",
@@ -66,11 +66,11 @@ const deck = [
 		],
 
 		texture: circuitTexture,
-		image: "/textures/card-texture-11.jpeg",
+		image: "/images/google-crawler.jpeg",
 	},
 	{
 		id: 2,
-		wip: true,
+		wip: false,
 		title: "Le Giumelle",
 		description: [
 			"My family's farm website, built with Next.js, Stripe and Shadcn/ui",
@@ -87,11 +87,11 @@ const deck = [
 		],
 
 		texture: circuitTexture,
-		image: "/textures/card-texture-11.jpeg",
+		image: "/images/kiwi.jpeg",
 	},
 	{
 		id: 3,
-		wip: true,
+		wip: false,
 		title: "Smartphone based RTI",
 		description: [
 			"Reflectance Transformation Imaging using OpenCV in Python",
@@ -108,11 +108,11 @@ const deck = [
 		],
 		headingSize: "small",
 		texture: circuitTexture,
-		image: "/textures/card-texture-11.jpeg",
+		image: "/images/camera.jpeg",
 	},
 	{
 		id: 4,
-		wip: true,
+		wip: false,
 		title: "Baccegasandro.dev",
 		description: [
 			"This website! Created with Next.js, Tailwind CSS and react-spring",
@@ -129,7 +129,7 @@ const deck = [
 		],
 
 		texture: circuitTexture,
-		image: "/textures/card-texture-11.jpeg",
+		image: "/images/brand-with-bg.jpeg",
 	},
 ] satisfies Deck;
 

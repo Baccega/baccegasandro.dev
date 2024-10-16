@@ -24,7 +24,7 @@ const deck = [
 			</RealisticButton>
 		],
 		texture: waveTexture,
-		image: "/images/twitter.jpeg",
+		image: "/images/twitter2.jpeg",
 	},
 	{
 		id: 2,

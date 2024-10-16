@@ -9,21 +9,21 @@ import { RealisticButton } from "@/components/ui/realisticButton";
 import { Download, Link } from "lucide-react";
 
 const deck = [
-	{
-		id: 8,
-		wip: true,
-		title: "Contact me",
-		description: ["See the options"],
-		texture: waveTexture,
-		image: "/images/contact-me-2.jpeg",
-	},
+	// {
+	// 	id: 8,
+	// 	wip: true,
+	// 	title: "Contact me",
+	// 	description: ["See the options (This will link to the contact me pack)"],
+	// 	texture: waveTexture,
+	// 	image: "/images/contact-me-2.jpeg",
+	// },
 	{
 		id: 7,
-		wip: true,
+		wip: false,
 		title: "Wirecube GmbH",
 		description: ["Fullstack developer", "Graz, Austria", "2023 - 2024"],
 		texture: stormTexture,
-		image: "/textures/card-texture-11.jpeg",
+		image: "/images/wirecube-offices.jpeg",
 	},
 	{
 		id: 4,
@@ -36,11 +36,11 @@ const deck = [
 	},
 	{
 		id: 6,
-		wip: true,
+		wip: false,
 		title: "SMC Treviso",
 		description: ["Frontend Developer", "Treviso, Italy", "2019 - 2022"],
 		texture: stormTexture,
-		image: "/textures/card-texture-11.jpeg",
+		image: "/images/smc-offices.jpeg",
 	},
 	{
 		id: 2,

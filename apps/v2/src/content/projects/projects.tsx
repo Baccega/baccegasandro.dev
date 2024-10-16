@@ -43,7 +43,7 @@ const deck = [
 				</a>
 			</RealisticButton>
 		],
-		headingSize: "small",
+		headingSize: "tiny",
 		texture: circuitTexture,
 		image: "/images/machinery.jpeg",
 	},
@@ -64,7 +64,7 @@ const deck = [
 				</a>
 			</RealisticButton>
 		],
-
+		headingSize: "small",
 		texture: circuitTexture,
 		image: "/images/google-crawler.jpeg",
 	},

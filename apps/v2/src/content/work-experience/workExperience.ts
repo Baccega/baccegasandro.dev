@@ -21,7 +21,7 @@ const deck = [
 		title: "CI/CD Pipeline development",
 		description: ["Increase the Gitlab's CI/CD pipeline speed by 4x"],
 		texture: stormTexture,
-		headingSize: "small",
+		headingSize: "tiny",
 		image: "/images/pipeline.jpeg",
 	},
 	{
@@ -52,7 +52,7 @@ const deck = [
 			"Created ad-hoc Vite proxy to style a custom CMS",
 		],
 		texture: stormTexture,
-		headingSize: "small",
+		headingSize: "tiny",
 		image: "/images/tools.jpeg",
 	},
 	{

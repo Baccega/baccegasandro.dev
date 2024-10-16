@@ -21,7 +21,7 @@ export type Card = {
 	description: Array<string | JSX.Element>;
 	texture: StaticImageData;
 	image: string;
-	headingSize?: "small" | "default";
+	headingSize?: "tiny" | "small" | "default";
 	wip?: boolean;
 };
 

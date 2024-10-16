@@ -58,7 +58,7 @@ const deck = [
 		</RealisticButton>],
 		texture: leafTexture,
 		image: "/images/graduation2.jpeg",
-		headingSize: "small",
+		headingSize: "tiny",
 	},
 	{
 		id: 5,
@@ -80,7 +80,7 @@ const deck = [
 		description: ["Camposampiero (PD)"],
 		texture: leafTexture,
 		image: "/images/north-italy-plains.webp",
-		headingSize: "small",
+		headingSize: "tiny",
 	},
 	{
 		id: 1,

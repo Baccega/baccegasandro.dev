@@ -5,6 +5,35 @@ import stormTexture from "/public/textures/card-texture-7.jpeg";
 
 const deck = [
 	{
+		id: 7,
+		wip: true,
+		title: "Visual Regression Testing",
+		description: [
+			"Created a custom visual regression testing tool using Playwright to detect regressions in the UI",
+		],
+		texture: stormTexture,
+		headingSize: "small",
+		image: "/textures/card-texture-5.jpeg",
+	},
+	{
+		id: 7,
+		wip: true,
+		title: "CI/CD Pipeline development",
+		description: ["Increase the Gitlab's CI/CD pipeline speed by 4x"],
+		texture: stormTexture,
+		headingSize: "small",
+		image: "/textures/card-texture-5.jpeg",
+	},
+	{
+		id: 6,
+		wip: true,
+		title: "Dashboard development",
+		description: ["React ( Material UI, Redux )", "Typescript", "Node.js"],
+		texture: stormTexture,
+		headingSize: "small",
+		image: "/textures/card-texture-5.jpeg",
+	},
+	{
 		id: 2,
 		wip: true,
 		title: "SMC Treviso",

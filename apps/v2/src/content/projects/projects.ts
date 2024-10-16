@@ -43,7 +43,7 @@ export const PROJECTS = {
 	id: 3,
 	wip: true,
 	slug: "projects",
-	title: "Projects",
+	title: "Personal Projects",
 	texture: circuitTexture,
 	deck: deck,
 	portrait: "/images/projects.jpeg",

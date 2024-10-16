@@ -77,7 +77,7 @@ const deck = [
 		id: 1,
 		wip: true,
 		title: "Baccega Sandro",
-		description: ["Software Engineer",
+		description: ["Software Engineer", "Specialized in Web Development",
 			<RealisticButton width="wide" key="cv-link" className="text-xl border-[3px]">
 				<a
 					target="_blank"

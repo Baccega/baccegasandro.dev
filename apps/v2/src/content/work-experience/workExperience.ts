@@ -1,7 +1,6 @@
 import type { Deck, Packet } from "../packets";
 import leafTexture from "/public/textures/card-texture-8.jpeg";
 import waveTexture from "/public/textures/card-texture-2.jpeg";
-import circuitTexture from "/public/textures/card-texture-3.jpeg";
 import stormTexture from "/public/textures/card-texture-7.jpeg";
 
 const deck = [
@@ -11,7 +10,7 @@ const deck = [
 		title: "SMC Treviso",
 		description: ["Frontend Developer", "Treviso, Italy", "2019 - 2022"],
 		texture: stormTexture,
-		image: "/textures/card-texture-11.jpeg",
+		image: "/textures/card-texture-5.jpeg",
 	},
 	{
 		id: 5,
@@ -23,7 +22,7 @@ const deck = [
 		],
 		texture: stormTexture,
 		headingSize: "small",
-		image: "/textures/card-texture-11.jpeg",
+		image: "/textures/card-texture-5.jpeg",
 	},
 	{
 		id: 4,
@@ -38,7 +37,7 @@ const deck = [
 		],
 		texture: stormTexture,
 		headingSize: "small",
-		image: "/textures/card-texture-11.jpeg",
+		image: "/textures/card-texture-5.jpeg",
 	},
 	{
 		id: 3,
@@ -47,7 +46,7 @@ const deck = [
 		headingSize: "small",
 		description: ["Adobe Experience Manager", "React", "Tailwind CSS"],
 		texture: stormTexture,
-		image: "/textures/card-texture-11.jpeg",
+		image: "/textures/card-texture-5.jpeg",
 	},
 	{
 		id: 1,
@@ -55,7 +54,7 @@ const deck = [
 		title: "Wirecube GmbH",
 		description: ["Fullstack developer", "Graz, Austria", "2023 - 2024"],
 		texture: stormTexture,
-		image: "/textures/card-texture-11.jpeg",
+		image: "/textures/card-texture-5.jpeg",
 	},
 ] satisfies Deck;
 

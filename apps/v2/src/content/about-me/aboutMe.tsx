@@ -1,7 +1,7 @@
 import React from "react";
 import type { Deck, Packet } from "../packets";
 import leafTexture from "/public/textures/card-texture-8.jpeg";
-import waveTexture from "/public/textures/card-texture-2.jpeg";
+import waveTexture from "/public/textures/card-texture-6.jpeg";
 import circuitTexture from "/public/textures/card-texture-3.jpeg";
 import stormTexture from "/public/textures/card-texture-7.jpeg";
 import magmaTexture from "/public/textures/card-texture-9.jpeg";
@@ -14,7 +14,7 @@ const deck = [
 		wip: true,
 		title: "Contact me",
 		description: ["See the options"],
-		texture: magmaTexture,
+		texture: waveTexture,
 		image: "/textures/card-texture-1.jpeg",
 	},
 	{

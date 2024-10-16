@@ -135,7 +135,7 @@ const deck = [
 
 export const PROJECTS = {
 	id: 3,
-	wip: true,
+	wip: false,
 	slug: "projects",
 	title: "My Projects",
 	texture: circuitTexture,

@@ -9,7 +9,7 @@ import { Link, Mail } from "lucide-react";
 const deck = [
 	{
 		id: 3,
-		wip: true,
+		wip: false,
 		title: "Twitter (X)",
 		description: [
 			<RealisticButton width="wide" key="twitter-link" className="text-xl border-[3px]">
@@ -24,11 +24,11 @@ const deck = [
 			</RealisticButton>
 		],
 		texture: waveTexture,
-		image: "/textures/card-texture-11.jpeg",
+		image: "/images/twitter.jpeg",
 	},
 	{
 		id: 2,
-		wip: true,
+		wip: false,
 		title: "LinkedIn",
 		description: [
 			<RealisticButton width="wide" key="linkedin-link" className="text-xl border-[3px]">
@@ -43,11 +43,11 @@ const deck = [
 			</RealisticButton>
 		],
 		texture: waveTexture,
-		image: "/textures/card-texture-11.jpeg",
+		image: "/images/linkedin.jpeg",
 	},
 	{
 		id: 1,
-		wip: true,
+		wip: false,
 		title: "E-Mail",
 		description: [
 			<RealisticButton width="wide" key="mail-link" className="text-xl border-[3px]">
@@ -62,7 +62,7 @@ const deck = [
 			</RealisticButton>
 		],
 		texture: waveTexture,
-		image: "/textures/card-texture-11.jpeg",
+		image: "/images/email.jpeg",
 	},
 ] satisfies Deck;
 

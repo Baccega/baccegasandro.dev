@@ -28,7 +28,9 @@ const deck = [
 		id: 6,
 		wip: true,
 		title: "Dashboard development",
-		description: ["React ( Material UI, Redux )", "Typescript", "Node.js"],
+		description: [
+			"Built complex features for a dashboard that used React, with Material UI and Redux, and Node.js with Express",
+		],
 		texture: stormTexture,
 		headingSize: "small",
 		image: "/textures/card-texture-5.jpeg",
@@ -58,11 +60,7 @@ const deck = [
 		wip: true,
 		title: "Started modern projects",
 		description: [
-			"Next.js",
-			"Shadcn/ui",
-			"Tailwind CSS",
-			"Turborepo",
-			"Zustand",
+			"Created brand new projects using new technologies like: Next.js, Shadcn/ui, Tailwind CSS, Turborepo, Zustand",
 		],
 		texture: stormTexture,
 		headingSize: "small",
@@ -89,7 +87,7 @@ const deck = [
 
 export const WORK_EXPERIENCE = {
 	id: 4,
-	wip: true,
+	wip: false,
 	slug: "work-experience",
 	title: "Work Experience",
 	texture: stormTexture,

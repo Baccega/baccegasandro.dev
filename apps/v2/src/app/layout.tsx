@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import localFont from 'next/font/local'
 import { LoadingOverlay } from "@/components/loadingOverlay";
 
-export const magicMedieval = localFont({
+const magicMedieval = localFont({
 	src: [
 		{
 			path: '../../public/fonts/magic-medieval-font/Magicmedieval.woff',

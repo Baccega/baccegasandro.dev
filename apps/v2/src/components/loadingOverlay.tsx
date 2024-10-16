@@ -33,7 +33,7 @@ export function LoadingOverlay() {
     return (<div aria-hidden style={{ opacity: imagesLoaded ? 0 : 1, visibility: imagesLoaded ? 'hidden' : 'visible', transition: 'visibility 0.5s, opacity 0.5s linear;' }} className="z-[100] absolute w-[100dvw] h-[100dvh] bg-black flex flex-col justify-center items-center gap-4">
         <div className="relative">
             <Image
-                className="object-cover w-full h-auto"
+                className="object-cover h-auto"
                 src="/shapes/brand-logo.svg"
                 alt="Loading logo"
                 width={250}

@@ -68,10 +68,10 @@ const deck = [
 
 export const CONTACT_ME = {
 	id: 2,
-	wip: true,
+	wip: false,
 	slug: "contact-me",
 	title: "Contact me",
 	texture: waveTexture,
 	deck: deck,
-	portrait: "/images/contact-me.jpeg",
+	portrait: "/images/contact-me-2.jpeg",
 } satisfies Packet;

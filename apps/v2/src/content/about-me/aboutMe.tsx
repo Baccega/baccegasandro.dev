@@ -6,7 +6,7 @@ import circuitTexture from "/public/textures/card-texture-3.jpeg";
 import stormTexture from "/public/textures/card-texture-7.jpeg";
 import magmaTexture from "/public/textures/card-texture-9.jpeg";
 import { RealisticButton } from "@/components/ui/realisticButton";
-import { Download } from "lucide-react";
+import { Download, Link } from "lucide-react";
 
 const deck = [
 	{
@@ -15,7 +15,7 @@ const deck = [
 		title: "Contact me",
 		description: ["See the options"],
 		texture: waveTexture,
-		image: "/textures/card-texture-1.jpeg",
+		image: "/images/contact-me-2.jpeg",
 	},
 	{
 		id: 7,
@@ -27,11 +27,11 @@ const deck = [
 	},
 	{
 		id: 4,
-		wip: true,
+		wip: false,
 		title: "Moved to Graz, Austria",
 		description: ["January 2023"],
 		texture: leafTexture,
-		image: "/textures/card-texture-2.jpeg",
+		image: "/images/graz.jpeg",
 		headingSize: "small",
 	},
 	{
@@ -44,16 +44,25 @@ const deck = [
 	},
 	{
 		id: 2,
-		wip: true,
+		wip: false,
 		title: "Master in Computer Science",
-		description: ["From Ca' Foscari University of Venice"],
+		description: ["From Ca' Foscari University of Venice", <RealisticButton width="wide" key="rti-link" className="text-xl border-[3px]">
+			<a
+				target="_blank"
+				rel="noreferrer"
+				href="http://dspace.unive.it/handle/10579/25914"
+				className="flex items-center justify-evenly gap-2"
+			>
+				<Link size="40" strokeWidth={2.8} /> <span className="leading-5">Thesis: "An Implicit Neural Representation for RTI"</span>
+			</a>
+		</RealisticButton>],
 		texture: leafTexture,
-		image: "/textures/card-texture-4.jpeg",
+		image: "/images/graduation2.jpeg",
 		headingSize: "small",
 	},
 	{
 		id: 5,
-		wip: true,
+		wip: false,
 		title: "Technology enthusiast",
 		description: [
 			"Loves videogames",
@@ -61,21 +70,21 @@ const deck = [
 			"First side jobs during high school",
 		],
 		texture: leafTexture,
-		image: "/textures/card-texture-5.jpeg",
+		image: "/images/kid.jpeg",
 		headingSize: "small",
 	},
 	{
 		id: 3,
-		wip: true,
+		wip: false,
 		title: "Born north of Padua, Italy",
 		description: ["Camposampiero (PD)"],
 		texture: leafTexture,
-		image: "/textures/card-texture-6.jpeg",
+		image: "/images/north-italy-plains.webp",
 		headingSize: "small",
 	},
 	{
 		id: 1,
-		wip: true,
+		wip: false,
 		title: "Baccega Sandro",
 		description: ["Software Engineer", "Specialized in Web Development",
 			<RealisticButton width="wide" key="cv-link" className="text-xl border-[3px]">
@@ -90,13 +99,13 @@ const deck = [
 			</RealisticButton>
 		],
 		texture: leafTexture,
-		image: "/textures/card-texture-7.jpeg",
+		image: "/images/me-fantasy.jpeg",
 	},
 ] satisfies Deck;
 
 export const ABOUT_ME = {
 	id: 1,
-	wip: true,
+	wip: false,
 	slug: "about-me",
 	title: "About me",
 	texture: leafTexture,

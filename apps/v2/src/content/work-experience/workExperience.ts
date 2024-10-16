@@ -5,7 +5,7 @@ import stormTexture from "/public/textures/card-texture-7.jpeg";
 
 const deck = [
 	{
-		id: 7,
+		id: 8,
 		wip: true,
 		title: "Visual Regression Testing",
 		description: [

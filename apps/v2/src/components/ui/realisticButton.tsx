@@ -19,7 +19,7 @@ const realisticButtonVariants = cva(
             },
             width: {
                 default: "",
-                wide: "py-2 w-full"
+                wide: "py-1 w-full"
             }
         },
         defaultVariants: {

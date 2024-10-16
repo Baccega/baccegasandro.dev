@@ -8,6 +8,9 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
+			fontFamily: {
+				medieval: ["var(--font-magic-medieval)"],
+			},
 			colors: {
 				"card-outline": "#2f2b2b",
 				"card-primary": "#007918",

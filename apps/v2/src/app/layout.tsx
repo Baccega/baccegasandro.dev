@@ -8,14 +8,16 @@ import { cn } from "@/lib/utils";
 import localFont from 'next/font/local'
 import { LoadingOverlay } from "@/components/loadingOverlay";
 
-const magicMedieval = localFont({
+export const magicMedieval = localFont({
 	src: [
 		{
-			path: '../../public/fonts/magic-medieval-font/Magicmedieval.ttf',
+			path: '../../public/fonts/magic-medieval-font/Magicmedieval.woff',
 			weight: '400',
 			style: 'normal',
 		},
 	],
+	display: 'swap',
+	variable: '--font-magic-medieval',
 })
 
 export const metadata: Metadata = {
@@ -31,6 +33,10 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={cn(magicMedieval.className, "relative")}>
+				<script>
+    				/* to prevent Firefox FOUC, this must be here */
+					let FF_FOUC_FIX;
+				</script>
 				<LoadingOverlay />
 				<Image
 					className="-z-50 absolute inset-0 object-cover bg-repeat"

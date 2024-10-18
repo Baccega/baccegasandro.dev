@@ -22,6 +22,7 @@ export type Card = {
 	texture: StaticImageData;
 	image: string;
 	headingSize?: "tiny" | "small" | "default";
+	descriptionSize?: "tiny" | "small" | "default";
 	wip?: boolean;
 };
 

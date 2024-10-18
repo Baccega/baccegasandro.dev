@@ -9,7 +9,7 @@ export function Packet(props: { title: string; texture: StaticImageData, portrai
 		<span className="bg-packet-border bg-no-repeat bg-cover w-full h-full" />
 		<div className="relative w-full h-full">
 			<Image
-				className="z-10 absolute inset-0 object-cover brightness-90"
+				className="z-10 absolute inset-0 object-cover"
 				src={props.texture}
 				placeholder="blur"
 				alt={props.title}

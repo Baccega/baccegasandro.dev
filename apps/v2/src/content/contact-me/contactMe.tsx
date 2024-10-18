@@ -50,6 +50,7 @@ const deck = [
 		wip: false,
 		title: "E-Mail",
 		description: [
+			"mail.sandro.baccega@gmail.com",
 			<RealisticButton width="wide" key="mail-link" className="text-xl border-[3px]">
 				<a
 					target="_blank"
@@ -61,6 +62,7 @@ const deck = [
 				</a>
 			</RealisticButton>
 		],
+		descriptionSize: "tiny",
 		texture: waveTexture,
 		image: "/images/email.jpeg",
 	},

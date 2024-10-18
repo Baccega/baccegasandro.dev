@@ -46,19 +46,20 @@ const deck = [
 		id: 2,
 		wip: false,
 		title: "Master in Computer Science",
-		description: ["From Ca' Foscari University of Venice", <RealisticButton width="wide" key="rti-link" className="text-xl border-[3px]">
+		description: ["From Ca' Foscari University of Venice", "Thesis: An Implicit Neural Representation for RTI", <RealisticButton width="wide" key="rti-link" className="text-xl border-[3px]">
 			<a
 				target="_blank"
 				rel="noreferrer"
 				href="http://dspace.unive.it/handle/10579/25914"
 				className="flex items-center justify-evenly gap-2"
 			>
-				<Link size="40" strokeWidth={2.8} /> <span className="leading-5">Thesis: "An Implicit Neural Representation for RTI"</span>
+				<Link size="20" strokeWidth={2.8} />Link to Master Thesis
 			</a>
 		</RealisticButton>],
 		texture: leafTexture,
 		image: "/images/graduation2.jpeg",
 		headingSize: "tiny",
+		descriptionSize: "small",
 	},
 	{
 		id: 5,

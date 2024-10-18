@@ -18,8 +18,11 @@ const deck = [
 	{
 		id: 7,
 		wip: false,
-		title: "CI/CD Pipeline development",
-		description: ["Increase the Gitlab's CI/CD pipeline speed by 4x"],
+		title: "CI/CD Pipelines development",
+		description: [
+			"Increase Gitlab's CI/CD pipeline speed by 4x",
+			"Created Jenkins pipelines for CD on Liferay DXP with Docker",
+		],
 		texture: stormTexture,
 		headingSize: "tiny",
 		image: "/images/pipeline.jpeg",
@@ -60,7 +63,7 @@ const deck = [
 		wip: false,
 		title: "Started modern projects",
 		description: [
-			"Created brand new projects using new technologies like: Next.js, Shadcn/ui, Tailwind CSS, Turborepo, Zustand",
+			"Started new projects using state of the art technologies like: Next.js, Shadcn/ui, Tailwind CSS, Turborepo, Zustand",
 		],
 		texture: stormTexture,
 		headingSize: "small",

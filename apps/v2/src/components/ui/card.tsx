@@ -35,6 +35,22 @@ const cardContainerVariants = cva(
 	},
 );
 
+const cardDescriptionVariants = cva(
+	"text-foreground text-balance",
+	{
+		variants: {
+			variant: {
+				default: "text-2xl",
+				small: "text-xl",
+				tiny: "text-md",
+			},
+		},
+		defaultVariants: {
+			variant: "default",
+		},
+	},
+);
+
 export interface CardProps
 	extends React.ButtonHTMLAttributes<HTMLDivElement>,
 	VariantProps<typeof cardWrapperVariants> {
@@ -43,7 +59,7 @@ export interface CardProps
 
 
 export default function CardComponent({ card, variant }: CardProps) {
-	const { texture, description, image, title, subtitle, headingSize = "default", wip } = card;
+	const { texture, description, image, title, subtitle, descriptionSize, headingSize = "default", wip } = card;
 
 	// Need to use as because typescript does not like CSS variables
 	const imageInlineStyle = {
@@ -62,17 +78,9 @@ export default function CardComponent({ card, variant }: CardProps) {
 					<CurvedText size={headingSize} text={title} />
 				</h2>
 				<div className="col-start-2 text-center bg-card-description bg-no-repeat h-[102%] -translate-y-[1.2rem] pt-6 px-4 flex flex-col gap-2">
-					{description.map((paragraph) => {
-						if (typeof paragraph === "string") {
-							return (
-								<p key={paragraph} className="text-foreground text-2xl">{paragraph}</p>
-							);
-						}
-						return (
-							<p key={paragraph.key} className="text-foreground text-2xl">{paragraph}</p>
-						);
-
-					})}
+					{description.map((paragraph) =>
+						<p key={typeof paragraph === "string" ? paragraph : paragraph.key} className={cardDescriptionVariants({ variant: descriptionSize })} > {paragraph}</p>
+					)}
 				</div>
 				<Image
 					className="-z-10 rounded-xl absolute inset-0 object-cover"
@@ -84,6 +92,6 @@ export default function CardComponent({ card, variant }: CardProps) {
 					priority={false}
 				/>
 			</div>
-		</div>
+		</div >
 	);
 }

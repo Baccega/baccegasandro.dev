@@ -18,6 +18,14 @@ const deck = [
 	// 	image: "/images/contact-me-2.jpeg",
 	// },
 	{
+		id: 9,
+		wip: false,
+		title: "Storywise",
+		description: ["Senior Frontend Engineer", "Graz, Austria", "2025 - Now"],
+		texture: stormTexture,
+		image: "/images/chax-offices.jpeg",
+	},
+	{
 		id: 7,
 		wip: false,
 		title: "Wirecube GmbH",
@@ -80,7 +88,7 @@ const deck = [
 		title: "Born north of Padua, Italy",
 		description: ["Camposampiero (PD)"],
 		texture: leafTexture,
-		image: "/images/north-italy-plains.webp",
+		image: "/images/north-italy-plains.jpeg",
 		headingSize: "tiny",
 	},
 	{

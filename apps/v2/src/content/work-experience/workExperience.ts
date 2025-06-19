@@ -49,7 +49,7 @@ const deck = [
 	{
 		id: 5,
 		wip: false,
-		title: "Created tooling for the team",
+		title: "Internal tool creation",
 		description: [
 			"Automated tasks with a Node.js CLI tool",
 			"Created ad-hoc Vite proxy to style a custom CMS",
@@ -61,7 +61,7 @@ const deck = [
 	{
 		id: 4,
 		wip: false,
-		title: "Started modern projects",
+		title: "New projects R&D",
 		description: [
 			"Started new projects using state of the art technologies like: Next.js, Shadcn/ui, Tailwind CSS, Turborepo, Zustand",
 		],
@@ -87,6 +87,22 @@ const deck = [
 		description: ["Fullstack developer", "Graz, Austria", "2023 - 2024"],
 		texture: stormTexture,
 		image: "/images/wirecube-offices.jpeg",
+	},
+	{
+		id: 10,
+		wip: false,
+		title: "SaaS development",
+		description: ["Maintained a web app, built with React, Tailwind CSS and Prisma"],
+		texture: stormTexture,
+		image: "/images/saas-development.jpeg",
+	},
+	{
+		id: 9,
+		wip: false,
+		title: "Storywise",
+		description: ["Senior Frontend Engineer", "Graz, Austria", "2025 - Now"],
+		texture: stormTexture,
+		image: "/images/chax-offices.jpeg",
 	},
 ] satisfies Deck;
 

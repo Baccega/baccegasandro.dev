@@ -8,6 +8,7 @@ import { trans } from "@/lib/utils";
 import { packets_above_position, packets_stacked_position, type PacketSpringApi, type PacketSpringProps } from "@/lib/packetsPositions";
 import { Deck, PACKETS } from "@/content/packets";
 
+const packetFallingAudio = new Audio('/sounds/packet-falling.m4a')
 
 export function AnimatedPackets(props: {
     packetsProps: PacketSpringProps[];
@@ -30,6 +31,7 @@ export function AnimatedPackets(props: {
     useEffect(() => {
         if (selectedPacket !== undefined) return;
         const anim = async () => {
+            packetFallingAudio.play()
             if (currentPacket < (previousPacket?.current ?? 0)) {
                 // Going back animation
                 props.packetsApi.start((i) => {

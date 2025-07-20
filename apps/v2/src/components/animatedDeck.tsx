@@ -9,6 +9,9 @@ import { packets_above_position, packets_clip, packets_scattered_position, packe
 import { cards_above_position, cards_scattered_position, cards_stacked_position, cards_up_position } from "@/lib/cardPositions";
 import type { Deck } from "@/content/packets";
 
+const scissorsAudio = new Audio('/sounds/scissors.m4a')
+const shuffleAudio = new Audio('/sounds/shuffle.m4a')
+const slidingAudio = new Audio('/sounds/sliding.m4a')
 
 export function AnimatedDeck(props: {
     deck: Deck, selectedPacket?: number, packetsApi: PacketSpringApi
@@ -31,11 +34,13 @@ export function AnimatedDeck(props: {
             })
             await wait(1000);
             await cardsApi.start((i) => ({ x: 0, y: i, immediate: true }))
+            scissorsAudio.play()
             await props.packetsApi.start((i) => {
                 if (props.selectedPacket !== i) return;
                 return packets_clip(i)
             });
             await wait(1000);
+            slidingAudio.play()
             await cardsApi.start(cards_up_position)
             await wait(500);
             await props.packetsApi.start((i) => {
@@ -43,6 +48,7 @@ export function AnimatedDeck(props: {
                 return packets_scattered_position(i)
             });
             await wait(500);
+            shuffleAudio.play()
             props.packetsApi.start((i) => ({
                 ...packets_above_position(i),
                 immediate: true

@@ -8,6 +8,9 @@ import { useEffect } from "react";
 import { useShallow } from "zustand/react/shallow";
 import { RealisticButton } from "./ui/realisticButton";
 
+const cardFlickAudio = new Audio('/sounds/card-flick.m4a')
+
+
 export function NavigationButtons() {
     const [isAnimating, setIsAnimating] = usePortfolioStore(
         useShallow((state) => [state.isAnimating, state.setIsAnimating]),
@@ -58,6 +61,7 @@ export function NavigationButtons() {
             // Deck is visible
             if (currentCard > selectedDeck.length) return;
             const nextCard = currentCard + 1;
+            cardFlickAudio.play();
             setCurrentCard(nextCard);
         } else {
             // Packets are visible
@@ -72,6 +76,7 @@ export function NavigationButtons() {
         if (selectedPacket !== undefined) {
             // Deck is visible
             if (currentCard === 0) return;
+            cardFlickAudio.play();
             const prevCard = currentCard - 1;
             setCurrentCard(prevCard);
         } else {

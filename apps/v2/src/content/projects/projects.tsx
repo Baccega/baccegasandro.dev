@@ -5,6 +5,7 @@ import circuitTexture from "/public/textures/card-texture-11.jpeg";
 import stormTexture from "/public/textures/card-texture-4.jpeg";
 import { RealisticButton } from "@/components/ui/realisticButton";
 import { Link } from "lucide-react";
+import { CppIcon, NextjsIcon, OpenCvIcon, PythonIcon, ReactIcon, ReactSpringIcon, StripeIcon, TailwindCssIcon, TypescriptIcon } from "@/lib/icons";
 
 const deck = [
 	{
@@ -46,6 +47,9 @@ const deck = [
 		headingSize: "tiny",
 		texture: circuitTexture,
 		image: "/images/machinery.jpeg",
+		badges: [
+			{ description: "Typescript", icon: TypescriptIcon },
+		],
 	},
 	{
 		id: 1,
@@ -67,6 +71,9 @@ const deck = [
 		headingSize: "small",
 		texture: circuitTexture,
 		image: "/images/google-crawler.jpeg",
+		badges: [
+			{ description: "C++", icon: CppIcon },
+		],
 	},
 	{
 		id: 2,
@@ -88,6 +95,12 @@ const deck = [
 
 		texture: circuitTexture,
 		image: "/images/kiwi.jpeg",
+		badges: [
+			{ description: "React", icon: ReactIcon },
+			{ description: "Tailwind CSS", icon: TailwindCssIcon },
+			{ description: "Next.js", icon: NextjsIcon },
+			{ description: "Stripe", icon: StripeIcon },
+		],
 	},
 	{
 		id: 3,
@@ -109,6 +122,10 @@ const deck = [
 		headingSize: "small",
 		texture: circuitTexture,
 		image: "/images/camera.jpeg",
+		badges: [
+			{ description: "Python", icon: PythonIcon },
+			{ description: "OpenCV", icon: OpenCvIcon },
+		],
 	},
 	{
 		id: 4,
@@ -130,6 +147,12 @@ const deck = [
 
 		texture: circuitTexture,
 		image: "/images/brand-with-bg.jpeg",
+		badges: [
+			{ description: "React", icon: ReactIcon },
+			{ description: "Tailwind CSS", icon: TailwindCssIcon },
+			{ description: "Next.js", icon: NextjsIcon },
+			{ description: "React Spring", icon: ReactSpringIcon },
+		],
 	},
 ] satisfies Deck;
 

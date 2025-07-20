@@ -25,6 +25,7 @@ const deck = [
 		],
 		texture: waveTexture,
 		image: "/images/twitter2.jpeg",
+		badges: [],
 	},
 	{
 		id: 2,
@@ -44,6 +45,7 @@ const deck = [
 		],
 		texture: waveTexture,
 		image: "/images/linkedin.jpeg",
+		badges: [],
 	},
 	{
 		id: 1,
@@ -65,6 +67,7 @@ const deck = [
 		descriptionSize: "tiny",
 		texture: waveTexture,
 		image: "/images/email.jpeg",
+		badges: [],
 	},
 ] satisfies Deck;
 

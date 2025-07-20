@@ -2,6 +2,7 @@ import type { Deck, Packet } from "../packets";
 import leafTexture from "/public/textures/card-texture-8.jpeg";
 import waveTexture from "/public/textures/card-texture-2.jpeg";
 import stormTexture from "/public/textures/card-texture-7.jpeg";
+import { AdobeExperienceManagerIcon, DockerIcon, ExpressIcon, GitlabCiIcon, JenkinsIcon, MaterialUiIcon, NextjsIcon, NodejsIcon, PlaywrightIcon, PrismaIcon, ReactIcon, ReduxIcon, TailwindCssIcon, TurborepoIcon, TypescriptIcon, ViteIcon } from "@/lib/icons";
 
 const deck = [
 	{
@@ -14,6 +15,10 @@ const deck = [
 		texture: stormTexture,
 		headingSize: "small",
 		image: "/images/testing.jpeg",
+		badges: [
+			{description: "Playwright", icon: PlaywrightIcon},
+			{description: "Typescript", icon: TypescriptIcon},
+		],
 	},
 	{
 		id: 7,
@@ -26,6 +31,11 @@ const deck = [
 		texture: stormTexture,
 		headingSize: "tiny",
 		image: "/images/pipeline.jpeg",
+		badges: [
+			{description: "Gitlab", icon: GitlabCiIcon},
+			{description: "Docker", icon: DockerIcon},
+			{description: "Jenkins", icon: JenkinsIcon},
+		],
 	},
 	{
 		id: 6,
@@ -37,6 +47,12 @@ const deck = [
 		texture: stormTexture,
 		headingSize: "small",
 		image: "/images/dashboard.jpeg",
+		badges: [
+			{description: "React", icon: ReactIcon},
+			{description: "Material UI", icon: MaterialUiIcon},
+			{description: "Redux", icon: ReduxIcon},
+			{description: "Express", icon: ExpressIcon},
+		],
 	},
 	{
 		id: 2,
@@ -45,6 +61,7 @@ const deck = [
 		description: ["Frontend Developer", "Treviso, Italy", "2019 - 2022"],
 		texture: stormTexture,
 		image: "/images/smc-offices.jpeg",
+		badges: [],
 	},
 	{
 		id: 5,
@@ -57,6 +74,10 @@ const deck = [
 		texture: stormTexture,
 		headingSize: "tiny",
 		image: "/images/tools.jpeg",
+		badges: [
+			{description: "Node.js", icon: NodejsIcon},
+			{description: "Vite", icon: ViteIcon},
+		],
 	},
 	{
 		id: 4,
@@ -68,6 +89,11 @@ const deck = [
 		texture: stormTexture,
 		headingSize: "small",
 		image: "/images/lab.jpeg",
+		badges: [
+			{description: "Next.js", icon: NextjsIcon},
+			{description: "Tailwind CSS", icon: TailwindCssIcon},
+			{description: "Turborepo", icon: TurborepoIcon},
+		],
 	},
 	{
 		id: 3,
@@ -79,6 +105,11 @@ const deck = [
 		],
 		texture: stormTexture,
 		image: "/images/platform-development.jpeg",
+		badges: [
+			{description: "React", icon: ReactIcon},
+			{description: "Tailwind CSS", icon: TailwindCssIcon},
+			{description: "Adobe Experience Manager", icon: AdobeExperienceManagerIcon},
+		],
 	},
 	{
 		id: 1,
@@ -87,6 +118,7 @@ const deck = [
 		description: ["Fullstack developer", "Graz, Austria", "2023 - 2024"],
 		texture: stormTexture,
 		image: "/images/wirecube-offices.jpeg",
+		badges: [],
 	},
 	{
 		id: 10,
@@ -95,6 +127,11 @@ const deck = [
 		description: ["Maintained a web app, built with React, Tailwind CSS and Prisma"],
 		texture: stormTexture,
 		image: "/images/saas-development.jpeg",
+		badges: [
+			{description: "React", icon: ReactIcon},
+			{description: "Tailwind CSS", icon: TailwindCssIcon},
+			{description: "Prisma", icon: PrismaIcon},
+		],
 	},
 	{
 		id: 9,
@@ -103,6 +140,7 @@ const deck = [
 		description: ["Senior Frontend Engineer", "Graz, Austria", "2025 - Now"],
 		texture: stormTexture,
 		image: "/images/chax-offices.jpeg",
+		badges: [],
 	},
 ] satisfies Deck;
 

@@ -23,6 +23,7 @@ const deck = [
 		title: "Storywise",
 		description: ["Senior Frontend Engineer", "Graz, Austria", "2025 - Now"],
 		texture: stormTexture,
+		badges: [],
 		image: "/images/chax-offices.jpeg",
 	},
 	{
@@ -31,6 +32,7 @@ const deck = [
 		title: "Wirecube GmbH",
 		description: ["Fullstack developer", "Graz, Austria", "2023 - 2024"],
 		texture: stormTexture,
+		badges: [],
 		image: "/images/wirecube-offices.jpeg",
 	},
 	{
@@ -39,6 +41,7 @@ const deck = [
 		title: "Moved to Graz, Austria",
 		description: ["January 2023"],
 		texture: leafTexture,
+		badges: [],
 		image: "/images/graz.jpeg",
 		headingSize: "small",
 	},
@@ -48,6 +51,7 @@ const deck = [
 		title: "SMC Treviso",
 		description: ["Frontend Developer", "Treviso, Italy", "2019 - 2022"],
 		texture: stormTexture,
+		badges: [],
 		image: "/images/smc-offices.jpeg",
 	},
 	{
@@ -65,6 +69,7 @@ const deck = [
 			</a>
 		</RealisticButton>],
 		texture: leafTexture,
+		badges: [],
 		image: "/images/graduation2.jpeg",
 		headingSize: "tiny",
 		descriptionSize: "small",
@@ -79,6 +84,7 @@ const deck = [
 			"First side jobs during high school",
 		],
 		texture: leafTexture,
+		badges: [],
 		image: "/images/kid.jpeg",
 		headingSize: "small",
 	},
@@ -88,6 +94,7 @@ const deck = [
 		title: "Born north of Padua, Italy",
 		description: ["Camposampiero (PD)"],
 		texture: leafTexture,
+		badges: [],
 		image: "/images/north-italy-plains.jpeg",
 		headingSize: "tiny",
 	},
@@ -108,6 +115,7 @@ const deck = [
 			</RealisticButton>
 		],
 		texture: leafTexture,
+		badges: [],
 		image: "/images/me-fantasy.jpeg",
 	},
 ] satisfies Deck;

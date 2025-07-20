@@ -3,6 +3,7 @@ import { ABOUT_ME } from "./about-me/aboutMe";
 import { CONTACT_ME } from "./contact-me/contactMe";
 import { PROJECTS } from "./projects/projects";
 import { WORK_EXPERIENCE } from "./work-experience/workExperience";
+import { IconType } from "react-icons";
 
 export type Packet = {
 	id: number;
@@ -23,6 +24,7 @@ export type Card = {
 	image: string;
 	headingSize?: "tiny" | "small" | "default";
 	descriptionSize?: "tiny" | "small" | "default";
+	badges: Array<{description: string; icon: IconType}>;
 	wip?: boolean;
 };
 

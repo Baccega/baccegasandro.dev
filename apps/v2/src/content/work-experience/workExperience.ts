@@ -2,7 +2,24 @@ import type { Deck, Packet } from "../packets";
 import leafTexture from "/public/textures/card-texture-8.jpeg";
 import waveTexture from "/public/textures/card-texture-2.jpeg";
 import stormTexture from "/public/textures/card-texture-7.jpeg";
-import { AdobeExperienceManagerIcon, DockerIcon, ExpressIcon, GitlabCiIcon, JenkinsIcon, MaterialUiIcon, NextjsIcon, NodejsIcon, PlaywrightIcon, PrismaIcon, ReactIcon, ReduxIcon, TailwindCssIcon, TurborepoIcon, TypescriptIcon, ViteIcon } from "@/lib/icons";
+import {
+	AdobeExperienceManagerIcon,
+	DockerIcon,
+	ExpressIcon,
+	GitlabCiIcon,
+	JenkinsIcon,
+	MaterialUiIcon,
+	NextjsIcon,
+	NodejsIcon,
+	PlaywrightIcon,
+	PrismaIcon,
+	ReactIcon,
+	ReduxIcon,
+	TailwindCssIcon,
+	TurborepoIcon,
+	TypescriptIcon,
+	ViteIcon,
+} from "@/lib/icons";
 
 const deck = [
 	{
@@ -16,8 +33,8 @@ const deck = [
 		headingSize: "small",
 		image: "/images/testing.jpeg",
 		badges: [
-			{description: "Playwright", icon: PlaywrightIcon},
-			{description: "Typescript", icon: TypescriptIcon},
+			{ description: "Playwright", icon: PlaywrightIcon },
+			{ description: "Typescript", icon: TypescriptIcon },
 		],
 	},
 	{
@@ -32,9 +49,9 @@ const deck = [
 		headingSize: "tiny",
 		image: "/images/pipeline.jpeg",
 		badges: [
-			{description: "Gitlab", icon: GitlabCiIcon},
-			{description: "Docker", icon: DockerIcon},
-			{description: "Jenkins", icon: JenkinsIcon},
+			{ description: "Gitlab CI", icon: GitlabCiIcon },
+			{ description: "Docker", icon: DockerIcon },
+			{ description: "Jenkins", icon: JenkinsIcon },
 		],
 	},
 	{
@@ -48,10 +65,10 @@ const deck = [
 		headingSize: "small",
 		image: "/images/dashboard.jpeg",
 		badges: [
-			{description: "React", icon: ReactIcon},
-			{description: "Material UI", icon: MaterialUiIcon},
-			{description: "Redux", icon: ReduxIcon},
-			{description: "Express", icon: ExpressIcon},
+			{ description: "React", icon: ReactIcon },
+			{ description: "Material UI", icon: MaterialUiIcon },
+			{ description: "Redux", icon: ReduxIcon },
+			{ description: "Express", icon: ExpressIcon },
 		],
 	},
 	{
@@ -75,8 +92,8 @@ const deck = [
 		headingSize: "tiny",
 		image: "/images/tools.jpeg",
 		badges: [
-			{description: "Node.js", icon: NodejsIcon},
-			{description: "Vite", icon: ViteIcon},
+			{ description: "Node.js", icon: NodejsIcon },
+			{ description: "Vite", icon: ViteIcon },
 		],
 	},
 	{
@@ -90,9 +107,9 @@ const deck = [
 		headingSize: "small",
 		image: "/images/lab.jpeg",
 		badges: [
-			{description: "Next.js", icon: NextjsIcon},
-			{description: "Tailwind CSS", icon: TailwindCssIcon},
-			{description: "Turborepo", icon: TurborepoIcon},
+			{ description: "Next.js", icon: NextjsIcon },
+			{ description: "Tailwind CSS", icon: TailwindCssIcon },
+			{ description: "Turborepo", icon: TurborepoIcon },
 		],
 	},
 	{
@@ -106,9 +123,12 @@ const deck = [
 		texture: stormTexture,
 		image: "/images/platform-development.jpeg",
 		badges: [
-			{description: "React", icon: ReactIcon},
-			{description: "Tailwind CSS", icon: TailwindCssIcon},
-			{description: "Adobe Experience Manager", icon: AdobeExperienceManagerIcon},
+			{ description: "React", icon: ReactIcon },
+			{ description: "Tailwind CSS", icon: TailwindCssIcon },
+			{
+				description: "Adobe Experience Manager",
+				icon: AdobeExperienceManagerIcon,
+			},
 		],
 	},
 	{
@@ -124,13 +144,15 @@ const deck = [
 		id: 10,
 		wip: false,
 		title: "SaaS development",
-		description: ["Maintained a web app, built with React, Tailwind CSS and Prisma"],
+		description: [
+			"Maintained a web app, built with React, Tailwind CSS and Prisma",
+		],
 		texture: stormTexture,
 		image: "/images/saas-development.jpeg",
 		badges: [
-			{description: "React", icon: ReactIcon},
-			{description: "Tailwind CSS", icon: TailwindCssIcon},
-			{description: "Prisma", icon: PrismaIcon},
+			{ description: "React", icon: ReactIcon },
+			{ description: "Tailwind CSS", icon: TailwindCssIcon },
+			{ description: "Prisma", icon: PrismaIcon },
 		],
 	},
 	{

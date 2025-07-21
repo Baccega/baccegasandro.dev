@@ -4,6 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import Image from "next/image";
 import type React from "react";
 import { CurvedText } from "./curvedText";
+import { Tooltip, TooltipContent, TooltipTrigger } from "./tooltip";
 
 const cardWrapperVariants = cva(
 	"relative rounded-xl border-card-border p-3 -z-20 w-card h-card border bg-card-outline",
@@ -91,9 +92,15 @@ export default function CardComponent({ card, variant }: CardProps) {
 					{wip ? <p className="absolute top-20 left-10 text-white text-shadow-black flex text-3xl">Work in Progress</p> : null}
 				</div>
 				<span className="col-start-2 relative w-full h-full z-20 flex justify-center">
-					{badges.map((badge, i) => <span key={badge.description} className={badgeVariants({ position: i + 1 <= 4 && i + 1 > 1 ? i + 1 as 1 | 2 | 3 | 4 : 1 })}>
-						<badge.icon className="m-auto" />
-					</span>)}
+					{badges.map((badge, i) => <Tooltip key={badge.description}>
+						<TooltipContent side="left">
+							<p className="text-lg">{badge.description}</p>
+						</TooltipContent>
+						<TooltipTrigger asChild className="cursor-help"><span className={badgeVariants({ position: i + 1 <= 4 && i + 1 > 1 ? i + 1 as 1 | 2 | 3 | 4 : 1 })}>
+							<badge.icon className="m-auto" />
+						</span></TooltipTrigger>
+
+					</Tooltip>)}
 				</span>
 				<h2 className="col-span-3 relative bg-center flex justify-center text-center w-full h-full bg-no-repeat bg-cover text-2xl font-semibold text-foreground bg-ribbon">
 					<CurvedText size={headingSize} text={title} />

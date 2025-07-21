@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 
 import localFont from 'next/font/local'
 import { LoadingOverlay } from "@/components/loadingOverlay";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const magicMedieval = localFont({
 	src: [
@@ -47,9 +48,11 @@ export default function RootLayout({
 					sizes="100vw"
 					priority={true}
 				/>
-				<main className="flex h-[100dvh] w-full items-center justify-center relative pb-10 tablet:pb-0 overflow-hidden">
-					{children}
-				</main>
+				<TooltipProvider>
+					<main className="flex h-[100dvh] w-full items-center justify-center relative pb-10 tablet:pb-0 overflow-hidden">
+						{children}
+					</main>
+				</TooltipProvider>
 			</body>
 		</html>
 	);

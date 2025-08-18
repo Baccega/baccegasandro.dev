@@ -84,6 +84,9 @@ const config: Config = {
 				"packet-portrait": "url('/shapes/packet-portrait.svg')",
 				"packet-border": "url('/shapes/packet-border.svg')",
 			},
+			dropShadow: {
+				"from-top": "0px 5px 2px rgba(0, 0, 0, 0.5)",
+			},
 		},
 	},
 	plugins: [require("tailwindcss-animate")],

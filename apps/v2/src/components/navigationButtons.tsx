@@ -7,6 +7,11 @@ import { Ban, ChevronLeft, ChevronRight, CircleChevronLeft, CircleChevronRight }
 import { useEffect } from "react";
 import { useShallow } from "zustand/react/shallow";
 import { RealisticButton } from "./ui/realisticButton";
+import arrowLeft from "/public/shapes/arrow-left-wood.svg";
+import arrowRight from "/public/shapes/arrow-right-wood.svg";
+import disabled from "/public/shapes/disabled-wood.svg";
+import Image from "next/image";
+import { WoodButton } from "./ui/woodButton";
 
 export function NavigationButtons() {
     const [isAnimating, setIsAnimating] = usePortfolioStore(
@@ -34,8 +39,6 @@ export function NavigationButtons() {
     const isEndOfStack =
         (selectedPacket === undefined && currentPacket >= PACKETS.length - 1) ||
         (selectedPacket !== undefined && currentCard >= selectedDeck.length);
-    const isPrevDisabled = isStartOfStack || isAnimating;
-    const isNextDisabled = isEndOfStack || isAnimating;
 
     // Deck is finished
     useEffect(() => {
@@ -53,6 +56,7 @@ export function NavigationButtons() {
 
     async function handleNext(e: React.MouseEvent<HTMLButtonElement>) {
         e.preventDefault();
+        if (isAnimating) return;
 
         if (selectedPacket !== undefined) {
             // Deck is visible
@@ -69,6 +73,8 @@ export function NavigationButtons() {
 
     async function handlePrev(e: React.MouseEvent<HTMLButtonElement>) {
         e.preventDefault();
+        if (isAnimating) return;
+
         if (selectedPacket !== undefined) {
             // Deck is visible
             if (currentCard === 0) return;
@@ -83,23 +89,21 @@ export function NavigationButtons() {
     }
 
     return (
-        <div className="absolute bottom-2 md:bottom-10 flex gap-10">
-            <RealisticButton
-                variant={isPrevDisabled ? "disabled" : "default"}
-                disabled={isPrevDisabled}
+        <div className="absolute bottom-2 md:bottom-10 flex gap-20">
+            <WoodButton
+                waiting={isAnimating}
+                disabled={isStartOfStack}
                 onClick={handlePrev}
-                direction="prev"
             >
-                {isStartOfStack ? <Ban strokeWidth={3} size="30" /> : <ChevronLeft strokeWidth={3} size="30" />}
-            </RealisticButton>
-            <RealisticButton
-                variant={isNextDisabled ? "disabled" : "default"}
-                disabled={isNextDisabled}
+                {isStartOfStack ? <Image className="pointer-events-none" width={64} src={disabled} alt="No previous card/packet" /> : <Image className="pointer-events-none" width={64} src={arrowLeft} alt="Previous card/packet" />}
+            </WoodButton>
+            <WoodButton
+                waiting={isAnimating}
+                disabled={isEndOfStack}
                 onClick={handleNext}
-                direction="next"
             >
-                {isEndOfStack ? <Ban strokeWidth={3} size="30" /> : <ChevronRight strokeWidth={3} size="30" />}
-            </RealisticButton>
+                {isEndOfStack ? <Image className="pointer-events-none" width={64} src={disabled} alt="No next packet" /> : <Image className="pointer-events-none" width={64} src={arrowRight} alt="Next card/packet" />}
+            </WoodButton>
         </div >
     );
 }

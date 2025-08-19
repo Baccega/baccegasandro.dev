@@ -9,6 +9,7 @@ import {
 	GitlabCiIcon,
 	JenkinsIcon,
 	MaterialUiIcon,
+	NestJSIcon,
 	NextjsIcon,
 	NodejsIcon,
 	PlaywrightIcon,
@@ -20,6 +21,8 @@ import {
 	TypescriptIcon,
 	ViteIcon,
 } from "@/lib/icons";
+import { RealisticButton } from "@/components/ui/realisticButton";
+import { Link } from "lucide-react";
 
 const deck = [
 	{
@@ -118,7 +121,7 @@ const deck = [
 		title: "Platform development",
 		headingSize: "small",
 		description: [
-			"Developed websites with React and Tailwind CSS, managed with Adobe Experience Manager",
+			"Developed Multiple Websites Serving Thousands of Users",
 		],
 		texture: stormTexture,
 		image: "/images/platform-development.jpeg",
@@ -143,9 +146,21 @@ const deck = [
 	{
 		id: 10,
 		wip: false,
-		title: "SaaS development",
+		title: "Product Development",
+		headingSize: "small",
 		description: [
-			"Maintained a web app, built with React, Tailwind CSS and Prisma",
+			"Maintained a Fullstack SaaS Web Application",
+			"Integrated AI features",
+			<RealisticButton width="wide" key="storywise-link" className="text-xl border-[3px]">
+				<a
+					target="_blank"
+					rel="noreferrer"
+					href="https://storywi.se"
+					className="flex items-center justify-evenly gap-2"
+				>
+					<Link size="20" strokeWidth={2.8} />Link to storywi.se
+				</a>
+			</RealisticButton>
 		],
 		texture: stormTexture,
 		image: "/images/saas-development.jpeg",
@@ -153,12 +168,13 @@ const deck = [
 			{ description: "React", icon: ReactIcon },
 			{ description: "Tailwind CSS", icon: TailwindCssIcon },
 			{ description: "Prisma", icon: PrismaIcon },
+			{ description: "NestJS", icon: NestJSIcon },
 		],
 	},
 	{
 		id: 9,
 		wip: false,
-		title: "Storywise",
+		title: "Chax",
 		description: ["Senior Frontend Engineer", "Graz, Austria", "2025 - Now"],
 		texture: stormTexture,
 		image: "/images/chax-offices.jpeg",

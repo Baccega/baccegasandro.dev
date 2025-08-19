@@ -24,7 +24,7 @@ export type Card = {
 	image: string;
 	headingSize?: "tiny" | "small" | "default";
 	descriptionSize?: "tiny" | "small" | "default";
-	badges: Array<{description: string; icon: IconType}>;
+	badges: Array<{ description: string; icon: IconType }>;
 	wip?: boolean;
 };
 

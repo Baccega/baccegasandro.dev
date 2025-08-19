@@ -79,9 +79,9 @@ const deck = [
 		wip: false,
 		title: "Technology enthusiast",
 		description: [
-			"Loves videogames",
+			"Passionate about videogames",
 			"Started coding at 12",
-			"First side jobs during high school",
+			"First side jobs in tech during high school",
 		],
 		texture: leafTexture,
 		badges: [],

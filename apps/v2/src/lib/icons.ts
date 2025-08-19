@@ -18,7 +18,8 @@ import {
   SiCplusplus,
   SiOpencv,
   SiStripe,
-  SiJenkins
+  SiJenkins,
+  SiNestjs
 } from "react-icons/si";
 import { TbBrandAdobe } from "react-icons/tb";
 
@@ -45,3 +46,4 @@ export const CppIcon = SiCplusplus;
 export const OpenCvIcon = SiOpencv;
 export const StripeIcon = SiStripe;
 export const JenkinsIcon = SiJenkins;
+export const NestJSIcon = SiNestjs;

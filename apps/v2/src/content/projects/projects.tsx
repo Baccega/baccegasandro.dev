@@ -94,7 +94,7 @@ const deck = [
 		],
 
 		texture: circuitTexture,
-		image: "/images/kiwi.jpeg",
+		image: "/images/legiumelle.jpeg",
 		badges: [
 			{ description: "React", icon: ReactIcon },
 			{ description: "Tailwind CSS", icon: TailwindCssIcon },

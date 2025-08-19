@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 import backgroundImage from "/public/textures/background-texture-4.jpeg";
@@ -48,7 +47,7 @@ export default function RootLayout({
 					sizes="100vw"
 					priority={true}
 				/>
-				<TooltipProvider>
+				<TooltipProvider delayDuration={200}>
 					<main className="flex h-[100dvh] w-full items-center justify-center relative pb-10 tablet:pb-0 overflow-hidden">
 						{children}
 					</main>

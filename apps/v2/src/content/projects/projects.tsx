@@ -132,7 +132,8 @@ const deck = [
 		wip: false,
 		title: "Baccegasandro.dev",
 		description: [
-			"This website! Created with Next.js, Tailwind CSS and react-spring",
+			"This Website!",
+			"Tackling Complex Animations and SVGs",
 			<RealisticButton width="wide" key="portfolio-link" className="text-xl border-[3px]">
 				<a
 					target="_blank"

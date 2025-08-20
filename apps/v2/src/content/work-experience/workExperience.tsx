@@ -163,7 +163,7 @@ const deck = [
 			</RealisticButton>
 		],
 		texture: stormTexture,
-		image: "/images/saas-development.jpeg",
+		image: "/images/storywise.jpeg",
 		badges: [
 			{ description: "React", icon: ReactIcon },
 			{ description: "Tailwind CSS", icon: TailwindCssIcon },
@@ -174,7 +174,8 @@ const deck = [
 	{
 		id: 9,
 		wip: false,
-		title: "Chax",
+		headingSize: "small",
+		title: "Chax.at | Midlight GmbH",
 		description: ["Senior Frontend Engineer", "Graz, Austria", "2025 - Now"],
 		texture: stormTexture,
 		image: "/images/chax-offices.jpeg",

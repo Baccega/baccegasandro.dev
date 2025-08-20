@@ -20,7 +20,8 @@ const deck = [
 	{
 		id: 9,
 		wip: false,
-		title: "Storywise",
+		headingSize: "small",
+		title: "Chax.at | Midlight GmbH",
 		description: ["Senior Frontend Engineer", "Graz, Austria", "2025 - Now"],
 		texture: stormTexture,
 		badges: [],

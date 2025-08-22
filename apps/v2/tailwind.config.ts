@@ -10,6 +10,7 @@ const config: Config = {
 		extend: {
 			fontFamily: {
 				medieval: ["var(--font-magic-medieval)"],
+				bevan: ["var(--font-bevan)"],
 			},
 			colors: {
 				"card-outline": "#2f2b2b",

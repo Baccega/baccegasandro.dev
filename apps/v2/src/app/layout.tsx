@@ -5,6 +5,7 @@ import backgroundImage from "/public/textures/background-texture-4.jpeg";
 import { cn } from "@/lib/utils";
 
 import localFont from 'next/font/local'
+import { Bevan } from 'next/font/google'
 import { LoadingOverlay } from "@/components/loadingOverlay";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
@@ -20,6 +21,9 @@ const magicMedieval = localFont({
 	variable: '--font-magic-medieval',
 })
 
+const bevan = Bevan({ subsets: ['latin'], weight: "400", display: 'fallback', variable: '--font-bevan' })
+
+
 export const metadata: Metadata = {
 	title: "Baccega Sandro | The Portfolio",
 	description: "Software Engineer // Specialized in ⚛️ React Web development and passionate about 🤖 automating boring tasks",
@@ -31,8 +35,8 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
-			<body className={cn(magicMedieval.className, "relative")}>
+		<html lang="en" className={cn(magicMedieval.variable, bevan.variable)}>
+			<body className="relative font-medieval">
 				<script>
     				/* to prevent Firefox FOUC, this must be here */
 					let FF_FOUC_FIX;

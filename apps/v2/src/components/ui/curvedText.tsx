@@ -3,13 +3,13 @@ import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 
 const curvedTextPathVariants = cva(
-    "w-full",
+    "w-full font-bevan",
     {
         variants: {
             size: {
-                tiny: "text-[75px]",
-                small: "text-[85px]",
-                default: "text-[110px]",
+                tiny: "text-[60px]",
+                small: "text-[70px]",
+                default: "text-[95px]",
             },
         },
         defaultVariants: {
@@ -68,7 +68,7 @@ const CurvedText = React.forwardRef<HTMLOrSVGElement, CurvedTextProps>(
                 <title>{text}</title>
                 <g transform={cn(curvedGMatrixVariants({ size }))}>
                     <path ref={pathRef} className="hidden" fill="red" id="curve" d="M353.698,398.093 C776.993,245.796 1192.62,256.708 1602.18,396.499" />
-                    <text ref={textRef} className={cn(curvedTextPathVariants({ size }))}>
+                    <text ref={textRef} fill="white" stroke="black" strokeWidth="3" className={cn(curvedTextPathVariants({ size }))}>
                         <textPath xlinkHref="#curve" startOffset={startOffset}>
                             {text}
                         </textPath>

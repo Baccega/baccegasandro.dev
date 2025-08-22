@@ -7,8 +7,9 @@ const curvedTextPathVariants = cva(
     {
         variants: {
             size: {
-                tiny: "text-[60px]",
+                tiny: "text-[63px]",
                 small: "text-[70px]",
+                medium: "text-[80px]",
                 default: "text-[95px]",
             },
         },
@@ -25,6 +26,7 @@ const curvedGMatrixVariants = cva(
             size: {
                 tiny: "matrix(1,0,0,1,-355,-275)",
                 small: "matrix(1,0,0,1,-355,-270)",
+                medium: "matrix(1,0,0,1,-355,-265)",
                 default: "matrix(1,0,0,1,-355,-260)",
             },
         },

@@ -33,7 +33,7 @@ const deck = [
 			"Created a custom visual regression testing tool using Playwright to detect regressions in the UI",
 		],
 		texture: stormTexture,
-		headingSize: "small",
+		headingSize: "tiny",
 		image: "/images/testing.jpeg",
 		badges: [
 			{ description: "Playwright", icon: PlaywrightIcon },
@@ -43,13 +43,13 @@ const deck = [
 	{
 		id: 7,
 		wip: false,
-		title: "CI/CD Pipelines development",
+		title: "CI/CD Pipelines",
 		description: [
-			"Increase Gitlab's CI/CD pipeline speed by 4x",
+			"Increased Gitlab's CI/CD pipeline speed by 4x",
 			"Created Jenkins pipelines for CD on Liferay DXP with Docker",
 		],
 		texture: stormTexture,
-		headingSize: "tiny",
+		headingSize: "default",
 		image: "/images/pipeline.jpeg",
 		badges: [
 			{ description: "Gitlab CI", icon: GitlabCiIcon },
@@ -60,7 +60,7 @@ const deck = [
 	{
 		id: 6,
 		wip: false,
-		title: "Dashboard development",
+		title: "Dashboard Development",
 		description: [
 			"Built complex features for a dashboard that used React, with Material UI and Redux, and Node.js with Express",
 		],
@@ -86,13 +86,13 @@ const deck = [
 	{
 		id: 5,
 		wip: false,
-		title: "Internal tool creation",
+		title: "Internal Tool Creation",
 		description: [
-			"Automated tasks with a Node.js CLI tool",
-			"Created ad-hoc Vite proxy to style a custom CMS",
+			"Automated Tasks with a Node.js CLI Tool",
+			"Created Custom Vite proxy to Style a Proprietary CMS",
 		],
 		texture: stormTexture,
-		headingSize: "tiny",
+		headingSize: "small",
 		image: "/images/tools.jpeg",
 		badges: [
 			{ description: "Node.js", icon: NodejsIcon },
@@ -102,12 +102,12 @@ const deck = [
 	{
 		id: 4,
 		wip: false,
-		title: "New projects R&D",
+		title: "New Projects R&D",
 		description: [
 			"Started new projects using state of the art technologies like: Next.js, Shadcn/ui, Tailwind CSS, Turborepo, Zustand",
 		],
 		texture: stormTexture,
-		headingSize: "small",
+		headingSize: "medium",
 		image: "/images/lab.jpeg",
 		badges: [
 			{ description: "Next.js", icon: NextjsIcon },
@@ -118,10 +118,10 @@ const deck = [
 	{
 		id: 3,
 		wip: false,
-		title: "Platform development",
+		title: "Platform Development",
 		headingSize: "small",
 		description: [
-			"Developed Multiple Websites Serving Thousands of Users",
+			"Developed Suite of Websites Serving Thousands of Users Every Day",
 		],
 		texture: stormTexture,
 		image: "/images/platform-development.jpeg",

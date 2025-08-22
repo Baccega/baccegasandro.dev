@@ -78,7 +78,7 @@ const deck = [
 	{
 		id: 5,
 		wip: false,
-		title: "Technology enthusiast",
+		title: "Technology Enthusiast",
 		description: [
 			"Passionate about videogames",
 			"Started coding at 12",
@@ -92,7 +92,7 @@ const deck = [
 	{
 		id: 3,
 		wip: false,
-		title: "Born north of Padua, Italy",
+		title: "Born North of Padua, Italy",
 		description: ["Camposampiero (PD)"],
 		texture: leafTexture,
 		badges: [],

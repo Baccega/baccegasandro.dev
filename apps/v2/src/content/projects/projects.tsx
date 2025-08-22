@@ -133,7 +133,7 @@ const deck = [
 		title: "Baccegasandro.dev",
 		description: [
 			"This Website!",
-			"Tackling Complex Animations and SVGs",
+			"Facing Complex Animations and SVGs",
 			<RealisticButton width="wide" key="portfolio-link" className="text-xl border-[3px]">
 				<a
 					target="_blank"
@@ -145,7 +145,7 @@ const deck = [
 				</a>
 			</RealisticButton>
 		],
-
+		headingSize: "medium",
 		texture: circuitTexture,
 		image: "/images/brand-with-bg.jpeg",
 		badges: [

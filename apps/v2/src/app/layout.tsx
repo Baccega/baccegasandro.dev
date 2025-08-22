@@ -5,7 +5,7 @@ import backgroundImage from "/public/textures/background-texture-4.jpeg";
 import { cn } from "@/lib/utils";
 
 import localFont from 'next/font/local'
-import { Bevan } from 'next/font/google'
+import { Alfa_Slab_One } from 'next/font/google'
 import { LoadingOverlay } from "@/components/loadingOverlay";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
@@ -21,7 +21,7 @@ const magicMedieval = localFont({
 	variable: '--font-magic-medieval',
 })
 
-const bevan = Bevan({ subsets: ['latin'], weight: "400", display: 'fallback', variable: '--font-bevan' })
+const alfaSlabOne = Alfa_Slab_One({ subsets: ['latin'], weight: "400", display: 'fallback', variable: '--font-alfaSlabOne' })
 
 
 export const metadata: Metadata = {
@@ -35,7 +35,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" className={cn(magicMedieval.variable, bevan.variable)}>
+		<html lang="en" className={cn(magicMedieval.variable, alfaSlabOne.variable)}>
 			<body className="relative font-medieval">
 				<script>
     				/* to prevent Firefox FOUC, this must be here */

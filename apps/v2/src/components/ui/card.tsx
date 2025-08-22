@@ -42,6 +42,7 @@ const cardDescriptionVariants = cva(
 		variants: {
 			variant: {
 				default: "text-2xl",
+				medium: "text-2xl",
 				small: "text-xl",
 				tiny: "text-md",
 			},

@@ -70,7 +70,7 @@ const CurvedText = React.forwardRef<HTMLOrSVGElement, CurvedTextProps>(
                 <title>{text}</title>
                 <g transform={cn(curvedGMatrixVariants({ size }))}>
                     <path ref={pathRef} className="hidden" fill="red" id="curve" d="M353.698,398.093 C776.993,245.796 1192.62,256.708 1602.18,396.499" />
-                    <text ref={textRef} fill="white" stroke="black" strokeWidth="3" className={cn(curvedTextPathVariants({ size }))}>
+                    <text ref={textRef} fill="white" stroke="black" strokeWidth="4" className={cn(curvedTextPathVariants({ size }))}>
                         <textPath xlinkHref="#curve" startOffset={startOffset}>
                             {text}
                         </textPath>

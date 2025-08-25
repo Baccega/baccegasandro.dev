@@ -44,7 +44,7 @@ const deck = [
 				</a>
 			</RealisticButton>
 		],
-		headingSize: "tiny",
+		headingSize: "small",
 		texture: circuitTexture,
 		image: "/images/machinery.jpeg",
 		badges: [
@@ -68,7 +68,7 @@ const deck = [
 				</a>
 			</RealisticButton>
 		],
-		headingSize: "small",
+		// headingSize: "medium",
 		texture: circuitTexture,
 		image: "/images/google-crawler.jpeg",
 		badges: [
@@ -119,7 +119,7 @@ const deck = [
 				</a>
 			</RealisticButton>
 		],
-		headingSize: "small",
+		headingSize: "medium",
 		texture: circuitTexture,
 		image: "/images/camera.jpeg",
 		badges: [
@@ -145,7 +145,6 @@ const deck = [
 				</a>
 			</RealisticButton>
 		],
-		headingSize: "medium",
 		texture: circuitTexture,
 		image: "/images/brand-with-bg.jpeg",
 		badges: [

@@ -10,7 +10,7 @@ const config: Config = {
 		extend: {
 			fontFamily: {
 				medieval: ["var(--font-magic-medieval)"],
-				alfaSlabOne: ["var(--font-alfaSlabOne)"],
+				carterOne: ["var(--font-carterOne)"],
 			},
 			colors: {
 				"card-outline": "#2f2b2b",

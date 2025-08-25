@@ -20,7 +20,7 @@ const deck = [
 	{
 		id: 9,
 		wip: false,
-		headingSize: "small",
+		headingSize: "medium",
 		title: "Chax.at | Midlight GmbH",
 		description: ["Senior Frontend Engineer", "Graz, Austria", "2025 - Now"],
 		texture: stormTexture,
@@ -44,7 +44,7 @@ const deck = [
 		texture: leafTexture,
 		badges: [],
 		image: "/images/graz.jpeg",
-		headingSize: "small",
+		headingSize: "medium",
 	},
 	{
 		id: 6,
@@ -72,7 +72,7 @@ const deck = [
 		texture: leafTexture,
 		badges: [],
 		image: "/images/graduation2.jpeg",
-		headingSize: "tiny",
+		headingSize: "small",
 		descriptionSize: "small",
 	},
 	{
@@ -87,7 +87,7 @@ const deck = [
 		texture: leafTexture,
 		badges: [],
 		image: "/images/kid.jpeg",
-		headingSize: "small",
+		headingSize: "medium",
 	},
 	{
 		id: 3,
@@ -97,7 +97,7 @@ const deck = [
 		texture: leafTexture,
 		badges: [],
 		image: "/images/north-italy-plains.jpeg",
-		headingSize: "tiny",
+		headingSize: "small",
 	},
 	{
 		id: 1,

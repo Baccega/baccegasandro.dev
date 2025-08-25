@@ -33,7 +33,7 @@ const deck = [
 			"Created a custom visual regression testing tool using Playwright to detect regressions in the UI",
 		],
 		texture: stormTexture,
-		headingSize: "tiny",
+		headingSize: "medium",
 		image: "/images/testing.jpeg",
 		badges: [
 			{ description: "Playwright", icon: PlaywrightIcon },
@@ -65,7 +65,7 @@ const deck = [
 			"Built complex features for a dashboard that used React, with Material UI and Redux, and Node.js with Express",
 		],
 		texture: stormTexture,
-		headingSize: "small",
+		headingSize: "medium",
 		image: "/images/dashboard.jpeg",
 		badges: [
 			{ description: "React", icon: ReactIcon },
@@ -92,7 +92,7 @@ const deck = [
 			"Created Custom Vite proxy to Style a Proprietary CMS",
 		],
 		texture: stormTexture,
-		headingSize: "small",
+		headingSize: "medium",
 		image: "/images/tools.jpeg",
 		badges: [
 			{ description: "Node.js", icon: NodejsIcon },
@@ -107,7 +107,7 @@ const deck = [
 			"Started new projects using state of the art technologies like: Next.js, Shadcn/ui, Tailwind CSS, Turborepo, Zustand",
 		],
 		texture: stormTexture,
-		headingSize: "medium",
+		headingSize: "default",
 		image: "/images/lab.jpeg",
 		badges: [
 			{ description: "Next.js", icon: NextjsIcon },
@@ -119,7 +119,7 @@ const deck = [
 		id: 3,
 		wip: false,
 		title: "Platform Development",
-		headingSize: "small",
+		headingSize: "medium",
 		description: [
 			"Developed Suite of Websites Serving Thousands of Users Every Day",
 		],
@@ -147,7 +147,7 @@ const deck = [
 		id: 10,
 		wip: false,
 		title: "Product Development",
-		headingSize: "small",
+		headingSize: "medium",
 		description: [
 			"Maintained a Fullstack SaaS Web Application",
 			"Integrated AI features",
@@ -174,7 +174,7 @@ const deck = [
 	{
 		id: 9,
 		wip: false,
-		headingSize: "small",
+		headingSize: "medium",
 		title: "Chax.at | Midlight GmbH",
 		description: ["Senior Frontend Engineer", "Graz, Austria", "2025 - Now"],
 		texture: stormTexture,

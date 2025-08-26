@@ -121,7 +121,7 @@ const deck = [
 		],
 		headingSize: "medium",
 		texture: circuitTexture,
-		image: "/images/camera.jpeg",
+		image: "/images/rti.jpeg",
 		badges: [
 			{ description: "Python", icon: PythonIcon },
 			{ description: "OpenCV", icon: OpenCvIcon },

@@ -78,5 +78,5 @@ export const CONTACT_ME = {
 	title: "Contact me",
 	texture: waveTexture,
 	deck: deck,
-	portrait: "/images/contact-me-2.jpeg",
+	portrait: "/images/contact-me.jpeg",
 } satisfies Packet;

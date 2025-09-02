@@ -15,7 +15,7 @@ const deck = [
 	// 	title: "Contact me",
 	// 	description: ["See the options (This will link to the contact me pack)"],
 	// 	texture: waveTexture,
-	// 	image: "/images/contact-me-2.jpeg",
+	// 	image: "/images/contact-me.jpeg",
 	// },
 	{
 		id: 9,

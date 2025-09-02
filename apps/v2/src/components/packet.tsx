@@ -43,7 +43,7 @@ export function Packet(props: { title: string; texture: StaticImageData, portrai
 				<div className="col-start-2 col-end-3 row-start-2 row-end-3 relative w-full h-full shadow-inner">
 					<div className="relative h-full bg-packet-portrait bg-no-repeat bg-cover bg-center" />
 				</div>
-				<h2 className="absolute bottom-[10%] bg-center flex justify-center text-center w-full h-[90px] bg-no-repeat bg-cover text-2xl font-semibold text-foreground bg-ribbon">
+				<h2 className="absolute bottom-[7%] bg-center flex justify-center text-center w-full h-[90px] bg-no-repeat bg-cover text-2xl font-semibold text-foreground bg-ribbon">
 					<CurvedText size="default" text={props.title} />
 				</h2>
 			</div>

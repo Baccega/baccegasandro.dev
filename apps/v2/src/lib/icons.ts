@@ -1,25 +1,27 @@
 import {
-  SiTypescript,
-  SiTailwindcss,
-  SiReact,
-  SiPrisma,
-  SiNextdotjs,
-  SiTurborepo,
-  SiNodedotjs,
-  SiVite,
-  SiMui,
-  SiRedux,
-  SiExpress,
-  SiDocker,
-  SiGitlab,
-  SiPlaywright,
-  SiSpringCreators,
-  SiPython,
-  SiCplusplus,
-  SiOpencv,
-  SiStripe,
-  SiJenkins,
-  SiNestjs
+	SiTypescript,
+	SiTailwindcss,
+	SiReact,
+	SiPrisma,
+	SiNextdotjs,
+	SiTurborepo,
+	SiNodedotjs,
+	SiVite,
+	SiMui,
+	SiRedux,
+	SiExpress,
+	SiDocker,
+	SiGitlab,
+	SiPlaywright,
+	SiSpringCreators,
+	SiPython,
+	SiCplusplus,
+	SiOpencv,
+	SiStripe,
+	SiJenkins,
+	SiNestjs,
+	SiNixos,
+	SiLinux,
 } from "react-icons/si";
 import { TbBrandAdobe } from "react-icons/tb";
 
@@ -47,3 +49,5 @@ export const OpenCvIcon = SiOpencv;
 export const StripeIcon = SiStripe;
 export const JenkinsIcon = SiJenkins;
 export const NestJSIcon = SiNestjs;
+export const NixIcon = SiNixos;
+export const LinuxIcon = SiLinux;

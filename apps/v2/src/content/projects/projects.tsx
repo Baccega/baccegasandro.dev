@@ -5,7 +5,7 @@ import circuitTexture from "/public/textures/card-texture-11.jpeg";
 import stormTexture from "/public/textures/card-texture-4.jpeg";
 import { RealisticButton } from "@/components/ui/realisticButton";
 import { Link } from "lucide-react";
-import { CppIcon, NextjsIcon, OpenCvIcon, PythonIcon, ReactIcon, ReactSpringIcon, StripeIcon, TailwindCssIcon, TypescriptIcon } from "@/lib/icons";
+import { NixIcon, LinuxIcon, CppIcon, NextjsIcon, OpenCvIcon, PythonIcon, ReactIcon, ReactSpringIcon, StripeIcon, TailwindCssIcon, TypescriptIcon } from "@/lib/icons";
 
 const deck = [
 	{
@@ -125,6 +125,31 @@ const deck = [
 		badges: [
 			{ description: "Python", icon: PythonIcon },
 			{ description: "OpenCV", icon: OpenCvIcon },
+		],
+	},
+	{
+		id: 5,
+		wip: false,
+		title: "My Homelab",
+		description: [
+			"A declarative Nix configuration for my Homelab",
+			<RealisticButton width="wide" key="homelab-link" className="text-xl border-[3px]">
+				<a
+					target="_blank"
+					rel="noreferrer"
+					href="https://github.com/Baccega/homelab"
+					className="flex items-center justify-evenly gap-2"
+				>
+					<Link size="20" strokeWidth={2.8} /> See Github repository
+				</a>
+			</RealisticButton>
+		],
+		headingSize: "default",
+		texture: circuitTexture,
+		image: "/images/homelab.jpeg",
+		badges: [
+			{ description: "Nix", icon: NixIcon },
+			{ description: "Linux", icon: LinuxIcon },
 		],
 	},
 	{

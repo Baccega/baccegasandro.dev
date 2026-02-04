@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Image from "next/image";
-import backgroundImage from "/public/textures/background-texture-4.jpeg";
+import backgroundImage from "../../public/textures/background-texture-4.jpeg";
 import { cn } from "@/lib/utils";
 
 import localFont from 'next/font/local'

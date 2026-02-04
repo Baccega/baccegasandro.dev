@@ -1,7 +1,7 @@
 import type { Deck, Packet } from "../packets";
-import leafTexture from "/public/textures/card-texture-8.jpeg";
-import waveTexture from "/public/textures/card-texture-2.jpeg";
-import stormTexture from "/public/textures/card-texture-7.jpeg";
+import leafTexture from "../../../public/textures/card-texture-8.jpeg";
+import waveTexture from "../../../public/textures/card-texture-2.jpeg";
+import stormTexture from "../../../public/textures/card-texture-7.jpeg";
 import {
 	AdobeExperienceManagerIcon,
 	DockerIcon,

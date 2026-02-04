@@ -7,9 +7,9 @@ import { Ban, ChevronLeft, ChevronRight, CircleChevronLeft, CircleChevronRight }
 import { useEffect } from "react";
 import { useShallow } from "zustand/react/shallow";
 import { RealisticButton } from "./ui/realisticButton";
-import arrowLeft from "/public/shapes/arrow-left-wood.svg";
-import arrowRight from "/public/shapes/arrow-right-wood.svg";
-import disabled from "/public/shapes/disabled-wood.svg";
+import arrowLeft from "../../public/shapes/arrow-left-wood.svg";
+import arrowRight from "../../public/shapes/arrow-right-wood.svg";
+import disabled from "../../public/shapes/disabled-wood.svg";
 import Image from "next/image";
 import { WoodButton } from "./ui/woodButton";
 

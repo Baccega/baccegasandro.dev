@@ -1,8 +1,8 @@
 import type { Deck, Packet } from "../packets";
-import leafTexture from "/public/textures/card-texture-8.jpeg";
-import waveTexture from "/public/textures/card-texture-6.jpeg";
-import circuitTexture from "/public/textures/card-texture-3.jpeg";
-import stormTexture from "/public/textures/card-texture-4.jpeg";
+import leafTexture from "../../../public/textures/card-texture-8.jpeg";
+import waveTexture from "../../../public/textures/card-texture-6.jpeg";
+import circuitTexture from "../../../public/textures/card-texture-3.jpeg";
+import stormTexture from "../../../public/textures/card-texture-4.jpeg";
 import { RealisticButton } from "@/components/ui/realisticButton";
 import { Link, Mail } from "lucide-react";
 

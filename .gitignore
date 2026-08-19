@@ -39,3 +39,6 @@ yarn-error.log*
 
 tmp
 archived
+
+# Temporary
+apps/v3/*

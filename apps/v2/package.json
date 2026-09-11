@@ -19,7 +19,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.12.0",
-    "sharp": "^0.35.3",
+    "sharp": "^0.35.4",
     "tailwind-merge": "^2.6.1",
     "tailwindcss-animate": "^1.0.7",
     "zustand": "^4.5.7"

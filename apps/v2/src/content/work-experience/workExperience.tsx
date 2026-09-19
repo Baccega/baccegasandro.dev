@@ -4,14 +4,17 @@ import waveTexture from "../../../public/textures/card-texture-2.jpeg";
 import stormTexture from "../../../public/textures/card-texture-7.jpeg";
 import {
 	AdobeExperienceManagerIcon,
+	ClaudeIcon,
 	DockerIcon,
 	ExpressIcon,
+	GeminiIcon,
 	GitlabCiIcon,
 	JenkinsIcon,
 	MaterialUiIcon,
 	NestJSIcon,
 	NextjsIcon,
 	NodejsIcon,
+	OpenAIIcon,
 	PlaywrightIcon,
 	PrismaIcon,
 	ReactIcon,
@@ -142,6 +145,23 @@ const deck = [
 		texture: stormTexture,
 		image: "/images/wirecube-offices.jpeg",
 		badges: [],
+	},
+	{
+		id: 11,
+		wip: false,
+		title: "Model Taming",
+		headingSize: "default",
+		description: [
+			"Supervised multiple AI models in parallel",
+			"Managed system prompts",
+		],
+		texture: stormTexture,
+		image: "/images/model-riding.jpeg",
+		badges: [
+			{ description: "GPT Models", icon: OpenAIIcon },
+			{ description: "Claude Models", icon: ClaudeIcon },
+			{ description: "Gemini Models", icon: GeminiIcon },
+		],
 	},
 	{
 		id: 10,

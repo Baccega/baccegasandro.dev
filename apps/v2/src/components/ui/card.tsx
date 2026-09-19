@@ -70,7 +70,7 @@ const badgeVariants = cva(
 
 export interface CardProps
 	extends React.ButtonHTMLAttributes<HTMLDivElement>,
-		VariantProps<typeof cardWrapperVariants> {
+	VariantProps<typeof cardWrapperVariants> {
 	card: Card;
 }
 
@@ -91,7 +91,7 @@ export default function CardComponent({ card, variant }: CardProps) {
 	return (
 		<div className={cn(cardWrapperVariants({ variant }))}>
 			<div className={cn(cardContainerVariants({ variant }))}>
-				<div className="relative h-[104%] col-start-2 translate-y-5 shadow-inner overflow-hidden bg-neutral-700">
+				<div className="relative h-[104%] col-start-2 translate-y-5 shadow-inner overflow-hidden">
 					<Image
 						className={cn(
 							"object-cover portrait-clip transition-opacity duration-300",

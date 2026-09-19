@@ -10,7 +10,7 @@ export function Packet(props: {
 	wip: boolean;
 }) {
 	return (
-		<div className="hover:cursor-pointer relative px-0 w-packet h-packet shadow-card overflow-hidden grid grid-rows-[2rem,1fr,2rem]">
+		<div className="hover:cursor-pointer relative px-0 w-packet h-packet overflow-hidden grid grid-rows-[2rem,1fr,2rem]">
 			<span className="bg-packet-border bg-no-repeat bg-cover w-full h-full" />
 			<div className="relative w-full h-full">
 				<Image

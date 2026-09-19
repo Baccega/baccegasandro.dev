@@ -127,7 +127,7 @@ export function LoadingOverlay() {
 					className="mt-4 rounded-md border border-white/60 px-5 py-2 text-base text-white transition-colors hover:bg-white hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
 					onClick={() => setDismissed(true)}
 				>
-					Continue anyway
+					Load anyway
 				</button>
 			)}
 		</div>

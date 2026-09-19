@@ -1,4 +1,5 @@
 import type { StaticImageData } from "next/image";
+import type { ReactElement } from "react";
 import { ABOUT_ME } from "./about-me/aboutMe";
 import { CONTACT_ME } from "./contact-me/contactMe";
 import { PROJECTS } from "./projects/projects";
@@ -19,7 +20,7 @@ export type Card = {
 	id: number;
 	title: string;
 	subtitle?: string;
-	description: Array<string | JSX.Element>;
+	description: Array<string | ReactElement>;
 	texture: StaticImageData;
 	image: string;
 	headingSize?: "tiny" | "small" | "medium" | "default";

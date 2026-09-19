@@ -1,12 +1,13 @@
 "use client"
 
-import { animated, to, type SpringValue, type SpringRef, config } from "@react-spring/web";
+import { animated, to, config } from "@react-spring/web";
 import { useEffect, useRef } from "react";
+import { useShallow } from "zustand/react/shallow";
 import { usePortfolioStore } from "@/lib/store";
 import { Packet } from "./packet";
 import { trans } from "@/lib/utils";
 import { packets_above_position, packets_stacked_position, type PacketSpringApi, type PacketSpringProps } from "@/lib/packetsPositions";
-import { Deck, PACKETS } from "@/content/packets";
+import { PACKETS } from "@/content/packets";
 
 
 export function AnimatedPackets(props: {
@@ -14,9 +15,10 @@ export function AnimatedPackets(props: {
     packetsApi: PacketSpringApi
 }) {
     const previousPacket = useRef<number | null>(null);
-    const setIsAnimating = usePortfolioStore((state) => state.setIsAnimating);
     const currentPacket = usePortfolioStore((state) => state.currentPacket);
-    const [selectedPacket, setSelectedPacket] = usePortfolioStore((state) => [state.selectedPacket, state.setSelectedPacket]);
+    const [selectedPacket, setSelectedPacket] = usePortfolioStore(
+        useShallow((state) => [state.selectedPacket, state.setSelectedPacket]),
+    );
 
     function handlePacketClick(e: React.MouseEvent<HTMLDivElement>) {
         e.preventDefault();

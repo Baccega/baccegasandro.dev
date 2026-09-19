@@ -26,11 +26,11 @@ export function Packet(props: {
 					<span className="relative flex items-center justify-center col-span-3">
 						<div className="relative">
 							<Image
-								className="z-50 object-cover h-auto"
+								className="z-50 object-cover h-auto w-[270px]"
 								src="/shapes/brand-logo.svg"
 								alt="Baccega Sandro, The Portfolio"
 								width={270}
-								height={129.5}
+								height={110}
 								priority={true}
 							/>
 						</div>

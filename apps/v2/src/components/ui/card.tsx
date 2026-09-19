@@ -125,7 +125,7 @@ export default function CardComponent({ card, variant }: CardProps) {
 											i + 1 <= 4 && i + 1 > 1 ? ((i + 1) as 1 | 2 | 3 | 4) : 1,
 									})}
 								>
-									<badge.icon className="m-auto" />
+									<badge.icon className="m-auto w-5 h-5" />
 								</span>
 							</TooltipTrigger>
 						</Tooltip>

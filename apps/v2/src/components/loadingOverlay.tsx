@@ -103,11 +103,11 @@ export function LoadingOverlay() {
 		>
 			<div className="relative">
 				<Image
-					className="object-cover h-auto"
+					className="object-cover h-auto w-[250px]"
 					src="/shapes/brand-logo.svg"
 					alt="Loading logo"
 					width={250}
-					height={103}
+					height={102}
 					priority={true}
 				/>
 			</div>

@@ -17,18 +17,15 @@ export function NavigationButtons() {
     const [isAnimating, setIsAnimating] = usePortfolioStore(
         useShallow((state) => [state.isAnimating, state.setIsAnimating]),
     );
-    const [currentPacket, setCurrentPacket] = usePortfolioStore((state) => [
-        state.currentPacket,
-        state.setCurrentPacket,
-    ]);
-    const [selectedPacket, setSelectedPacket] = usePortfolioStore((state) => [
-        state.selectedPacket,
-        state.setSelectedPacket,
-    ]);
-    const [currentCard, setCurrentCard] = usePortfolioStore((state) => [
-        state.currentCard,
-        state.setCurrentCard,
-    ]);
+    const [currentPacket, setCurrentPacket] = usePortfolioStore(
+        useShallow((state) => [state.currentPacket, state.setCurrentPacket]),
+    );
+    const [selectedPacket, setSelectedPacket] = usePortfolioStore(
+        useShallow((state) => [state.selectedPacket, state.setSelectedPacket]),
+    );
+    const [currentCard, setCurrentCard] = usePortfolioStore(
+        useShallow((state) => [state.currentCard, state.setCurrentCard]),
+    );
 
     const selectedDeck =
         selectedPacket !== undefined ? PACKETS[selectedPacket].deck : [];

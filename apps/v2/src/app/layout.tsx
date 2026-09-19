@@ -1,32 +1,37 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import backgroundImage from "../../public/textures/background-texture-4.jpeg";
-import { cn } from "@/lib/utils";
 
-import localFont from 'next/font/local'
-import { Carter_One } from 'next/font/google'
 import { LoadingOverlay } from "@/components/loadingOverlay";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { Carter_One } from "next/font/google";
+import localFont from "next/font/local";
 
 const magicMedieval = localFont({
 	src: [
 		{
-			path: '../../public/fonts/magic-medieval-font/Magicmedieval.woff',
-			weight: '400',
-			style: 'normal',
+			path: "../../public/fonts/magic-medieval-font/Magicmedieval.woff",
+			weight: "400",
+			style: "normal",
 		},
 	],
-	display: 'swap',
-	variable: '--font-magic-medieval',
-})
+	display: "swap",
+	variable: "--font-magic-medieval",
+});
 
-const carterOne = Carter_One({ subsets: ['latin'], weight: "400", display: 'fallback', variable: '--font-carterOne' })
-
+const carterOne = Carter_One({
+	subsets: ["latin"],
+	weight: "400",
+	display: "fallback",
+	variable: "--font-carterOne",
+});
 
 export const metadata: Metadata = {
 	title: "Baccega Sandro | The Portfolio",
-	description: "Software Engineer // Specialized in ⚛️ React Web development and passionate about 🤖 automating boring tasks",
+	description:
+		"Software Engineer // Specialized in ⚛️ React Web development and passionate about 🤖 automating boring tasks",
 };
 
 export default function RootLayout({
@@ -38,8 +43,7 @@ export default function RootLayout({
 		<html lang="en" className={cn(magicMedieval.variable, carterOne.variable)}>
 			<body className="relative font-medieval">
 				<script>
-    				/* to prevent Firefox FOUC, this must be here */
-					let FF_FOUC_FIX;
+					/* to prevent Firefox FOUC, this must be here */ let FF_FOUC_FIX;
 				</script>
 				<LoadingOverlay />
 				<Image
@@ -50,6 +54,7 @@ export default function RootLayout({
 					fill
 					sizes="100vw"
 					priority={true}
+					unoptimized
 				/>
 				<TooltipProvider delayDuration={200}>
 					<main className="flex h-[100dvh] w-full items-center justify-center relative pb-10 tablet:pb-0 overflow-hidden">

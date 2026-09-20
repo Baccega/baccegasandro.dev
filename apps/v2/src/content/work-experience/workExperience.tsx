@@ -149,14 +149,14 @@ const deck = [
 	{
 		id: 11,
 		wip: false,
-		title: "Model Taming",
+		title: "LLM Overlord",
 		headingSize: "default",
 		description: [
-			"Supervised multiple AI models in parallel",
-			"Managed system prompts",
+			"Bending multiple AI models in parallel to my will",
+			"Crafted ad-hoc system prompts",
 		],
 		texture: stormTexture,
-		image: "/images/model-riding.jpeg",
+		image: "/images/model-overlord.jpeg",
 		badges: [
 			{ description: "GPT Models", icon: OpenAIIcon },
 			{ description: "Claude Models", icon: ClaudeIcon },

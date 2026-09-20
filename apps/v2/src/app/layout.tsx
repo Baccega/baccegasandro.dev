@@ -43,7 +43,7 @@ export default function RootLayout({
 		<html lang="en" className={cn(magicMedieval.variable, carterOne.variable)}>
 			<body className="relative font-medieval">
 				<script>
-					/* to prevent Firefox FOUC, this must be here */ let FF_FOUC_FIX;
+					{/* to prevent Firefox FOUC, this must be here */} let FF_FOUC_FIX;
 				</script>
 				<LoadingOverlay />
 				<Image

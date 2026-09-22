@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 
 const woodButtonVariants = cva(
-    ["transition-all", "hover:drop-shadow-from-top hover:invert hover:sepia hover:contrast-75", "active:scale-95 active:contrast-125 active:drop-shadow-none"],
+    ["transition-all", "hover:drop-shadow-from-top hover:invert hover:sepia hover:contrast-75 cursor-pointer", "active:scale-95 active:contrast-125 active:drop-shadow-none"],
     {
         variants: {
             waiting: {

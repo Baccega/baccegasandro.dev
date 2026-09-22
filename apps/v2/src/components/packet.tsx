@@ -10,7 +10,7 @@ export function Packet(props: {
 	wip: boolean;
 }) {
 	return (
-		<div className="hover:cursor-pointer relative px-0 w-packet h-packet overflow-hidden grid grid-rows-[2rem,1fr,2rem]">
+		<div className="hover:cursor-pointer relative px-0 w-packet h-packet overflow-hidden grid grid-rows-[2rem_1fr_2rem]">
 			<span className="bg-packet-border bg-no-repeat bg-cover w-full h-full" />
 			<div className="relative w-full h-full">
 				<Image
@@ -22,7 +22,7 @@ export function Packet(props: {
 					priority={false}
 					unoptimized
 				/>
-				<div className="relative grid grid-rows-[1fr,2fr] grid-cols-[20px,1fr,20px] z-20 w-full h-full py-4">
+				<div className="relative grid grid-rows-[1fr_2fr] grid-cols-[20px_1fr_20px] z-20 w-full h-full py-4">
 					<span className="relative flex items-center justify-center col-span-3">
 						<div className="relative">
 							<Image

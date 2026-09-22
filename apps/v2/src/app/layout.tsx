@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import backgroundImage from "../../public/textures/background-texture-4.jpeg";
 
+import { Copyright } from "@/components/copyright";
 import { LoadingOverlay } from "@/components/loadingOverlay";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Carter_One } from "next/font/google";
@@ -25,7 +26,7 @@ const carterOne = Carter_One({
 	subsets: ["latin"],
 	weight: "400",
 	display: "fallback",
-	variable: "--font-carterOne",
+	variable: "--font-carter-one",
 });
 
 export const metadata: Metadata = {
@@ -57,7 +58,8 @@ export default function RootLayout({
 					unoptimized
 				/>
 				<TooltipProvider delayDuration={200}>
-					<main className="flex h-[100dvh] w-full items-center justify-center relative pb-10 tablet:pb-0 overflow-hidden">
+					<main className="flex h-dvh w-full items-center justify-center relative pb-10 sm:pb-0 overflow-hidden">
+						<Copyright className="fixed top-1 left-1/2 -translate-x-1/2 text-sm font-semibold tracking-wide text-amber-950/60 [text-shadow:0_1px_0_rgb(255_255_255/0.5),0_-1px_0_rgb(0_0_0/0.25)] hover:text-amber-950/45 sm:top-auto sm:right-2 sm:bottom-2 sm:left-auto sm:translate-x-0" />
 						{children}
 					</main>
 				</TooltipProvider>

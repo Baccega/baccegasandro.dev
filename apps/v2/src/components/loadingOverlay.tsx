@@ -7,6 +7,7 @@ import {
 } from "@/lib/assets";
 import Image from "next/image";
 import React from "react";
+import { Copyright } from "./copyright";
 import { Spinner } from "./ui/spinner";
 
 type NetworkInformation = {
@@ -130,6 +131,7 @@ export function LoadingOverlay() {
 					Load anyway
 				</button>
 			)}
+			<Copyright className="absolute bottom-4 left-1/2 -translate-x-1/2 text-xl" />
 		</div>
 	);
 }

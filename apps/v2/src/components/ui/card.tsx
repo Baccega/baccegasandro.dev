@@ -23,7 +23,7 @@ const cardWrapperVariants = cva(
 );
 
 const cardContainerVariants = cva(
-	"relative grid grid-rows-[1fr,auto,80px,1fr] grid-cols-[1.5rem,1fr,1.5rem] items-center justify-center rounded-2xl w-full h-full",
+	"relative grid grid-rows-[1fr_auto_80px_1fr] grid-cols-[1.5rem_1fr_1.5rem] items-center justify-center rounded-2xl w-full h-full",
 	{
 		variants: {
 			variant: {
@@ -70,7 +70,7 @@ const badgeVariants = cva(
 
 export interface CardProps
 	extends React.ButtonHTMLAttributes<HTMLDivElement>,
-	VariantProps<typeof cardWrapperVariants> {
+		VariantProps<typeof cardWrapperVariants> {
 	card: Card;
 }
 

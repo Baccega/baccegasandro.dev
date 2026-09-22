@@ -7,6 +7,9 @@ allowBuilds:
 
 autoInstallPeers: false
 
+minimumReleaseAgeExclude:
+  - cn@0.4.0
+
 overrides:
   micromatch@<4.0.8: ">=4.0.8"
   cross-spawn@>=7.0.0 <7.0.5: ">=7.0.5"

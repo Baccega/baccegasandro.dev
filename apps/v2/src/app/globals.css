@@ -1,9 +1,92 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  
+@theme inline {
+  --font-medieval: var(--font-magic-medieval);
+  --font-carterOne: var(--font-carter-one);
+
+  --color-card-outline: #2f2b2b;
+  --color-card-primary: #007918;
+  --color-card-border: #a3a3a3;
+  --color-card-background: #fff;
+  --color-card-background-disabled: #ededed;
+  --color-card-dividers-color: #000;
+  --color-packet-silver: rgb(229, 229, 229);
+  --color-foreground: hsl(var(--foreground));
+  --color-foreground-contrast: #fff;
+  --color-background: hsl(var(--background));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  --shadow-card: -40px 40px 100px 15px rgba(0, 0, 0, 0.4);
+  --shadow-button: 0 5px 5px 0 rgba(0, 0, 0, 0.6);
+  --shadow-button-hover: 0 10px 5px 0 rgba(0, 0, 0, 0.5);
+  --shadow-button-pressed: inset 0 3px 5px 0 rgba(0, 0, 0, 0.75);
+  --drop-shadow-from-top: 0 5px 2px rgba(0, 0, 0, 0.5);
+}
+
+@utility w-packet {
+  width: min(22.5rem, 97dvw);
+}
+
+@utility w-card {
+  width: min(22rem, 95dvw);
+}
+
+@utility w-ribbon {
+  width: 100%;
+}
+
+@utility h-packet {
+  height: 34rem;
+}
+
+@utility h-card {
+  height: 33rem;
+}
+
+@utility h-ribbon {
+  height: 5rem;
+}
+
+@utility bg-ribbon {
+  background-image: url("/shapes/ribbon-bended.svg");
+}
+
+@utility bg-card-description {
+  background-image: url("/shapes/card-description.svg");
+}
+
+@utility bg-card-portrait {
+  background-image: url("/shapes/card-portrait.svg");
+}
+
+@utility bg-packet-portrait {
+  background-image: url("/shapes/packet-portrait.svg");
+}
+
+@utility bg-packet-border {
+  background-image: url("/shapes/packet-border.svg");
 }
 
 body {
